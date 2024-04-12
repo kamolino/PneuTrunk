@@ -112,8 +112,8 @@ class InverseKinematicsSolver(Node):
     def solver_sqp(self, q0):
         #self.get_logger().info("solver_sqp")
         q_required = np.zeros(13)
-        qRotMin = -15.0         # min. revolute joints limit
-        qRotMax = 15.0          # max. revolute joints limit
+        qRotMin = -18.0         # min. revolute joints limit
+        qRotMax = 18.0          # max. revolute joints limit
         qLinMin = 0.0           # min. translation joints limit
         qLinMax = 40.0          # max. translation joints limit
         lb = [qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qLinMin]
@@ -137,7 +137,7 @@ class InverseKinematicsSolver(Node):
     # =========================================================
     def obj_function(self, q):
         x_real = self.forward_kinematics(q)
-        x_des = np.array([1.0, 0.0, 0.0, self.effector[0], 0.0, 1.0, 0.0, self.effector[1], 0.0, 0.0, 1.0, -self.effector[2], 0.0, 0.0, 0.0, 1.0])
+        x_des = np.array([1.0, 0.0, 0.0, self.effector[0], 0.0, 1.0, 0.0, self.effector[1], 0.0, 0.0, 1.0, self.effector[2], 0.0, 0.0, 0.0, 1.0])
         error = np.linalg.norm(x_des - x_real)
         #print("error:"+str(error))
         return error
