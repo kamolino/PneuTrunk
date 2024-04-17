@@ -19,6 +19,9 @@ class DesiredPosition(Node):
         self.timer_ = self.create_timer(0.01, self.position)
         self.get_logger().info("Desired position...")
         self.end_effector = np.zeros(3)
+        self.end_effector[0] = 0
+        self.end_effector[1] = 0
+        self.end_effector[2] = -978
 
     def optitrack_position(self, msg_optitrack):
         self.end_effector[0] = (msg_optitrack.pose.position.x*1000)

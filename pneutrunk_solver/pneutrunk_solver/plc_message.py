@@ -3,6 +3,7 @@ import socket
 from rclpy.node import Node
 import numpy as np
 from pneutrunk_msgs.msg import PneutrunkJointState
+import re
 
 class PLCmessage(Node):
 
@@ -23,11 +24,11 @@ class PLCmessage(Node):
         q_string = str(q_udp)
         q_real = q_string.split(',')
         joint_state = PneutrunkJointState()
-        q = np.zeros(12)
-        for i in range(12):
+        q = np.zeros(14)    #12
+        for i in range(14): #12
             q[i] = float(q_real[i])
         joint_state.segment_state = q
-        joint_state.translation = 0.0#float(q_real[12])
+        joint_state.translation = 10.0
         self.publisher_.publish(joint_state)
         self.get_logger().info("PLC:"+str(joint_state))
 

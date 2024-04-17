@@ -21,7 +21,7 @@ class InverseKinematicsSolver(Node):
     UDP_PORT = 12050    
     # Robot parameters:
     effector = np.zeros(3)              # effector = [x, y, z]
-    q_real = np.zeros(13)
+    q_real = np.zeros(15)
     packet_start = ""
     gesture = ""
     ball_color = ""
@@ -76,9 +76,9 @@ class InverseKinematicsSolver(Node):
     def q_real_detection(self, msg):
         q_real_state_temp = msg.segment_state
         q_real_tran_temp = msg.translation
-        for i in range(12):
+        for i in range(14):
             self.q_real[i] = q_real_state_temp[i]
-        self.q_real[12] = q_real_tran_temp
+        self.q_real[14] = q_real_tran_temp
         #self.q_real.append = 0.0#msg.translation
         #self.get_logger().info("q_real_detection")
 
@@ -110,22 +110,23 @@ class InverseKinematicsSolver(Node):
     s:release   -   release an object
     """
     def solver_sqp(self, q0):
-        #self.get_logger().info("solver_sqp")
-        q_required = np.zeros(13)
+        q_required = np.zeros(15)
         qRotMin = -18.0         # min. revolute joints limit
-        qRotMax = 18.0          # max. revolute joints limit
-        qLinMin = 0.0           # min. translation joints limit
-        qLinMax = 40.0          # max. translation joints limit
-        lb = [qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qRotMin, qLinMin]
-        ub = [qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qRotMax, qLinMax]
-        bounds = ((qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qLinMin, qLinMax))
+        qRotMax =  18.0         # max. revolute joints limit
+        qLinMin =   0.0         # min. translation joints limit
+        qLinMax =  25.0         # max. translation joints limit
+        bounds = ((qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), 
+                  (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), 
+                  (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qRotMin, qRotMax), (qLinMin, qLinMax))
         # SQP Optimization 
         result = optimize.minimize(self.obj_function, q0, method='SLSQP', bounds=bounds)
-        for i in range(13):
+        for i in range(14):
             q_required[i] = round(result.x[i], 2)
+        q_required[14] = round(result.x[14], 2)
         message = self.ball_color + "," + self.packet_start
-        for i in range(13):
+        for i in range(14):
             message = message + str(q_required[i]) + ","
+        message = message + str(q_required[14]) + ","    
         message = message + "c:0,0,0,0,0,0,0,0,0,0,0,0"
         message = str.encode(message)
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -139,7 +140,7 @@ class InverseKinematicsSolver(Node):
         x_real = self.forward_kinematics(q)
         x_des = np.array([1.0, 0.0, 0.0, self.effector[0], 0.0, 1.0, 0.0, self.effector[1], 0.0, 0.0, 1.0, self.effector[2], 0.0, 0.0, 0.0, 1.0])
         error = np.linalg.norm(x_des - x_real)
-        #print("error:"+str(error))
+        #self.get_logger().info("error:"+str(error))
         return error
     
     # =========================================================
@@ -148,6 +149,8 @@ class InverseKinematicsSolver(Node):
     def forward_kinematics(self, q):
         r1 = -173/2
         r2 = -115/2
+        r3 = -135/2
+        r4_effector = -250
 
         A01 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, r1], [0, 0, 0, 1]]
         A12 = [[math.cos(math.radians(q[0])), 0, math.sin(math.radians(q[0])), 0], [0, 1, 0, 0], [-math.sin(math.radians(q[0])), 0, math.cos(math.radians(q[0])), 0], [0, 0, 0, 1]]
@@ -190,9 +193,18 @@ class InverseKinematicsSolver(Node):
         A2324 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, r2], [0, 0, 0, 1]]
         T024 = np.dot(np.dot(np.dot(np.dot(T020, A2021), A2122), A2223), A2324)
 
-        A2425 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 3*r2 + q[12]], [0, 0, 0, 1]]
+        A2425 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, r2], [0, 0, 0, 1]]
         T025 = np.dot(T024, A2425)
-        result = np.reshape(T025, -1)
+        A2526 = [[math.cos(math.radians(q[12])), 0, math.sin(math.radians(q[12])), 0], [0, 1, 0, 0], [-math.sin(math.radians(q[12])), 0, math.cos(math.radians(q[12])), 0], [0, 0, 0, 1]]
+        A2627 = [[1, 0, 0, 0], [0, math.cos(math.radians(q[13])), -math.sin(math.radians(q[13])), 0], [0, math.sin(math.radians(q[13])), math.cos(math.radians(q[13])), 0], [0, 0, 0, 1]]
+        A2728 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, r2], [0, 0, 0, 1]]
+        T028 = np.dot(np.dot(np.dot(np.dot(T024, A2425), A2526), A2627), A2728)
+
+        A2829 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 2*r3+r4_effector-q[14]], [0, 0, 0, 1]]
+        T029 = np.dot(T028, A2829)
+        self.get_logger().info("x = "+str(T029[0][3])+", y = "+str(T029[1][3])+", z = "+str(T029[2][3]))
+        result = np.reshape(T029, -1)
+        
         return result
     # =========================================================
     
