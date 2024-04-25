@@ -1,7 +1,8 @@
 import cv2
 import rclpy
+import subprocess
 from sensor_msgs.msg import Image
-from std_msgs.msg import String  # Импортируем String сообщение
+from std_msgs.msg import String  # importing String message
 from rclpy.node import Node
 from cv_bridge import CvBridge
 from ultralytics import YOLO
@@ -26,8 +27,13 @@ class PublisherNodeClass(Node):
 
     def __init__(self):
         super().__init__('publisher_node')
-        self.cameraDeviceNumber = 0
-        #self._logger().info("camera:"+str(self.cameraDeviceNumber))
+
+        model_name = "USB2.0 PC CAMERA"# You can change the model of camera v4l2-ctl --list-devices
+
+        video_index = get_video_index_by_model(model_name) #index camera in string format
+        video_index_as_int = int(video_index)#convert index camera format from string to int format 
+
+        self.cameraDeviceNumber = video_index_as_int
         self.camera = cv2.VideoCapture(self.cameraDeviceNumber)
         self.bridgeObject = CvBridge()
         self.publisher = self.create_publisher(Image, 'topic_camera_image', 10)
@@ -36,7 +42,6 @@ class PublisherNodeClass(Node):
 
     def timer_callbackFunction(self):
         success, frame = self.camera.read()
-        #frame = cv2.resize(frame, (820,640), interpolation=cv2.INTER_CUBIC)#820,640#480, 640
         results = model(frame, stream=True)
         hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         cx = 0
@@ -80,9 +85,23 @@ class PublisherNodeClass(Node):
                 color_msg.data = color
                 self.color_publisher.publish(color_msg)
                 org = (x1, y1 - 25)
-                cv2.putText(frame, color, org, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-                    
-        #cv2.imshow('Webcam', frame)
+                cv2.putText(frame, color, org, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)                 
+
+def get_video_index_by_model(model_name):
+    try:
+        output = subprocess.check_output("v4l2-ctl --list-devices", shell=True, stderr=subprocess.STDOUT)
+        output_str = output.decode("utf-8")
+
+        lines = output_str.split('\n')
+        for i, line in enumerate(lines):
+            if model_name in line:
+                next_line = lines[i + 1]  # Next line after name of model
+                device_index = next_line.split("/dev/video")[-1]
+                #return device_index.strip()
+                return device_index
+    except subprocess.CalledProcessError as e:
+        print("Error while executing the command :", e.output.decode("utf-8"))
+    return None
 
 def main (args=None):
    rclpy.init(args=args)
@@ -91,6 +110,5 @@ def main (args=None):
    publisherObject.destroy_node()
    rclpy.shutdown()
 
-if __name__ == '__main__':
-   main()
-
+if __name__ == "__main__":
+    main()
