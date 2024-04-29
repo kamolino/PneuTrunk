@@ -46,7 +46,7 @@ class InverseKinematicsSolver(Node):
     # =========================================================
     def ball_color_detection(self, msg):
         self.ball_color = msg.data
-
+        #self._logger().info("color:"+str(self.ball_color))
     # =========================================================
     # ================ Desired position change ================
     # =========================================================
@@ -202,7 +202,7 @@ class InverseKinematicsSolver(Node):
 
         A2829 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 2*r3+r4_effector-q[14]], [0, 0, 0, 1]]
         T029 = np.dot(T028, A2829)
-        self.get_logger().info("x = "+str(T029[0][3])+", y = "+str(T029[1][3])+", z = "+str(T029[2][3]))
+        #self.get_logger().info("x = "+str(T029[0][3])+", y = "+str(T029[1][3])+", z = "+str(T029[2][3]))
         result = np.reshape(T029, -1)
         
         return result

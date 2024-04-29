@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "publisher_node = pneutrunk_ball_detection.publisher_node:main",
-            "subsrciber_node = pneutrunk_ball_detection.subsrciber_node:main"
+            "cameraPublisher = pneutrunk_ball_detection.cameraPublisher:main",
+            "subscriberImage = pneutrunk_ball_detection.subscriberImage:main"
         ],
     },
 )

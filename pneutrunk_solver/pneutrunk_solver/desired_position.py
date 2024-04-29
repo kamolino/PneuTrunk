@@ -30,9 +30,9 @@ class DesiredPosition(Node):
 
     def position(self):
         msg_object = Pose()
-        msg_object.position.x = -(self.end_effector[0]) + 700
-        msg_object.position.y = -(self.end_effector[1]) + 550
-        msg_object.position.z = -(self.end_effector[2])
+        msg_object.position.x = 300.0#-(self.end_effector[0]) + 700
+        msg_object.position.y = 600.0#-(self.end_effector[1]) + 550
+        msg_object.position.z = -530.0#-(self.end_effector[2])
         self.publisher_.publish(msg_object)
 
 def main(args=None):

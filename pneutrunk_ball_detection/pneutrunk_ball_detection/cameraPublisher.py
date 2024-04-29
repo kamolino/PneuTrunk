@@ -28,8 +28,8 @@ class PublisherNodeClass(Node):
     def __init__(self):
         super().__init__('publisher_node')
 
-        model_name = "USB2.0 PC CAMERA"# You can change the model of camera v4l2-ctl --list-devices
-
+        model_name = "Full HD webcam" #"USB2.0 PC CAMERA"# You can change the model of camera v4l2-ctl --list-devices
+        video_index = str()
         video_index = get_video_index_by_model(model_name) #index camera in string format
         video_index_as_int = int(video_index)#convert index camera format from string to int format 
 
@@ -37,7 +37,7 @@ class PublisherNodeClass(Node):
         self.camera = cv2.VideoCapture(self.cameraDeviceNumber)
         self.bridgeObject = CvBridge()
         self.publisher = self.create_publisher(Image, 'topic_camera_image', 10)
-        self.color_publisher = self.create_publisher(String, 'topic_object_color', 10)
+        self.color_publisher = self.create_publisher(String, '/pneutrunk/object_color', 10)
         self.timer = self.create_timer(0.1, self.timer_callbackFunction)
 
     def timer_callbackFunction(self):
