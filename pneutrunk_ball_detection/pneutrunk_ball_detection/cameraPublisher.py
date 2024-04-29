@@ -66,20 +66,20 @@ class PublisherNodeClass(Node):
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                     hue_value = hsv_frame[cy, cx, 0]
                     if 0 <= hue_value < 5 or 170 <= hue_value <= 179:
-                        color = "RED"
-                        print ("RED")
+                        color = "red"
+                        print ("red")
                     elif 5 <= hue_value < 22:
-                        color = "ORANGE"
-                        print("ORANGE")
+                        color = "orange"
+                        print("orange")
                     elif 22 <= hue_value < 33:
-                        color = "YELLOW"
-                        print("YELLOW")
+                        color = "yellow"
+                        print("yellow")
                     elif 33 <= hue_value < 78:
-                        color = "GREEN"
-                        print("GREEN")
+                        color = "green"
+                        print("green")
                     elif 78 <= hue_value < 131:
-                        color = "BLUE"
-                        print("BLUE")
+                        color = "blue"
+                        print("blue")
 
                 color_msg = String()
                 color_msg.data = color

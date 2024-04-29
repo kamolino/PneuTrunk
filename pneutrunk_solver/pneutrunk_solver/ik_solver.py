@@ -126,7 +126,7 @@ class InverseKinematicsSolver(Node):
         message = self.ball_color + "," + self.packet_start
         for i in range(14):
             message = message + str(q_required[i]) + ","
-        message = message + str(q_required[14]) + ","    
+        message = "start:"+message + str(q_required[14]) + ","    
         message = message + "c:0,0,0,0,0,0,0,0,0,0,0,0"
         message = str.encode(message)
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
