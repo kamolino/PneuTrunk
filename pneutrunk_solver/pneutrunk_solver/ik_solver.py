@@ -17,7 +17,7 @@ class InverseKinematicsSolver(Node):
     # ================= Variables declaration =================
     # =========================================================
     # UDP parameters
-    UDP_IP = "192.168.1.38"             # IP address of PLC
+    UDP_IP = "192.168.1.45"             # IP address of PLC , bolo: 192.168.1.38
     UDP_PORT = 12050    
     # Robot parameters:
     effector = np.zeros(3)              # effector = [x, y, z]
@@ -46,6 +46,7 @@ class InverseKinematicsSolver(Node):
     # =========================================================
     def ball_color_detection(self, msg):
         self.ball_color = msg.data
+        self.solver_sqp(self.q_real)
         #self._logger().info("color:"+str(self.ball_color))
     # =========================================================
     # ================ Desired position change ================
@@ -68,7 +69,7 @@ class InverseKinematicsSolver(Node):
             self.packet_start = "s:release,q:"
         elif(self.gesture == "Left:Close"):
             self.packet_start = "s:continue,q:"
-        self.solver_sqp(self.q_real)
+        #self.solver_sqp(self.q_real)
         
     # =========================================================
     # ========= Generalized variables vector from PLC =========
