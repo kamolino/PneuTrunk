@@ -63,11 +63,11 @@ class InverseKinematicsSolver(Node):
         if(self.gesture == "Right:Open"):
             self.packet_start = "s:come,q:"
         elif(self.gesture == "Right:Close"):
-            self.packet_start = "s:continue,q:"
+            self.packet_start = "s:hold,q:"
         elif(self.gesture == "Left:Open"):
             self.packet_start = "s:release,q:"
         elif(self.gesture == "Left:Close"):
-            self.packet_start = "s:grasp,q:"
+            self.packet_start = "s:continue,q:"
         self.solver_sqp(self.q_real)
         
     # =========================================================
