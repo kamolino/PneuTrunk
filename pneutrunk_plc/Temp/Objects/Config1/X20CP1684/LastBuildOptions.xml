@@ -30,7 +30,7 @@
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1684\iomap.iom" LastWriteTime="2024-04-30 15:17:34" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1684\pvmap.vvm" LastWriteTime="2023-04-06 10:19:18" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\hardware.hw" LastWriteTime="2024-05-02 09:55:06" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1684\cpu.sw" LastWriteTime="2024-05-06 09:38:32" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1684\cpu.sw" LastWriteTime="2024-05-06 13:02:12" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\channelconfiguration.xml" LastWriteTime="2024-05-06 08:37:36" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2024-04-30 16:56:40" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.typ" LastWriteTime="2024-05-06 09:24:06" />
@@ -2162,7 +2162,7 @@
     <CommandLine Parameter=" -r -f &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1684\#cpu_tp.mak&quot; -k" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\binaries\config1\x20cp1684\rucpackage\rucpackage.zip">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\binaries\config1\x20cp1684\transfer.lst" LastWriteTime="2024-05-06 09:38:58" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\binaries\config1\x20cp1684\transfer.lst" LastWriteTime="2024-05-06 13:02:38" />
     <CommandLine Parameter=" -o &quot;$(AS_PROJECT_PATH)\Binaries\Config1\X20CP1684\RUCPackage\RUCPackage.zip&quot; -include &quot;$(AS_PROJECT_PATH)\Binaries\Config1\X20CP1684&quot; -f &quot;$(AS_PROJECT_PATH)\Binaries\Config1\X20CP1684\Transfer.lst&quot; -systemDirectory &quot;C:\BRAutomation\AS\System\D0492\SG4\Ia32&quot; -d &quot;$(AS_PROJECT_PATH)\Temp\Transfer\Config1\X20CP1684\FilesToTransfer&quot; -configurationId &quot;pneutrunk_Config1&quot; -configurationVersion &quot;1.0.0&quot; -v &quot;D4.92&quot; -S &quot;X20CPx68x&quot; -moduleSystem SAFE -OrderNumber &quot;X20CP1684&quot; -loggerModuleSize &quot;2252800&quot; -userPartitionSize 10485760 -compatibleCpuCode &quot;&quot; -RuntimeType &quot;AREmb&quot; -C &quot;\&quot;/IF=tcpip /LOPO=11159 /SA=1\&quot;, \&quot;/COMT=2500 /RT=1000 /AM=* /SDT=5 /DAIP=192.168.1.45 /REPO=11159 /ANSL=1 /PT=11169\&quot;&quot;" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\binaries\config1\x20cp1684\transfer.lst">
@@ -2194,7 +2194,7 @@
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\astcp.br" LastWriteTime="2022-11-08 14:45:00" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\asarlog.br" LastWriteTime="2022-11-08 14:45:00" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\regulatory.br" LastWriteTime="2024-05-06 08:37:42" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1684\cpu.sw" LastWriteTime="2024-05-06 09:38:32" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1684\cpu.sw" LastWriteTime="2024-05-06 13:02:12" />
     <CommandLine Parameter=" &quot;$(AS_PROJECT_PATH)\pneutrunk_V2.apj&quot; -t &quot;$(AS_PROJECT_PATH)\Temp&quot; -o &quot;$(AS_PROJECT_PATH)\Binaries&quot; -c &quot;Config1&quot; -i &quot;C:\BRAutomation\AS412&quot; -S &quot;X20CP1684&quot; -A &quot;X20CPx68x&quot; -pil -swFiles &quot;$(AS_PROJECT_PATH)\Physical\Config1\X20CP1684\Cpu.sw&quot; -Z &quot;Connectivity: n.d, UnitSystem: n.d, FMUExport: n.d, TextSystem: n.d, ProgrammingSystem: n.d, RemanentData: n.d, AAS: n.d&quot; -C &quot;/COMT=2500 /RT=1000 /AM=* /SDT=5 /DAIP=192.168.1.45 /REPO=11159 /ANSL=1 /PT=11169&quot; -D &quot;/IF=tcpip /LOPO=11159 /SA=1&quot; -M IA32 -T SG4" />
   </Rule>
 </RuleSetOptions>

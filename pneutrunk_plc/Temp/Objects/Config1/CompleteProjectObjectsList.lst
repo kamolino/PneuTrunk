@@ -546,7 +546,7 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Program\Cyclic.st"
     LogicalPath="Source.Program.Cyclic.st"
     Type="File"
-    LastWriteTime="133594616212527503"
+    LastWriteTime="133594737143542390"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Program\Init.st"
@@ -4553,12 +4553,12 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\Cpu.pkg"
     LogicalPath="Config1.X20CP1684"
     Type="Cpu"
-    LastWriteTime="133594616638511592" />
+    LastWriteTime="133594731937767128" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\Cpu.sw"
     LogicalPath="Config1.X20CP1684.Cpu.sw"
     Type="File"
-    LastWriteTime="133594619133454188"
+    LastWriteTime="133594741329207246"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\Cpu.per"

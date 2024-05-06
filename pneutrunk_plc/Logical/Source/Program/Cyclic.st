@@ -33,6 +33,9 @@ PROGRAM _CYCLIC
 				automatika.casovac		:= TRUE;
 				global_step				:= 1;
 			END_IF
+			IF automatika.step_color = 1 OR automatika.step_color = 2 THEN
+				automatika.loptickyVzasobniku	:= TRUE;
+			END_IF
 			
 			
 		1:	
@@ -68,20 +71,24 @@ PROGRAM _CYCLIC
 			//automatika.casovac_uchopenie	:= TRUE;
 			IF(automatika.step_color = 1)THEN
 				automatika.box := 1;
+				automatika.loptickyVzasobniku := TRUE;
 			ELSIF(automatika.step_color = 2)THEN
 				automatika.box	:= 2;
+				automatika.loptickyVzasobniku := TRUE;
 			ELSIF(automatika.step_color = 3)THEN
+				automatika.loptickyVzasobniku := FALSE;
 				automatika.box := 3;
 			END_IF
 			
 			automatika.casovac			:= TRUE;
+			automatika.cas				:= 4500;
 			automatika.effector			:= FALSE;
 			automatika.linear			:= 23;
 			global_step	:= 4;
 			
 		4:
 			automatika.effector		:= FALSE;
-			automatika.cas			:= 2500;
+			
 			automatika.y_desired[0]	:= TIME_TO_INT(TON_0.ET)*(-7)/((automatika.cas));
 			automatika.y_desired[1]	:= TIME_TO_INT(TON_0.ET)*(10)/((automatika.cas));	// 5000ms
 			automatika.y_desired[2]	:= TIME_TO_INT(TON_0.ET)*(-10)/((automatika.cas));
@@ -139,9 +146,10 @@ PROGRAM _CYCLIC
 				automatika.ball_piston			:= TRUE;
 				automatika.popcorn				:= TRUE;
 				automatika.casovac				:= TRUE;
-				automatika.cas					:= 4500;
+				automatika.cas					:= 5500;
 			END_IF
 		8:
+			
 			IF(automatika.box = 1) THEN
 				// prenesenie objektu
 				automatika.y_desired[0]	:= TIME_TO_INT(TON_0.ET)*(7)/((automatika.cas));
@@ -181,20 +189,46 @@ PROGRAM _CYCLIC
 			
 				automatika.linear		:= TIME_TO_INT(TON_0.ET)*30/((automatika.cas));
 			ELSIF(automatika.box = 3) THEN
+				(*
 				IF(automatika.step_color = 1)THEN
+					automatika.loptickyVzasobniku	:= TRUE;
 					automatika.box := 1;
 				ELSIF(automatika.step_color = 2)THEN
 					automatika.box	:= 2;
+					automatika.loptickyVzasobniku	:= TRUE;
 				ELSIF(automatika.step_color = 3)THEN
-					automatika.box := 3;
-				END_IF
-				automatika.casovac			:= TRUE;
-				global_step := 4;
+					*)
+					automatika.y_desired[0]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.y_desired[1]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));	// 5000ms
+					automatika.y_desired[2]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.y_desired[3]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.y_desired[4]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.y_desired[5]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.y_desired[6]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			
+					automatika.x_desired[0]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.x_desired[1]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.x_desired[2]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.x_desired[3]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.x_desired[4]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.x_desired[5]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+					automatika.x_desired[6]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));;
+					
+					automatika.loptickyVzasobniku	:= FALSE;
+					automatika.effector				:= FALSE;
+					global_step						:= 0;
+				//END_IF
+				
 			END_IF
 
 			IF TON_0.Q=TRUE THEN
 				automatika.casovac			:= FALSE;
-				global_step					:= 9;
+				IF automatika.loptickyVzasobniku = TRUE THEN
+					global_step					:= 9;
+				ELSE
+					global_step					:= 0;
+				END_IF
+				
 				automatika.ball_piston		:= FALSE;
 				//	automatika.linear			:= 30;
 			END_IF
@@ -218,20 +252,45 @@ PROGRAM _CYCLIC
 			global_step					:= 903;
 			
 		903:
-			IF(automatika.step_color = 3)THEN
-				automatika.testFarba	:= 0;
-				automatika.loptickyVzasobniku	:= FALSE;
-				global_step					:= 0;
-			ELSE
-				global_step					:= 10;
-			END_IF
-				
-		10:
 			IF TON_0.Q = TRUE THEN
 				automatika.casovac			:= FALSE;
 				automatika.popcorn			:= FALSE;
-				global_step					:= 0;//1
+				IF(automatika.step_color = 3)THEN
+					automatika.testFarba	:= 0;
+					automatika.loptickyVzasobniku	:= FALSE;
+				END_IF
+				global_step					:= 904;			
 			END_IF
+			
+		904:
+			automatika.cas					:= 2500;
+			global_step						:= 905;
+			
+		905:
+			automatika.casovac				:= TRUE;
+			automatika.y_desired[0]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.y_desired[1]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));	// 5000ms
+			automatika.y_desired[2]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.y_desired[3]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.y_desired[4]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.y_desired[5]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.y_desired[6]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			
+			automatika.x_desired[0]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.x_desired[1]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.x_desired[2]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.x_desired[3]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.x_desired[4]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.x_desired[5]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			automatika.x_desired[6]	:= TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
+			
+			automatika.linear		:= 23;
+			
+			IF TON_0.Q = TRUE THEN
+				automatika.casovac			:= FALSE;
+				global_step					:= 0;
+			END_IF
+			
 			
 		11:
 			automatika.cas					:= 6000;
