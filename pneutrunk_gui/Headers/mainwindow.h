@@ -83,7 +83,7 @@ class MainWindow : public QMainWindow
     public slots:
         void JointStateCallback();
         void GestureCameraCallback();
-        void ObjectDetectionCameraCallback();
+        // void ObjectDetectionCameraCallback();
 };
 
 QImage Mat2QImage(cv::Mat const& src);

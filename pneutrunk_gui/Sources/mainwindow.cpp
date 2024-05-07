@@ -51,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ROS_thread = new rosModule(this);
     connect(ROS_thread, SIGNAL(rosUpdate()), this, SLOT(JointStateCallback()));
     connect(ROS_thread, SIGNAL(rosGestureUpdate()), this, SLOT(GestureCameraCallback()));
-    connect(ROS_thread, SIGNAL(rosObjectDetectionUpdate()), this, SLOT(ObjectDetectionCameraCallback()));
+    // connect(ROS_thread, SIGNAL(rosObjectDetectionUpdate()), this, SLOT(ObjectDetectionCameraCallback()));
     ROS_thread->start(); // This invokes WorkerThread::run in a new thread
 }
 
@@ -190,14 +190,14 @@ void MainWindow::GestureCameraCallback()
     
 }
 
-void MainWindow::ObjectDetectionCameraCallback()
-{
-    if (ui->Pages_Widget->currentIndex() == 3)
-    {
-        QImage qimage = Mat2QImage(ROS_thread->camera_object_detection_matrix);
-        ui->Label_Camera_object->setPixmap(QPixmap::fromImage(qimage));
-    }
-}
+// void MainWindow::ObjectDetectionCameraCallback()
+// {
+//     if (ui->Pages_Widget->currentIndex() == 3)
+//     {
+//         QImage qimage = Mat2QImage(ROS_thread->camera_object_detection_matrix);
+//         ui->Label_Camera_object->setPixmap(QPixmap::fromImage(qimage));
+//     }
+// }
 
 
 QImage Mat2QImage(cv::Mat const& src)

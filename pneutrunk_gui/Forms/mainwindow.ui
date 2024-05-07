@@ -471,7 +471,7 @@ QPushButton:pressed {
           <item>
            <widget class="QStackedWidget" name="Pages_Widget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="Page_Main">
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -4385,38 +4385,13 @@ QPushButton:pressed {
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                   <layout class="QHBoxLayout" name="horizontalLayout_36">
                     <item>
                      <widget class="QLabel" name="Label_Camera_gesture">
                       <property name="maximumSize">
                        <size>
-                        <width>600</width>
-                        <height>400</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>TextLabel</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_8">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_19">
-                    <item>
-                     <widget class="QLabel" name="Label_Camera_object">
-                      <property name="maximumSize">
-                       <size>
-                        <width>600</width>
-                        <height>400</height>
+                        <width>16777215</width>
+                        <height>16777215</height>
                        </size>
                       </property>
                       <property name="text">

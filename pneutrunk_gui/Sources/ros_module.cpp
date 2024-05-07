@@ -13,8 +13,8 @@ void rosModule::run()
 
     _camera_gesture_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/gesture/camera", 
                         1, std::bind(&rosModule::CameraGestureCallback, this, _1));
-    _camera_object_detection_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/object_detection/camera", 
-                        1, std::bind(&rosModule::ObjectDetectionCallback, this, _1));
+    // _camera_object_detection_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/object_detection/camera", 
+    //                     1, std::bind(&rosModule::ObjectDetectionCallback, this, _1));
 
     _executor.add_node(_node);
     _executor.spin();
@@ -40,8 +40,8 @@ void rosModule::CameraGestureCallback(const sensor_msgs::msg::Image &msg)
     emit rosGestureUpdate();
 }
 
-void rosModule::ObjectDetectionCallback(const sensor_msgs::msg::Image &msg)
-{
-    camera_object_detection_matrix = cv_bridge::toCvCopy(msg, "bgr8")->image;
-    emit rosObjectDetectionUpdate();
-}
+// void rosModule::ObjectDetectionCallback(const sensor_msgs::msg::Image &msg)
+// {
+//     camera_object_detection_matrix = cv_bridge::toCvCopy(msg, "bgr8")->image;
+//     emit rosObjectDetectionUpdate();
+// }
