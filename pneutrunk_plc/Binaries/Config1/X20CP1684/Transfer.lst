@@ -3,6 +3,7 @@
 <Transfer xmlns="http://br-automation.co.at/AS/Transfer">
   <OperatingSystem Version="D4.92"/>
   <Hardware Target="SG4"/>
+  <Operation Delete="Program.br"/>
   <Operation Delete="solo_reg.br"/>
   <Operation Delete="Sender1.br"/>
   <Operation Delete="Controller.br"/>
@@ -50,4 +51,5 @@
   <Operation Download="Controller.br" Memory="UserROM"/>
   <Operation Download="Sender1.br" Memory="UserROM"/>
   <Operation Download="solo_reg.br" Memory="UserROM"/>
+  <Operation Download="Program.br" Memory="UserROM"/>
 </Transfer>

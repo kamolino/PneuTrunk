@@ -121,6 +121,11 @@ PROGRAM _CYCLIC
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
 								modul.uhol2[2] := (modul.uholINT2);
 								modul.uhol2[2] := modul.uhol2[2]*260/1024 - 130;
+								IF Receiver.receive_data[4] = 3 THEN
+									modul.naraz[2]	:= TRUE;
+								ELSE
+									modul.naraz[2]	:= FALSE;
+								END_IF
 							ELSIF(Receiver.receive_data[2] = 4)THEN
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
@@ -132,6 +137,11 @@ PROGRAM _CYCLIC
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
 								modul.uhol2[3] := (modul.uholINT2);
 								modul.uhol2[3] := modul.uhol2[3]*260/1024 - 130;
+								IF Receiver.receive_data[4] = 3 THEN
+									modul.naraz[3]	:= TRUE;
+								ELSE
+									modul.naraz[3]	:= FALSE;
+								END_IF
 							ELSIF(Receiver.receive_data[2] = 5)THEN
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
@@ -143,6 +153,11 @@ PROGRAM _CYCLIC
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
 								modul.uhol2[4] := (modul.uholINT2);
 								modul.uhol2[4] := modul.uhol2[4]*260/1024 - 130;
+								IF Receiver.receive_data[4] = 3 THEN
+									modul.naraz[4]	:= TRUE;
+								ELSE
+									modul.naraz[4]	:= FALSE;
+								END_IF
 							ELSIF(Receiver.receive_data[2] = 6)THEN
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
@@ -154,7 +169,11 @@ PROGRAM _CYCLIC
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
 								modul.uhol2[5] := (modul.uholINT2);
 								modul.uhol2[5] := modul.uhol2[5]*260/1024 - 130;
-								
+								IF Receiver.receive_data[4] = 3 THEN
+									modul.naraz[5]	:= TRUE;
+								ELSE
+									modul.naraz[5]	:= FALSE;
+								END_IF
 							ELSIF(Receiver.receive_data[2] = 7)THEN
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
@@ -166,6 +185,17 @@ PROGRAM _CYCLIC
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
 								modul.uhol2[6] := (modul.uholINT2);
 								modul.uhol2[6] := modul.uhol2[6]*260/1024 - 130;
+								IF Receiver.receive_data[4] = 3 THEN
+									modul.naraz[6]	:= TRUE;
+								ELSE
+									modul.naraz[6]	:= FALSE;
+								END_IF
+							ELSIF(Receiver.receive_data[2] = 8)THEN
+								IF Receiver.receive_data[4] = 3 THEN
+									modul.naraz[7]	:= TRUE;
+								ELSE
+									modul.naraz[7]	:= FALSE;
+								END_IF
 							END_IF
 						END_IF
 					END_IF

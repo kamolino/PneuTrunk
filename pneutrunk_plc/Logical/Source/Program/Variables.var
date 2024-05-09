@@ -4,4 +4,5 @@ VAR
 	TON_2 : TON;
 	TON_3 : TON;
 	TON_4 : TON;
+	i : INT;
 END_VAR

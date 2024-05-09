@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1714987594_1_
-#define _BUR_1714987594_1_
+#ifndef _BUR_1715258596_1_
+#define _BUR_1715258596_1_
 
 #include <bur/plctypes.h>
 
@@ -30,6 +30,9 @@ typedef struct automatic
 	plcbit popcorn;
 	signed short testFarba;
 	plcbit loptickyVzasobniku;
+	signed short x_desired_previous[7];
+	signed short y_desired_previous[7];
+	signed short I_konstanta[7];
 } automatic;
 
 typedef struct podavac
@@ -107,6 +110,8 @@ typedef struct moduly
 	float uhol_XminusRef[7];
 	float uhol_YminusRef[7];
 	float linearReal;
+	plcbit naraz[8];
+	plcbit narazAktivny;
 } moduly;
 
 
@@ -124,5 +129,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1714987594_1_ */
+#endif /* _BUR_1715258596_1_ */
 

@@ -65,13 +65,27 @@ PROGRAM _CYCLIC
 			END_FOR
 			step					:= 4;
 			I_ON					:= TRUE;
-			global_step := 1;
+			global_step 			:= 999;
 			
 		4:
 			ball_popcorn.ball		:= automatika.ball_up;
 			ball_popcorn.ball_piston:= automatika.ball_piston;
 			ball_popcorn.popcorn	:= automatika.popcorn;
 			modull.efektor			:= automatika.effector;
+			I_konstanta_ID1			:= automatika.I_konstanta[0];
+			I_konstanta_ID2			:= automatika.I_konstanta[1];
+			I_konstanta_ID3			:= automatika.I_konstanta[2];
+			I_konstanta_ID4			:= automatika.I_konstanta[3];
+			I_konstanta_ID5			:= automatika.I_konstanta[4];
+			I_konstanta_ID6			:= automatika.I_konstanta[5];
+			I_konstanta_ID7			:= automatika.I_konstanta[6];
+			
+			FOR i:=0 TO 6 BY 1 DO
+				IF modul.naraz[i] = TRUE THEN
+					modul.narazAktivny	:= TRUE;
+					step				:= 5;
+				END_IF
+			END_FOR
 			
 			
 			IF stlacene = TRUE AND centralStop = TRUE THEN
@@ -229,7 +243,9 @@ PROGRAM _CYCLIC
 			ELSIF centralStop = FALSE OR stlacene = FALSE THEN
 				stlacene				:= FALSE;
 				switch					:= FALSE;
+				switch2					:= FALSE;
 				I_ON					:= FALSE;
+				kalibraciaStart			:= FALSE;
 				step					:= 0;
 				global_step_udp			:= 0;
 				global_step				:= 0;
@@ -239,10 +255,13 @@ PROGRAM _CYCLIC
 				automatika.casovac_uchopenie:= FALSE;
 				automatika.effector		:= FALSE;
 				automatika.holdPosition	:= FALSE;
+				automatika.automatic	:= FALSE;
 				FOR i:=0 TO 6 BY 1 DO
-					modul.tlak1[i] 		:= 0;
-					modul.tlak2[i]		:= 0;
-					modul.tlak3[i] 		:= 0;
+					modul.tlak1[i] 				:= 0;
+					modul.tlak2[i]				:= 0;
+					modul.tlak3[i] 				:= 0;
+					modull.pozadovany_uhol_y[i]	:= 0;
+					modull.pozadovany_uhol_x[i]	:= 0;
 				END_FOR
 				modul.tlakLinear		:= 0;
 				modull.efektor			:= FALSE;
@@ -250,6 +269,8 @@ PROGRAM _CYCLIC
 				ball_popcorn.ball		:= FALSE;
 				ball_popcorn.ball_piston:= FALSE;
 			END_IF
+		5: // kolaborativny mod - doslo k narazu		
+					
 			
 	END_CASE
 	

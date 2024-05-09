@@ -23,6 +23,9 @@ TYPE
 		popcorn : BOOL;
 		testFarba : INT;
 		loptickyVzasobniku : BOOL := TRUE;
+		x_desired_previous : ARRAY[0..6]OF INT;
+		y_desired_previous : ARRAY[0..6]OF INT;
+		I_konstanta : ARRAY[0..6]OF INT;
 	END_STRUCT;
 	podavac : 	STRUCT 
 		popcorn : BOOL;
@@ -94,5 +97,7 @@ TYPE
 		uhol_XminusRef : ARRAY[0..6]OF REAL; (*uhol ktory posiela PLC do PC po odpocitani odchylky naklonenia realneho robota*)
 		uhol_YminusRef : ARRAY[0..6]OF REAL; (*uhol ktory posiela PLC do PC po odpocitani odchylky naklonenia realneho robota*)
 		linearReal : REAL;
+		naraz : ARRAY[0..7]OF BOOL;
+		narazAktivny : BOOL;
 	END_STRUCT;
 END_TYPE
