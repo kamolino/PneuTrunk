@@ -23,12 +23,12 @@ PROGRAM _INIT
 	poradie_ID6:=3;	
 	poradie_ID7:=3;	
 	
-	I_konstanta_ID1:=30;
-	I_konstanta_ID2:=30;
-	I_konstanta_ID3:=30;
-	I_konstanta_ID4:=30;
-	I_konstanta_ID5:=30;
-	I_konstanta_ID6:=30;
-	I_konstanta_ID7:=30;
+	I_konstanta_ID1:=15;
+	I_konstanta_ID2:=15;
+	I_konstanta_ID3:=15;
+	I_konstanta_ID4:=15;
+	I_konstanta_ID5:=15;
+	I_konstanta_ID6:=15;
+	I_konstanta_ID7:=15;
 	
 END_PROGRAM

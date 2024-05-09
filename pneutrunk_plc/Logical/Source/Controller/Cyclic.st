@@ -227,17 +227,25 @@ PROGRAM _CYCLIC
 				modul.tlakLinear:= REAL_TO_INT(lin_pressure*32767/9);
 				
 			ELSIF centralStop = FALSE OR stlacene = FALSE THEN
-				stlacene	:= FALSE;
-				switch		:= FALSE;
-				I_ON		:= FALSE;
-				step		:= 0;
+				stlacene				:= FALSE;
+				switch					:= FALSE;
+				I_ON					:= FALSE;
+				step					:= 0;
+				global_step_udp			:= 0;
+				global_step				:= 0;
+				automatika.casovac		:= FALSE;
+				automatika.ball_piston	:= FALSE;
+				automatika.ball_up		:= FALSE;
+				automatika.casovac_uchopenie:= FALSE;
+				automatika.effector		:= FALSE;
+				automatika.holdPosition	:= FALSE;
 				FOR i:=0 TO 6 BY 1 DO
-					modul.tlak1[i] := 0;
-					modul.tlak2[i] := 0;
-					modul.tlak3[i] := 0;
+					modul.tlak1[i] 		:= 0;
+					modul.tlak2[i]		:= 0;
+					modul.tlak3[i] 		:= 0;
 				END_FOR
-				modul.tlakLinear:= 0;
-				modull.efektor	:= FALSE;
+				modul.tlakLinear		:= 0;
+				modull.efektor			:= FALSE;
 				modull.pozadovanyLinear	:= 23;
 				ball_popcorn.ball		:= FALSE;
 				ball_popcorn.ball_piston:= FALSE;

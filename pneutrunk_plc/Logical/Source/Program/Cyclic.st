@@ -81,7 +81,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 			automatika.casovac			:= TRUE;
-			automatika.cas				:= 4500;
+			automatika.cas				:= 3000;
 			automatika.effector			:= FALSE;
 			automatika.linear			:= 23;
 			global_step	:= 4;

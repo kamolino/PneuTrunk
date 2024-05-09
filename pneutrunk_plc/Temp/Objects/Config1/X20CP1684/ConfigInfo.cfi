@@ -52,6 +52,22 @@
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\test_input\local.var" />
     </Task>
+    <Task
+      Name="Controller"
+      Disable="false"
+      Source="Source.Controller"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Variables.var" />
+    </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#3">
@@ -80,22 +96,6 @@
   </TaskClass>
   <TaskClass
     Name="Cyclic#4">
-    <Task
-      Name="Controller"
-      Disable="false"
-      Source="Source.Controller"
-      Language="IEC">
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Types.typ" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Variables.var" />
-    </Task>
     <Task
       Name="Identifika"
       Disable="true"

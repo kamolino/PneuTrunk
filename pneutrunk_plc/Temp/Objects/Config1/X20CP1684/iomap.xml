@@ -602,7 +602,7 @@
 </LN>
 <LN ID="%IX.IF3.ST1.IF1.ST6.DigitalInput01" Type="BOOL">
 <Prod Device="IF3.ST1.IF1.ST6" DPName="DigitalInput01" Kind="io"/>
-<Cons Device="TC#4-CPYDEV" DPName="::centralStop" Kind="pv"/>
+<Cons Device="TC#2-CPYDEV" DPName="::centralStop" Kind="pv"/>
 </LN>
 <LN ID="%IX.IF3.ST1.IF1.ST6.DigitalInput02" Type="BOOL">
 <Prod Device="IF3.ST1.IF1.ST6" DPName="DigitalInput02" Kind="io"/>
@@ -626,7 +626,7 @@
 <Cons Device="IF3.ST1.IF1.ST6" DPName="ResetCounter02" Kind="io"/>
 </LN>
 <LN ID="%QX.IF3.ST1.IF1.ST6.DigitalOutput01" Type="BOOL">
-<Prod Device="TC#4-CPYDEV" DPName="::Controller:modull.efektor" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::Controller:modull.efektor" Kind="pv"/>
 <Cons Device="IF3.ST1.IF1.ST6" DPName="DigitalOutput01" Kind="io"/>
 </LN>
 <LN ID="%QX.IF3.ST1.IF1.ST6.DigitalOutput02" Type="BOOL">
@@ -1119,15 +1119,15 @@
 <Cons Device="IF6.ST2" DPName="DigitalOutput09" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput10" Type="BOOL">
-<Prod Device="TC#4-CPYDEV" DPName="::ball_popcorn.ball_piston" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::ball_popcorn.ball_piston" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput10" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput11" Type="BOOL">
-<Prod Device="TC#4-CPYDEV" DPName="::ball_popcorn.popcorn" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::ball_popcorn.popcorn" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput11" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput12" Type="BOOL">
-<Prod Device="TC#4-CPYDEV" DPName="::ball_popcorn.ball" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::ball_popcorn.ball" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput12" Kind="io"/>
 </LN>
 <LN ID="%IX.IF6.ST2.StatusDigitalOutput01" Type="BOOL">

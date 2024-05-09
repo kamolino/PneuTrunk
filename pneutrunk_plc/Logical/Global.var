@@ -37,7 +37,7 @@ VAR
 	ref_alfa_x_ID1 : REAL;
 	q_real : ARRAY[0..12] OF REAL := [0.55,12.58,12.23,7.85,1.23,15.36,17.85,12.05,3.85,3.6,-12.52,10.65,31.28];
 	q_desired : ARRAY[0..12] OF REAL;
-	pripustna_odchylka_naklonenia : REAL := 0.1;
+	pripustna_odchylka_naklonenia : REAL := 0.25;
 	poradie_ID7 : REAL;
 	poradie_ID6 : REAL;
 	poradie_ID5 : REAL;
