@@ -79,6 +79,7 @@ VAR
 	Blue_tab_ID7 : REAL;
 	Blue_tab_ID6 : REAL;
 	Blue_tab_ID5 : REAL;
+	buttons : tlacidla;
 	Blue_tab_ID4 : REAL;
 	Blue_tab_ID3 : REAL;
 	Blue_tab_ID2 : REAL;

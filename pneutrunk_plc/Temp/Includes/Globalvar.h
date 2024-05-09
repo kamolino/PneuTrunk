@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715243740_1_
-#define _BUR_1715243740_1_
+#ifndef _BUR_1715269824_2_
+#define _BUR_1715269824_2_
 
 #include <bur/plctypes.h>
 
@@ -31,6 +31,7 @@ _GLOBAL float Blue_tab_ID1;
 _GLOBAL float Blue_tab_ID2;
 _GLOBAL float Blue_tab_ID3;
 _GLOBAL float Blue_tab_ID4;
+_GLOBAL struct tlacidla buttons;
 _GLOBAL float Blue_tab_ID5;
 _GLOBAL float Blue_tab_ID6;
 _GLOBAL float Blue_tab_ID7;
@@ -126,5 +127,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.var\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715243740_1_ */
+#endif /* _BUR_1715269824_2_ */
 

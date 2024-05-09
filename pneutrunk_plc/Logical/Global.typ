@@ -1,5 +1,13 @@
 
 TYPE
+	tlacidla : 	STRUCT 
+		ros : BOOL;
+		stopLED : BOOL;
+		stop : BOOL;
+		startLED : BOOL;
+		start : BOOL;
+		centralStop : BOOL;
+	END_STRUCT;
 	automatic : 	STRUCT 
 		y_desired : ARRAY[0..6]OF INT := [7(0)];
 		x_desired : ARRAY[0..6]OF INT := [7(0)];
@@ -8,8 +16,6 @@ TYPE
 		casovac : BOOL;
 		effector : BOOL;
 		casovac_uchopenie : BOOL;
-		trajectoryTime : TIME := T#6s;
-		trajectoryStart : BOOL;
 		ball_piston : BOOL;
 		novyCyklus : TIME := T#1s;
 		novyCyklusStart : BOOL;

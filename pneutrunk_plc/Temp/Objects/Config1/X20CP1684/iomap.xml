@@ -602,7 +602,7 @@
 </LN>
 <LN ID="%IX.IF3.ST1.IF1.ST6.DigitalInput01" Type="BOOL">
 <Prod Device="IF3.ST1.IF1.ST6" DPName="DigitalInput01" Kind="io"/>
-<Cons Device="TC#2-CPYDEV" DPName="::centralStop" Kind="pv"/>
+<Cons Device="TC#2-CPYDEV" DPName="::buttons.centralStop" Kind="pv"/>
 </LN>
 <LN ID="%IX.IF3.ST1.IF1.ST6.DigitalInput02" Type="BOOL">
 <Prod Device="IF3.ST1.IF1.ST6" DPName="DigitalInput02" Kind="io"/>

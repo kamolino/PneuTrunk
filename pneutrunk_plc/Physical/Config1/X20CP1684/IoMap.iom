@@ -17,7 +17,7 @@ VAR_CONFIG
 	::modul.tlak2[4] AT %QW."X20AO4622c".AnalogOutput02;
 	::modul.tlak3[4] AT %QW."X20AO4622c".AnalogOutput03;
 	::modul.tlak1[5] AT %QW."X20AO4622c".AnalogOutput04;
-	::centralStop AT %IX."X20CM8281".DigitalInput01;
+	::buttons.centralStop AT %IX."X20CM8281".DigitalInput01;
 	::modul.tlakLinear AT %QW."X20CM8281b".AnalogOutput01;
 	::Controller:modull.efektor AT %QX."X20CM8281".DigitalOutput01;
 	::modul.tlak2[6] AT %QW."X20AO4622d".AnalogOutput01;

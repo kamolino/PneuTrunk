@@ -20,14 +20,14 @@ PROGRAM _CYCLIC
 			END_IF
 			
 
-			IF stlacene = TRUE AND centralStop = TRUE THEN
+			IF buttons.start = TRUE AND buttons.centralStop = TRUE THEN
 				IF switch = FALSE THEN
 					switch 			:= TRUE;
 					kalibraciaStart := TRUE;
 					FOR id:=0 TO 6 BY 1 DO
-						modul.tlak1[id]	:= REAL_TO_INT(4*32767/9);
-						modul.tlak2[id]	:= REAL_TO_INT(4*32767/9);
-						modul.tlak3[id]	:= REAL_TO_INT(4*32767/9);
+						modul.tlak1[id]	:= REAL_TO_INT(3*32767/9);
+						modul.tlak2[id]	:= REAL_TO_INT(3*32767/9);
+						modul.tlak3[id]	:= REAL_TO_INT(3*32767/9);
 					END_FOR
 				END_IF
 				
@@ -88,7 +88,7 @@ PROGRAM _CYCLIC
 			END_FOR
 			
 			
-			IF stlacene = TRUE AND centralStop = TRUE THEN
+			IF buttons.start = TRUE AND buttons.centralStop = TRUE THEN
 				FOR id:=0 TO 6 BY 1 DO
 					modull.real_uhol_x_kalibrovane[id]	:= modul.uhol1[id];
 					modull.real_uhol_y_kalibrovane[id]	:= modul.uhol2[id];
@@ -240,8 +240,8 @@ PROGRAM _CYCLIC
 				//lin_modul
 				modul.tlakLinear:= REAL_TO_INT(lin_pressure*32767/9);
 				
-			ELSIF centralStop = FALSE OR stlacene = FALSE THEN
-				stlacene				:= FALSE;
+			ELSIF buttons.centralStop = FALSE OR buttons.start = FALSE THEN
+				buttons.start			:= FALSE;
 				switch					:= FALSE;
 				switch2					:= FALSE;
 				I_ON					:= FALSE;
@@ -256,12 +256,30 @@ PROGRAM _CYCLIC
 				automatika.effector		:= FALSE;
 				automatika.holdPosition	:= FALSE;
 				automatika.automatic	:= FALSE;
+				act_alfa_x_ID1:= 0;
+				act_alfa_y_ID1:= 0;
+				act_alfa_x_ID2:= 0;
+				act_alfa_y_ID2:= 0;
+				act_alfa_x_ID3:= 0;
+				act_alfa_y_ID3:= 0;
+				act_alfa_x_ID4:= 0;
+				act_alfa_y_ID4:= 0;
+				act_alfa_x_ID5:= 0;
+				act_alfa_y_ID5:= 0;
+				act_alfa_x_ID6:= 0;
+				act_alfa_y_ID6:= 0;
+				act_alfa_x_ID7:= 0;
+				act_alfa_y_ID7:= 0;
 				FOR i:=0 TO 6 BY 1 DO
 					modul.tlak1[i] 				:= 0;
 					modul.tlak2[i]				:= 0;
 					modul.tlak3[i] 				:= 0;
 					modull.pozadovany_uhol_y[i]	:= 0;
 					modull.pozadovany_uhol_x[i]	:= 0;
+					modull.real_uhol_x_kalibrovane[i]	:= 0;
+					modull.real_uhol_y_kalibrovane[i] 	:= 0;
+					modull.nula_x[i]			:= 0;
+					modull.nula_y[i]			:= 0;
 				END_FOR
 				modul.tlakLinear		:= 0;
 				modull.efektor			:= FALSE;

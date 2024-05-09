@@ -1,12 +1,21 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715258596_1_
-#define _BUR_1715258596_1_
+#ifndef _BUR_1715271592_1_
+#define _BUR_1715271592_1_
 
 #include <bur/plctypes.h>
 
 /* Datatypes and datatypes of function blocks */
+typedef struct tlacidla
+{	plcbit ros;
+	plcbit stopLED;
+	plcbit stop;
+	plcbit startLED;
+	plcbit start;
+	plcbit centralStop;
+} tlacidla;
+
 typedef struct automatic
 {	signed short y_desired[7];
 	signed short x_desired[7];
@@ -15,8 +24,6 @@ typedef struct automatic
 	plcbit casovac;
 	plcbit effector;
 	plcbit casovac_uchopenie;
-	plctime trajectoryTime;
-	plcbit trajectoryStart;
 	plcbit ball_piston;
 	plctime novyCyklus;
 	plcbit novyCyklusStart;
@@ -129,5 +136,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715258596_1_ */
+#endif /* _BUR_1715271592_1_ */
 
