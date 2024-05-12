@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715269824_2_
-#define _BUR_1715269824_2_
+#ifndef _BUR_1715524476_2_
+#define _BUR_1715524476_2_
 
 #include <bur/plctypes.h>
 
@@ -109,7 +109,7 @@ _GLOBAL float Yellow_tab_ID3;
 _GLOBAL float Yellow_tab_ID4;
 _GLOBAL float Yellow_tab_ID5;
 _GLOBAL float Yellow_tab_ID6;
-_GLOBAL struct podavac ball_popcorn;
+_GLOBAL struct podavac zasobnik;
 _GLOBAL float Yellow_tab_ID7;
 _GLOBAL float hranica_upravy_traj;
 
@@ -127,5 +127,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.var\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715269824_2_ */
+#endif /* _BUR_1715524476_2_ */
 

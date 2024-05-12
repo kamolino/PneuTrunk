@@ -32,9 +32,11 @@ TYPE
 		x_desired_previous : ARRAY[0..6]OF INT;
 		y_desired_previous : ARRAY[0..6]OF INT;
 		I_konstanta : ARRAY[0..6]OF INT;
+		levitacia : BOOL;
 	END_STRUCT;
 	podavac : 	STRUCT 
-		popcorn : BOOL;
+		levitovanie : BOOL;
+		ball_piston_sjf : BOOL;
 		ball : BOOL;
 		ball_piston : BOOL;
 	END_STRUCT;

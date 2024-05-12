@@ -1116,18 +1116,19 @@
 <Cons Device="IF6.ST2" DPName="DigitalOutput08" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput09" Type="BOOL">
+<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.levitovanie" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput09" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput10" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::ball_popcorn.ball_piston" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.ball_piston" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput10" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput11" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::ball_popcorn.popcorn" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.ball_piston_sjf" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput11" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput12" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::ball_popcorn.ball" Kind="pv"/>
+<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.ball" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput12" Kind="io"/>
 </LN>
 <LN ID="%IX.IF6.ST2.StatusDigitalOutput01" Type="BOOL">

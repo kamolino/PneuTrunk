@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715271592_1_
-#define _BUR_1715271592_1_
+#ifndef _BUR_1715524476_1_
+#define _BUR_1715524476_1_
 
 #include <bur/plctypes.h>
 
@@ -40,10 +40,12 @@ typedef struct automatic
 	signed short x_desired_previous[7];
 	signed short y_desired_previous[7];
 	signed short I_konstanta[7];
+	plcbit levitacia;
 } automatic;
 
 typedef struct podavac
-{	plcbit popcorn;
+{	plcbit levitovanie;
+	plcbit ball_piston_sjf;
 	plcbit ball;
 	plcbit ball_piston;
 } podavac;
@@ -136,5 +138,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715271592_1_ */
+#endif /* _BUR_1715524476_1_ */
 

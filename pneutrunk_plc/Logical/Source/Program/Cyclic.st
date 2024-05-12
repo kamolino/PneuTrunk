@@ -31,9 +31,11 @@ PROGRAM _CYCLIC
 				automatika.I_konstanta[i]	:= 20;
 			END_FOR
 			automatika.automatic	:= FALSE;
-			//global_step				:= 999;
-			
-			
+			(*
+			IF automatika.step_color = 1 OR automatika.step_color = 2 THEN
+				global_step				:= 999;
+			END_IF				
+			*)
 		999:
 			IF automatika.step_color = 1 OR automatika.step_color = 2 THEN
 				automatika.loptickyVzasobniku	:= TRUE;
@@ -91,7 +93,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 			automatika.casovac			:= TRUE;
-			automatika.cas				:= 3500;
+			automatika.cas				:= 4000;
 			automatika.effector			:= FALSE;
 			automatika.linear			:= 23;
 			global_step					:= 4;
@@ -99,7 +101,7 @@ PROGRAM _CYCLIC
 				automatika.I_konstanta[i]	:= 50;
 			END_FOR
 		4:
-			//automatika.effector		:= FALSE;
+			// Pohyb ku levitujucej lopte
 			
 			automatika.y_desired[0]	:= TIME_TO_INT(TON_0.ET)*(-7)/((automatika.cas));
 			automatika.y_desired[1]	:= TIME_TO_INT(TON_0.ET)*(10)/((automatika.cas));	
@@ -132,7 +134,7 @@ PROGRAM _CYCLIC
 			
 		55:
 			IF TON_1.Q = TRUE THEN
-				automatika.ball_up				:= TRUE;
+				automatika.levitacia			:= TRUE;
 				automatika.linear				:= 30;
 				automatika.casovac_uchopenie	:= FALSE;
 				global_step						:= 555;
@@ -159,9 +161,8 @@ PROGRAM _CYCLIC
 			IF TON_1.Q = TRUE THEN
 				automatika.casovac_uchopenie	:= FALSE;
 				global_step						:= 8;
-				automatika.ball_up				:= FALSE;
+				automatika.levitacia			:= FALSE;
 				automatika.ball_piston			:= TRUE;
-			//	automatika.popcorn				:= TRUE;
 				automatika.cas					:= 4500;
 				automatika.casovac				:= TRUE;
 				FOR i:=0 TO 6 BY 1 DO
@@ -310,13 +311,12 @@ PROGRAM _CYCLIC
 			
 			IF TON_0.Q = TRUE THEN
 				automatika.casovac			:= FALSE;
-				global_step					:= 1;//0
+				global_step					:= 999;//posledne bolo 1 predtym 0
 			END_IF
 			
 			
 		11:
-			automatika.cas					:= 10000;
-			automatika.casovac				:= TRUE;
+			automatika.cas					:= 5000;
 			global_step						:= 111;
 			automatika.linear				:= 23;
 			FOR i:=0 TO 6 BY 1 DO
@@ -326,6 +326,7 @@ PROGRAM _CYCLIC
 			FOR i:=0 TO 6 BY 1 DO
 				automatika.I_konstanta[i]	:= 50;
 			END_FOR
+			automatika.casovac				:= TRUE;
 			
 		111:
 			// ide po loptu
@@ -333,32 +334,41 @@ PROGRAM _CYCLIC
 			automatika.y_desired[1]	:= (automatika.y_desired_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(18)/((automatika.cas));	
 			automatika.y_desired[2]	:= (automatika.y_desired_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(18)/((automatika.cas));
 			automatika.y_desired[3]	:= (automatika.y_desired_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(18)/((automatika.cas));
-			automatika.y_desired[4]	:= (automatika.y_desired_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-15)/((automatika.cas));
-			automatika.y_desired[5]	:= (automatika.y_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-18)/((automatika.cas));
-			automatika.y_desired[6]	:= (automatika.y_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-18)/((automatika.cas));
+			automatika.y_desired[4]	:= (automatika.y_desired_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-18)/((automatika.cas));
+			automatika.y_desired[5]	:= (automatika.y_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-15)/((automatika.cas));
+			automatika.y_desired[6]	:= (automatika.y_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-18)/((automatika.cas));//-18
 			
 			automatika.x_desired[0]	:= (automatika.x_desired_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(15)/((automatika.cas));
 			automatika.x_desired[1]	:= (automatika.x_desired_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(13)/((automatika.cas));
 			automatika.x_desired[2]	:= (automatika.x_desired_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(3)/((automatika.cas));
 			automatika.x_desired[3]	:= (automatika.x_desired_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(10)/((automatika.cas));
 			automatika.x_desired[4]	:= (automatika.x_desired_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-10)/((automatika.cas));
-			automatika.x_desired[5]	:= (automatika.x_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-10)/((automatika.cas));
-			automatika.x_desired[6]	:= (automatika.x_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-10)/((automatika.cas));
+			automatika.x_desired[5]	:= (automatika.x_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-12)/((automatika.cas));
+			automatika.x_desired[6]	:= (automatika.x_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(-15)/((automatika.cas));//-10
 			
 			IF TON_0.Q=TRUE THEN
 				automatika.casovac			:= FALSE;
-				global_step					:= 1111;
-				automatika.linear			:= 30;
+				global_step					:= 1110;
 			END_IF
-			
-		1111:// pockanie na vysunutie linearneho clena
-			automatika.cas				:= 4000;
-			automatika.casovac			:= TRUE;
-			global_step					:= 1112;
+		1110:
+			automatika.cas					:= 5000;
+			automatika.casovac				:= TRUE;
+			global_step						:= 11101;
+		11101:
+			IF TON_0.Q = TRUE THEN
+				automatika.casovac			:= FALSE;
+				automatika.ball_up			:= TRUE;
+				global_step					:= 11102;
+			END_IF
+		11102:
+			automatika.cas					:= 4000;
+			automatika.casovac				:= TRUE;
+			global_step						:= 1112;	
 			
 		1112:// pockanie na vysunutie linearneho clena
 			IF TON_0.Q = TRUE THEN
 				automatika.casovac		:= FALSE;
+				automatika.linear		:= 30;
 				global_step				:= 1113;
 			END_IF
 				
@@ -372,6 +382,7 @@ PROGRAM _CYCLIC
 			IF TON_0.Q = TRUE THEN
 				automatika.casovac			:= FALSE;
 				automatika.linear			:= 23;
+				automatika.ball_up			:= FALSE;
 				global_step					:= 1222;
 			END_IF
 			
@@ -388,6 +399,7 @@ PROGRAM _CYCLIC
 		12223:
 			automatika.cas					:= 3000;
 			automatika.casovac				:= TRUE;
+			automatika.popcorn				:= TRUE;
 			FOR i:=0 TO 6 BY 1 DO
 				automatika.x_desired_previous[i]:= automatika.x_desired[i];
 				automatika.y_desired_previous[i]:= automatika.y_desired[i];
@@ -488,6 +500,7 @@ PROGRAM _CYCLIC
 				automatika.holdPosition			:= FALSE;
 				global_step						:= 15;
 				automatika.casovac				:= FALSE;
+				automatika.popcorn				:= FALSE;
 			END_IF
 			
 				
@@ -550,7 +563,7 @@ PROGRAM _CYCLIC
 		
 		19:
 			IF TON_0.Q = TRUE THEN
-				global_step				:= 0;
+				global_step				:= 999;
 				automatika.casovac		:= FALSE;
 			END_IF
 		

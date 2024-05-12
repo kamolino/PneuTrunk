@@ -68,9 +68,10 @@ PROGRAM _CYCLIC
 			global_step 			:= 999;
 			
 		4:
-			ball_popcorn.ball		:= automatika.ball_up;
-			ball_popcorn.ball_piston:= automatika.ball_piston;
-			ball_popcorn.popcorn	:= automatika.popcorn;
+			zasobnik.ball			:= automatika.ball_up;
+			zasobnik.ball_piston	:= automatika.ball_piston;
+			zasobnik.ball_piston_sjf:= automatika.popcorn;
+			zasobnik.levitovanie	:= automatika.levitacia;
 			modull.efektor			:= automatika.effector;
 			I_konstanta_ID1			:= automatika.I_konstanta[0];
 			I_konstanta_ID2			:= automatika.I_konstanta[1];
@@ -252,6 +253,7 @@ PROGRAM _CYCLIC
 				automatika.casovac		:= FALSE;
 				automatika.ball_piston	:= FALSE;
 				automatika.ball_up		:= FALSE;
+				automatika.popcorn		:= FALSE;
 				automatika.casovac_uchopenie:= FALSE;
 				automatika.effector		:= FALSE;
 				automatika.holdPosition	:= FALSE;
@@ -270,6 +272,20 @@ PROGRAM _CYCLIC
 				act_alfa_y_ID6:= 0;
 				act_alfa_x_ID7:= 0;
 				act_alfa_y_ID7:= 0;
+				ref_alfa_x_ID1:= 0;
+				ref_alfa_y_ID1:= 0;
+				ref_alfa_x_ID2:= 0;
+				ref_alfa_y_ID2:= 0;
+				ref_alfa_x_ID3:= 0;
+				ref_alfa_y_ID3:= 0;	
+				ref_alfa_x_ID4:= 0;
+				ref_alfa_y_ID4:= 0;
+				ref_alfa_x_ID5:= 0;
+				ref_alfa_y_ID5:= 0;
+				ref_alfa_x_ID6:= 0;
+				ref_alfa_y_ID6:= 0;
+				ref_alfa_x_ID7:= 0;
+				ref_alfa_y_ID7:= 0;
 				FOR i:=0 TO 6 BY 1 DO
 					modul.tlak1[i] 				:= 0;
 					modul.tlak2[i]				:= 0;
@@ -284,8 +300,8 @@ PROGRAM _CYCLIC
 				modul.tlakLinear		:= 0;
 				modull.efektor			:= FALSE;
 				modull.pozadovanyLinear	:= 23;
-				ball_popcorn.ball		:= FALSE;
-				ball_popcorn.ball_piston:= FALSE;
+				zasobnik.ball			:= FALSE;
+				zasobnik.ball_piston	:= FALSE;
 			END_IF
 		5: // kolaborativny mod - doslo k narazu		
 					

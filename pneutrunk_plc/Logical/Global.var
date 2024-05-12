@@ -1,7 +1,7 @@
 VAR
 	hranica_upravy_traj : REAL := 2;
 	Yellow_tab_ID7 : REAL;
-	ball_popcorn : podavac;
+	zasobnik : podavac;
 	Yellow_tab_ID6 : REAL;
 	Yellow_tab_ID5 : REAL;
 	Yellow_tab_ID4 : REAL;

@@ -23,7 +23,8 @@ VAR_CONFIG
 	::modul.tlak2[6] AT %QW."X20AO4622d".AnalogOutput01;
 	::modul.tlak3[6] AT %QW."X20AO4622d".AnalogOutput02;
 	::modul.tlak1[6] AT %QW."X20AO4622d".AnalogOutput03;
-	::ball_popcorn.ball AT %QX."X20DO9322".DigitalOutput12;
-	::ball_popcorn.popcorn AT %QX."X20DO9322".DigitalOutput11;
-	::ball_popcorn.ball_piston AT %QX."X20DO9322".DigitalOutput10;
+	::zasobnik.ball AT %QX."X20DO9322".DigitalOutput12;
+	::zasobnik.ball_piston_sjf AT %QX."X20DO9322".DigitalOutput11;
+	::zasobnik.ball_piston AT %QX."X20DO9322".DigitalOutput10;
+	::zasobnik.levitovanie AT %QX."X20DO9322".DigitalOutput09;
 END_VAR
