@@ -4387,6 +4387,13 @@ QPushButton:pressed {
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_36">
                     <item>
+                     <widget class="QLabel" name="Label_Camera_balls">
+                      <property name="text">
+                       <string>TextLabel</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="Label_Camera_gesture">
                       <property name="maximumSize">
                        <size>

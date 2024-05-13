@@ -83,6 +83,8 @@ class MainWindow : public QMainWindow
     public slots:
         void JointStateCallback();
         void GestureCameraCallback();
+        void BallDetectionCameraCallback();
+
         // void ObjectDetectionCameraCallback();
 };
 
