@@ -2,15 +2,15 @@
 <?AutomationStudio FileVersion="4.9"?>
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
-    <Task Name="Server" Source="Source.UDP.Server.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Client" Source="Source.UDP.Client.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Narazy" Source="Source.Narazy.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Server" Source="Source.UDP.Server.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Receiver" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <Task Name="Sender" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2">
     <Task Name="Receiver1" Source="Source.RS485.Receiver.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="test_input" Source="test_input.prg" Memory="UserROM" Language="ANSIC" AdditionalIncludeDirectories="\Logical\MATLAB_includes\R2023a\" BuildOptions="-lm -DMODEL=simulink_2_plc -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -DEXT_MODE -DEXTMODE_STATIC -DEXTMODE_STATIC_SIZE=1000000 -DON_TARGET_WAIT_FOR_START=0 -DCLASSIC_INTERFACE=1 -DALLOCATIONFCN=0 -DTID01EQ=1 -DMAT_FILE=0 -DONESTEPFCN=0 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 " Debugging="false" />
-    <Task Name="Controller" Source="Source.Controller.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="Sender1" Source="Source.RS485.Sender.prg" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -20,7 +20,8 @@
     <Task Name="Identifika" Source="Source.Identifikacia.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="meranie" Source="meranie.prg" Memory="UserROM" Language="ANSIC" AdditionalIncludeDirectories="\Logical\MATLAB_includes\R2022b\" BuildOptions="-lm -DMODEL=pneutrunkMeranie -DNUMST=1 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -DEXT_MODE -DEXTMODE_STATIC -DEXTMODE_STATIC_SIZE=1000000 -DON_TARGET_WAIT_FOR_START=0 -DCLASSIC_INTERFACE=1 -DALLOCATIONFCN=0 -DTID01EQ=0 -DMAT_FILE=0 -DONESTEPFCN=0 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 " Debugging="false" Disabled="true" />
     <Task Name="Testing" Source="Source.Testing.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="Program" Source="Source.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Program" Source="Source.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="Controller" Source="Source.Controller.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

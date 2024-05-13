@@ -40,7 +40,6 @@ VAR
 	maxUhol : INT;
 	TON_0 : TON;
 	kalibraciaStart : BOOL;
-	step : INT;
 	TON_1 : TON;
 	switch2 : BOOL;
 END_VAR

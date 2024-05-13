@@ -31,4 +31,7 @@ PROGRAM _INIT
 	I_konstanta_ID6:=30;
 	I_konstanta_ID7:=30;
 	
+	buttons.stropBielaLED	:= TRUE;
+	buttons.stropCervenaLED	:= FALSE;
+	
 END_PROGRAM

@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715524476_2_
-#define _BUR_1715524476_2_
+#ifndef _BUR_1715618773_1_
+#define _BUR_1715618773_1_
 
 #include <bur/plctypes.h>
 
@@ -107,6 +107,7 @@ _GLOBAL struct automatic automatika;
 _GLOBAL float Yellow_tab_ID2;
 _GLOBAL float Yellow_tab_ID3;
 _GLOBAL float Yellow_tab_ID4;
+_GLOBAL signed short step;
 _GLOBAL float Yellow_tab_ID5;
 _GLOBAL float Yellow_tab_ID6;
 _GLOBAL struct podavac zasobnik;
@@ -127,5 +128,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.var\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715524476_2_ */
+#endif /* _BUR_1715618773_1_ */
 

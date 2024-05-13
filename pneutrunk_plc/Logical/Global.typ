@@ -1,12 +1,15 @@
 
 TYPE
 	tlacidla : 	STRUCT 
+		start : BOOL;
 		ros : BOOL;
 		stopLED : BOOL;
 		stop : BOOL;
 		startLED : BOOL;
-		start : BOOL;
+		startButton : BOOL;
 		centralStop : BOOL;
+		stropBielaLED : BOOL;
+		stropCervenaLED : BOOL;
 	END_STRUCT;
 	automatic : 	STRUCT 
 		y_desired : ARRAY[0..6]OF INT := [7(0)];

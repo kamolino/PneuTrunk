@@ -4,18 +4,6 @@
   <TaskClass
     Name="Cyclic#1">
     <Task
-      Name="Server"
-      Disable="false"
-      Source="Source.UDP.Server"
-      Language="IEC">
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Server\Server.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\UDP\Server\Server.typ" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\UDP\Server\Server.var" />
-    </Task>
-    <Task
       Name="Client"
       Disable="false"
       Source="Source.UDP.Client"
@@ -26,6 +14,34 @@
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\UDP\Client\Client.typ" />
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\UDP\Client\Client.var" />
+    </Task>
+    <Task
+      Name="Narazy"
+      Disable="false"
+      Source="Source.Narazy"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Narazy\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Narazy\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Narazy\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Variables.var" />
+    </Task>
+    <Task
+      Name="Server"
+      Disable="false"
+      Source="Source.UDP.Server"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Server\Server.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\UDP\Server\Server.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\UDP\Server\Server.var" />
     </Task>
   </TaskClass>
   <TaskClass
@@ -51,22 +67,6 @@
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\test_input\local.typ" />
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\test_input\local.var" />
-    </Task>
-    <Task
-      Name="Controller"
-      Disable="false"
-      Source="Source.Controller"
-      Language="IEC">
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Types.typ" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Variables.var" />
     </Task>
   </TaskClass>
   <TaskClass
@@ -140,7 +140,7 @@
     </Task>
     <Task
       Name="Program"
-      Disable="false"
+      Disable="true"
       Source="Source.Program"
       Language="IEC">
       <InternalFile
@@ -153,6 +153,22 @@
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Program\Types.typ" />
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Program\Variables.var" />
+    </Task>
+    <Task
+      Name="Controller"
+      Disable="false"
+      Source="Source.Controller"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Variables.var" />
     </Task>
   </TaskClass>
   <TaskClass

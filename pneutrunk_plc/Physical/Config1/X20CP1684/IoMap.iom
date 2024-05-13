@@ -17,7 +17,6 @@ VAR_CONFIG
 	::modul.tlak2[4] AT %QW."X20AO4622c".AnalogOutput02;
 	::modul.tlak3[4] AT %QW."X20AO4622c".AnalogOutput03;
 	::modul.tlak1[5] AT %QW."X20AO4622c".AnalogOutput04;
-	::buttons.centralStop AT %IX."X20CM8281".DigitalInput01;
 	::modul.tlakLinear AT %QW."X20CM8281b".AnalogOutput01;
 	::Controller:modull.efektor AT %QX."X20CM8281".DigitalOutput01;
 	::modul.tlak2[6] AT %QW."X20AO4622d".AnalogOutput01;
@@ -27,4 +26,11 @@ VAR_CONFIG
 	::zasobnik.ball_piston_sjf AT %QX."X20DO9322".DigitalOutput11;
 	::zasobnik.ball_piston AT %QX."X20DO9322".DigitalOutput10;
 	::zasobnik.levitovanie AT %QX."X20DO9322".DigitalOutput09;
+	::buttons.stropCervenaLED AT %QX."X20DO9322".DigitalOutput08;
+	::buttons.startLED AT %QX."X20DO9322".DigitalOutput06;
+	::buttons.stopLED AT %QX."X20DO9322".DigitalOutput07;
+	::buttons.stropBielaLED AT %QX."X20DO9322".DigitalOutput05;
+	::buttons.startButton AT %IX."X20DM9324".DigitalInput01;
+	::buttons.stop AT %IX."X20DM9324".DigitalInput02;
+	::buttons.centralStop AT %IX."X20DM9324".DigitalInput04;
 END_VAR

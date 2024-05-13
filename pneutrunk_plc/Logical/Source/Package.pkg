@@ -10,5 +10,6 @@
     <Object Type="Package">RS485</Object>
     <Object Type="Program" Language="IEC">Identifikacia</Object>
     <Object Type="Program" Language="IEC">Testing</Object>
+    <Object Type="Program" Language="IEC">Narazy</Object>
   </Objects>
 </Package>

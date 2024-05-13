@@ -250,4 +250,16 @@
     <Parameter ID="StatusInfo" Value="on" />
     <Parameter ID="DigitalOutputsPacked" Value="off" />
   </Module>
+  <Module ID="IF6.ST3" Hardware="X20DM9324">
+    <Parameter ID="HardwareModuleName" Value="X20DM9324" />
+  </Module>
+  <Module ID="IF6.ST3.IO" Hardware="X20DM9324">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+    <Parameter ID="DigitalOutputsPacked" Value="off" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="InputFilter" Value="10" Type="USINT" />
+  </Module>
 </IOCFG>

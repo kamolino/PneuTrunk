@@ -602,7 +602,6 @@
 </LN>
 <LN ID="%IX.IF3.ST1.IF1.ST6.DigitalInput01" Type="BOOL">
 <Prod Device="IF3.ST1.IF1.ST6" DPName="DigitalInput01" Kind="io"/>
-<Cons Device="TC#2-CPYDEV" DPName="::buttons.centralStop" Kind="pv"/>
 </LN>
 <LN ID="%IX.IF3.ST1.IF1.ST6.DigitalInput02" Type="BOOL">
 <Prod Device="IF3.ST1.IF1.ST6" DPName="DigitalInput02" Kind="io"/>
@@ -626,7 +625,7 @@
 <Cons Device="IF3.ST1.IF1.ST6" DPName="ResetCounter02" Kind="io"/>
 </LN>
 <LN ID="%QX.IF3.ST1.IF1.ST6.DigitalOutput01" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::Controller:modull.efektor" Kind="pv"/>
+<Prod Device="TC#4-CPYDEV" DPName="::Controller:modull.efektor" Kind="pv"/>
 <Cons Device="IF3.ST1.IF1.ST6" DPName="DigitalOutput01" Kind="io"/>
 </LN>
 <LN ID="%QX.IF3.ST1.IF1.ST6.DigitalOutput02" Type="BOOL">
@@ -1104,31 +1103,35 @@
 <Cons Device="IF6.ST2" DPName="DigitalOutput04" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput05" Type="BOOL">
+<Prod Device="TC#4-CPYDEV" DPName="::buttons.stropBielaLED" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput05" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput06" Type="BOOL">
+<Prod Device="TC#4-CPYDEV" DPName="::buttons.startLED" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput06" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput07" Type="BOOL">
+<Prod Device="TC#4-CPYDEV" DPName="::buttons.stopLED" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput07" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput08" Type="BOOL">
+<Prod Device="TC#4-CPYDEV" DPName="::buttons.stropCervenaLED" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput08" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput09" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.levitovanie" Kind="pv"/>
+<Prod Device="TC#4-CPYDEV" DPName="::zasobnik.levitovanie" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput09" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput10" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.ball_piston" Kind="pv"/>
+<Prod Device="TC#4-CPYDEV" DPName="::zasobnik.ball_piston" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput10" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput11" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.ball_piston_sjf" Kind="pv"/>
+<Prod Device="TC#4-CPYDEV" DPName="::zasobnik.ball_piston_sjf" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput11" Kind="io"/>
 </LN>
 <LN ID="%QX.IF6.ST2.DigitalOutput12" Type="BOOL">
-<Prod Device="TC#2-CPYDEV" DPName="::zasobnik.ball" Kind="pv"/>
+<Prod Device="TC#4-CPYDEV" DPName="::zasobnik.ball" Kind="pv"/>
 <Cons Device="IF6.ST2" DPName="DigitalOutput12" Kind="io"/>
 </LN>
 <LN ID="%IX.IF6.ST2.StatusDigitalOutput01" Type="BOOL">
@@ -1205,5 +1208,110 @@
 </LN>
 <LN ID="%ID.IF6.ST2.ModuleCommErrorChangeTime" Type="DATE_AND_TIME">
 <Prod Device="IF6.ST2" DPName="ModuleCommErrorChangeTime" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.ModuleOk" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="ModuleOk" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.SerialNumber" Type="UDINT">
+<Prod Device="IF6.ST3" DPName="SerialNumber" Kind="io"/>
+</LN>
+<LN ID="%IW.IF6.ST3.ModuleID" Type="UINT">
+<Prod Device="IF6.ST3" DPName="ModuleID" Kind="io"/>
+</LN>
+<LN ID="%IW.IF6.ST3.HardwareVariant" Type="UINT">
+<Prod Device="IF6.ST3" DPName="HardwareVariant" Kind="io"/>
+</LN>
+<LN ID="%IW.IF6.ST3.FirmwareVersion" Type="UINT">
+<Prod Device="IF6.ST3" DPName="FirmwareVersion" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput01" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput01" Kind="io"/>
+<Cons Device="TC#4-CPYDEV" DPName="::buttons.startButton" Kind="pv"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput02" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput02" Kind="io"/>
+<Cons Device="TC#4-CPYDEV" DPName="::buttons.stop" Kind="pv"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput03" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput03" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput04" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput04" Kind="io"/>
+<Cons Device="TC#4-CPYDEV" DPName="::buttons.centralStop" Kind="pv"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput05" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput05" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput06" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput06" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput07" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput07" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.DigitalInput08" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="DigitalInput08" Kind="io"/>
+</LN>
+<LN ID="%QX.IF6.ST3.DigitalOutput01" Type="BOOL">
+<Cons Device="IF6.ST3" DPName="DigitalOutput01" Kind="io"/>
+</LN>
+<LN ID="%QX.IF6.ST3.DigitalOutput02" Type="BOOL">
+<Cons Device="IF6.ST3" DPName="DigitalOutput02" Kind="io"/>
+</LN>
+<LN ID="%QX.IF6.ST3.DigitalOutput03" Type="BOOL">
+<Cons Device="IF6.ST3" DPName="DigitalOutput03" Kind="io"/>
+</LN>
+<LN ID="%QX.IF6.ST3.DigitalOutput04" Type="BOOL">
+<Cons Device="IF6.ST3" DPName="DigitalOutput04" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.StatusDigitalOutput01" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="StatusDigitalOutput01" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.StatusDigitalOutput02" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="StatusDigitalOutput02" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.StatusDigitalOutput03" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="StatusDigitalOutput03" Kind="io"/>
+</LN>
+<LN ID="%IX.IF6.ST3.StatusDigitalOutput04" Type="BOOL">
+<Prod Device="IF6.ST3" DPName="StatusDigitalOutput04" Kind="io"/>
+</LN>
+<LN ID="%IW.IF6.ST3.BusModuleId" Type="UINT">
+<Prod Device="IF6.ST3" DPName="BusModuleId" Kind="io"/>
+</LN>
+<LN ID="%IB.IF6.ST3.ModeOfOperation" Type="USINT">
+<Prod Device="IF6.ST3" DPName="ModeOfOperation" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.ModeOfOperationChangeTime" Type="DATE_AND_TIME">
+<Prod Device="IF6.ST3" DPName="ModeOfOperationChangeTime" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.NrOfResets" Type="DINT">
+<Prod Device="IF6.ST3" DPName="NrOfResets" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.NrOfResetsChangeTime" Type="DATE_AND_TIME">
+<Prod Device="IF6.ST3" DPName="NrOfResetsChangeTime" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.NrOfInits" Type="DINT">
+<Prod Device="IF6.ST3" DPName="NrOfInits" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.NrOfInitsChangeTime" Type="DATE_AND_TIME">
+<Prod Device="IF6.ST3" DPName="NrOfInitsChangeTime" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.NrOfFwUpdates" Type="DINT">
+<Prod Device="IF6.ST3" DPName="NrOfFwUpdates" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.NrOfFwUpdatesChangeTime" Type="DATE_AND_TIME">
+<Prod Device="IF6.ST3" DPName="NrOfFwUpdatesChangeTime" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.ModuleNoComm" Type="DINT">
+<Prod Device="IF6.ST3" DPName="ModuleNoComm" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.ModuleNoCommChangeTime" Type="DATE_AND_TIME">
+<Prod Device="IF6.ST3" DPName="ModuleNoCommChangeTime" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.ModuleCommError" Type="DINT">
+<Prod Device="IF6.ST3" DPName="ModuleCommError" Kind="io"/>
+</LN>
+<LN ID="%ID.IF6.ST3.ModuleCommErrorChangeTime" Type="DATE_AND_TIME">
+<Prod Device="IF6.ST3" DPName="ModuleCommErrorChangeTime" Kind="io"/>
 </LN>
 </Links></IO>

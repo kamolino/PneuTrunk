@@ -1,19 +1,22 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715524476_1_
-#define _BUR_1715524476_1_
+#ifndef _BUR_1715619838_1_
+#define _BUR_1715619838_1_
 
 #include <bur/plctypes.h>
 
 /* Datatypes and datatypes of function blocks */
 typedef struct tlacidla
-{	plcbit ros;
+{	plcbit start;
+	plcbit ros;
 	plcbit stopLED;
 	plcbit stop;
 	plcbit startLED;
-	plcbit start;
+	plcbit startButton;
 	plcbit centralStop;
+	plcbit stropBielaLED;
+	plcbit stropCervenaLED;
 } tlacidla;
 
 typedef struct automatic
@@ -138,5 +141,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715524476_1_ */
+#endif /* _BUR_1715619838_1_ */
 

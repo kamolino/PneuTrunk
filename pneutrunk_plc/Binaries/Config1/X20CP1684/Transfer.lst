@@ -3,14 +3,14 @@
 <Transfer xmlns="http://br-automation.co.at/AS/Transfer">
   <OperatingSystem Version="D4.92"/>
   <Hardware Target="SG4"/>
-  <Operation Delete="Program.br"/>
+  <Operation Delete="Controller.br"/>
   <Operation Delete="solo_reg.br"/>
   <Operation Delete="Sender1.br"/>
-  <Operation Delete="Controller.br"/>
   <Operation Delete="test_input.br"/>
   <Operation Delete="Receiver1.br"/>
-  <Operation Delete="Client.br"/>
   <Operation Delete="Server.br"/>
+  <Operation Delete="Narazy.br"/>
+  <Operation Delete="Client.br"/>
   <Operation Delete="regulatory.br"/>
   <Operation Delete="AsTCP.br"/>
   <Operation Delete="AsArLog.br"/>
@@ -44,12 +44,12 @@
   <Operation Download="AsArLog.br" Memory="UserROM"/>
   <Operation Download="AsTCP.br" Memory="UserROM"/>
   <Operation Download="regulatory.br" Memory="UserROM"/>
-  <Operation Download="Server.br" Memory="UserROM"/>
   <Operation Download="Client.br" Memory="UserROM"/>
+  <Operation Download="Narazy.br" Memory="UserROM"/>
+  <Operation Download="Server.br" Memory="UserROM"/>
   <Operation Download="Receiver1.br" Memory="UserROM"/>
   <Operation Download="test_input.br" Memory="UserROM"/>
-  <Operation Download="Controller.br" Memory="UserROM"/>
   <Operation Download="Sender1.br" Memory="UserROM"/>
   <Operation Download="solo_reg.br" Memory="UserROM"/>
-  <Operation Download="Program.br" Memory="UserROM"/>
+  <Operation Download="Controller.br" Memory="UserROM"/>
 </Transfer>

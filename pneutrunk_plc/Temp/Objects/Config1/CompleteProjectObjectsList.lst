@@ -10,13 +10,13 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Global.typ"
     LogicalPath="Global.typ"
     Type="File"
-    LastWriteTime="133599971494410299"
+    LastWriteTime="133600930618291263"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Global.var"
     LogicalPath="Global.var"
     Type="File"
-    LastWriteTime="133599954107967470"
+    LastWriteTime="133600920109263013"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Libraries\Package.pkg"
@@ -536,7 +536,7 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Package.pkg"
     LogicalPath="Source"
     Type="Package"
-    LastWriteTime="133317157980000000" />
+    LastWriteTime="133600919564750271" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Program\IEC.prg"
     LogicalPath="Source.Program"
@@ -1451,13 +1451,13 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Cyclic.st"
     LogicalPath="Source.Controller.Cyclic.st"
     Type="File"
-    LastWriteTime="133600074949997472"
+    LastWriteTime="133600954394501696"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Init.st"
     LogicalPath="Source.Controller.Init.st"
     Type="File"
-    LastWriteTime="133597226831471663"
+    LastWriteTime="133600945610029325"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Exit.st"
@@ -1475,7 +1475,7 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Controller\Variables.var"
     LogicalPath="Source.Controller.Variables.var"
     Type="File"
-    LastWriteTime="133591206623832217"
+    LastWriteTime="133600920030352984"
     Private="true" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\RS485\Package.pkg"
@@ -1491,7 +1491,7 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\RS485\Sender\SenderCyclic.st"
     LogicalPath="Source.RS485.Sender.SenderCyclic.st"
     Type="File"
-    LastWriteTime="133525647630640986"
+    LastWriteTime="133600630988970303"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\RS485\Sender\Sender.typ"
@@ -1597,6 +1597,41 @@
     LogicalPath="Source.Testing.Variables.var"
     Type="File"
     LastWriteTime="133306036420000000"
+    Private="true" />
+  <Object
+    Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\IEC.prg"
+    LogicalPath="Source.Narazy"
+    Type="Program"
+    LastWriteTime="133600919413164980" />
+  <Object
+    Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Cyclic.st"
+    LogicalPath="Source.Narazy.Cyclic.st"
+    Type="File"
+    LastWriteTime="133600920237018249"
+    Private="false" />
+  <Object
+    Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Init.st"
+    LogicalPath="Source.Narazy.Init.st"
+    Type="File"
+    LastWriteTime="133600919413008980"
+    Private="false" />
+  <Object
+    Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Exit.st"
+    LogicalPath="Source.Narazy.Exit.st"
+    Type="File"
+    LastWriteTime="133600919413008980"
+    Private="false" />
+  <Object
+    Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Types.typ"
+    LogicalPath="Source.Narazy.Types.typ"
+    Type="File"
+    LastWriteTime="133600919413008980"
+    Private="true" />
+  <Object
+    Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\Source\Narazy\Variables.var"
+    LogicalPath="Source.Narazy.Variables.var"
+    Type="File"
+    LastWriteTime="133600920189229284"
     Private="true" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Logical\meranie\ANSIC.prg"
@@ -4541,7 +4576,7 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\Hardware.hw"
     LogicalPath="Config1.Hardware.hw"
     Type="File"
-    LastWriteTime="133591173076786938"
+    LastWriteTime="133600920866061566"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\Hardware.hwl"
@@ -4553,12 +4588,12 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\Cpu.pkg"
     LogicalPath="Config1.X20CP1684"
     Type="Cpu"
-    LastWriteTime="133600077829314777" />
+    LastWriteTime="133600959537240974" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\Cpu.sw"
     LogicalPath="Config1.X20CP1684.Cpu.sw"
     Type="File"
-    LastWriteTime="133600064577743201"
+    LastWriteTime="133600967022354423"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\Cpu.per"
@@ -4570,7 +4605,7 @@
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\IoMap.iom"
     LogicalPath="Config1.X20CP1684.IoMap.iom"
     Type="File"
-    LastWriteTime="133599957315786229"
+    LastWriteTime="133600931612172411"
     Private="false" />
   <Object
     Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8\Physical\Config1\X20CP1684\PvMap.vvm"

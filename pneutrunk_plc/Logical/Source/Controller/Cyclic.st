@@ -6,28 +6,37 @@ PROGRAM _CYCLIC
 		
 		0:  // Detekcia referencnej polohy
 			IF switch2 = FALSE THEN
-				switch2 := TRUE;
+				buttons.startLED				:= FALSE;
+				switch2 						:= TRUE;
 				FOR id:=0 TO 6 BY 1 DO
 					modul.tlak1[id]	:= REAL_TO_INT(0);
 					modul.tlak2[id]	:= REAL_TO_INT(0);
 					modul.tlak3[id]	:= REAL_TO_INT(0);
-					packetPos.qDesired[id*2] := 0;
-					packetPos.qDesired[id*2+1] := 0;
+					packetPos.qDesired[id*2] 	:= 0;
+					packetPos.qDesired[id*2+1] 	:= 0;
 					automatika.x_desired[id]	:= 0;
 					automatika.y_desired[id]	:= 0;
+					switch						:= FALSE;
 				END_FOR
 				
 			END_IF
 			
-
+			IF buttons.startButton = TRUE THEN
+				buttons.start	:= TRUE;
+			END_IF
+			
 			IF buttons.start = TRUE AND buttons.centralStop = TRUE THEN
+				buttons.stop					:= FALSE;
+				buttons.stopLED					:= FALSE;
+				buttons.stropCervenaLED			:= FALSE;
+				buttons.startLED				:= TRUE;
 				IF switch = FALSE THEN
-					switch 			:= TRUE;
-					kalibraciaStart := TRUE;
+					switch 						:= TRUE;
+					kalibraciaStart 			:= TRUE;
 					FOR id:=0 TO 6 BY 1 DO
-						modul.tlak1[id]	:= REAL_TO_INT(3*32767/9);
-						modul.tlak2[id]	:= REAL_TO_INT(3*32767/9);
-						modul.tlak3[id]	:= REAL_TO_INT(3*32767/9);
+						modul.tlak1[id]			:= REAL_TO_INT(3*32767/9);
+						modul.tlak2[id]			:= REAL_TO_INT(3*32767/9);
+						modul.tlak3[id]			:= REAL_TO_INT(3*32767/9);
 					END_FOR
 				END_IF
 				
@@ -39,20 +48,20 @@ PROGRAM _CYCLIC
 			END_IF
 			global_step				:= 0;
 			
-			
 		1:	// Vypustenie vzduchu zo vsetkych mechov, zapnutie I-regulatora 
-			
+			(*
 			FOR id:=0 TO 6 BY 1 DO
 				modul.tlak1[id]	:= 0;
 				modul.tlak2[id]	:= 0;
 				modul.tlak3[id]	:= 0;
 			END_FOR
+			*)
 			//I_ON					:= TRUE;
 			switch2 				:= FALSE;
 			kalibraciaStart			:= TRUE;
 			step					:= 2;
 		
-		2:
+		2:	// cakaj
 			IF TON_0.Q = TRUE THEN
 				kalibraciaStart		:= FALSE;
 				step				:= 3;
@@ -66,6 +75,12 @@ PROGRAM _CYCLIC
 			step					:= 4;
 			I_ON					:= TRUE;
 			global_step 			:= 999;
+			
+			FOR id:=0 TO 6 BY 1 DO
+				modul.tlak1[id]	:= 0;
+				modul.tlak2[id]	:= 0;
+				modul.tlak3[id]	:= 0;
+			END_FOR
 			
 		4:
 			zasobnik.ball			:= automatika.ball_up;
@@ -81,14 +96,13 @@ PROGRAM _CYCLIC
 			I_konstanta_ID6			:= automatika.I_konstanta[5];
 			I_konstanta_ID7			:= automatika.I_konstanta[6];
 			
-			FOR i:=0 TO 6 BY 1 DO
-				IF modul.naraz[i] = TRUE THEN
-					modul.narazAktivny	:= TRUE;
-					step				:= 5;
-				END_IF
-			END_FOR
-			
-			
+			IF buttons.stop = TRUE THEN
+				buttons.start		:= FALSE;
+			//	buttons.startLED	:= FALSE;
+				buttons.stopLED		:= TRUE;
+				step				:= 5;
+			END_IF
+
 			IF buttons.start = TRUE AND buttons.centralStop = TRUE THEN
 				FOR id:=0 TO 6 BY 1 DO
 					modull.real_uhol_x_kalibrovane[id]	:= modul.uhol1[id];
@@ -303,9 +317,88 @@ PROGRAM _CYCLIC
 				zasobnik.ball			:= FALSE;
 				zasobnik.ball_piston	:= FALSE;
 			END_IF
-		5: // kolaborativny mod - doslo k narazu		
-					
+		5: // kolaborativny mod - doslo k narazu, alebo stlacenie stop		
+			buttons.startLED			:= FALSE;
+			buttons.stopLED				:= TRUE;
+			IF buttons.start = TRUE THEN 
+				buttons.stropBielaLED	:= FALSE;
+				buttons.stropCervenaLED	:= TRUE;
+				buttons.start			:= FALSE;
+			END_IF
+			step						:= 6;
+			global_step					:= 0;
+				
+		6:
+			IF buttons.stop = TRUE THEN
+				buttons.stopLED			:= FALSE;
+				buttons.stropCervenaLED	:= FALSE;
+				buttons.stropBielaLED	:= TRUE;
+				step					:= 7;
+			END_IF
 			
+				
+		7:	// resetovanie vsetkeho
+			buttons.start			:= FALSE;
+			switch					:= FALSE;
+			switch2					:= FALSE;
+			I_ON					:= FALSE;
+			kalibraciaStart			:= FALSE;
+			step					:= 0;
+			global_step_udp			:= 0;
+			global_step				:= 0;
+			automatika.casovac		:= FALSE;
+			automatika.ball_piston	:= FALSE;
+			automatika.ball_up		:= FALSE;
+			automatika.popcorn		:= FALSE;
+			automatika.casovac_uchopenie:= FALSE;
+			automatika.effector		:= FALSE;
+			automatika.holdPosition	:= FALSE;
+			automatika.automatic	:= FALSE;
+			act_alfa_x_ID1:= 0;
+			act_alfa_y_ID1:= 0;
+			act_alfa_x_ID2:= 0;
+			act_alfa_y_ID2:= 0;
+			act_alfa_x_ID3:= 0;
+			act_alfa_y_ID3:= 0;
+			act_alfa_x_ID4:= 0;
+			act_alfa_y_ID4:= 0;
+			act_alfa_x_ID5:= 0;
+			act_alfa_y_ID5:= 0;
+			act_alfa_x_ID6:= 0;
+			act_alfa_y_ID6:= 0;
+			act_alfa_x_ID7:= 0;
+			act_alfa_y_ID7:= 0;
+			ref_alfa_x_ID1:= 0;
+			ref_alfa_y_ID1:= 0;
+			ref_alfa_x_ID2:= 0;
+			ref_alfa_y_ID2:= 0;
+			ref_alfa_x_ID3:= 0;
+			ref_alfa_y_ID3:= 0;	
+			ref_alfa_x_ID4:= 0;
+			ref_alfa_y_ID4:= 0;
+			ref_alfa_x_ID5:= 0;
+			ref_alfa_y_ID5:= 0;
+			ref_alfa_x_ID6:= 0;
+			ref_alfa_y_ID6:= 0;
+			ref_alfa_x_ID7:= 0;
+			ref_alfa_y_ID7:= 0;
+			FOR i:=0 TO 6 BY 1 DO
+				modul.tlak1[i] 				:= 0;
+				modul.tlak2[i]				:= 0;
+				modul.tlak3[i] 				:= 0;
+				modull.pozadovany_uhol_y[i]	:= 0;
+				modull.pozadovany_uhol_x[i]	:= 0;
+				modull.real_uhol_x_kalibrovane[i]	:= 0;
+				modull.real_uhol_y_kalibrovane[i] 	:= 0;
+				modull.nula_x[i]			:= 0;
+				modull.nula_y[i]			:= 0;
+			END_FOR
+			modul.tlakLinear		:= 0;
+			modull.efektor			:= FALSE;
+			modull.pozadovanyLinear	:= 23;
+			zasobnik.ball			:= FALSE;
+			zasobnik.ball_piston	:= FALSE;
+			step					:= 0;
 	END_CASE
 	
 	IF I_ON= TRUE THEN
