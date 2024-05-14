@@ -13,8 +13,10 @@ void rosModule::run()
 
     _camera_gesture_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/gesture/camera", 
                         1, std::bind(&rosModule::CameraGestureCallback, this, _1));
-    _camera_ball_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/object_color", 
+
+    _camera_ball_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/camera_ball_detection", 
                         1, std::bind(&rosModule::CameraBallDetectionCallback, this, _1));
+
     // _camera_object_detection_subscriber = _node->create_subscription<sensor_msgs::msg::Image>("/pneutrunk/object_detection/camera", 
     //                     1, std::bind(&rosModule::ObjectDetectionCallback, this, _1));
 
@@ -38,12 +40,14 @@ void rosModule::JointStateCallback(const pneutrunk_msgs::msg::PneutrunkJointStat
 
 void rosModule::CameraGestureCallback(const sensor_msgs::msg::Image &msg)
 {
+    
     camera_gesture_matrix = cv_bridge::toCvCopy(msg, "bgr8")->image;
     emit rosGestureUpdate();
 }
 
 void rosModule::CameraBallDetectionCallback(const sensor_msgs::msg::Image &msg)
 {
+
     camera_ball_matrix = cv_bridge::toCvCopy(msg, "bgr8")->image;
     emit rosBallDetectionUpdate();
 }

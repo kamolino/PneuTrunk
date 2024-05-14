@@ -6,6 +6,7 @@ import argparse
 import itertools
 from collections import Counter
 from collections import deque
+import subprocess
 
 import cv2 as cv
 import numpy as np
@@ -21,6 +22,21 @@ from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
 
+def get_video_index_by_model(model_name):
+    try:
+        output = subprocess.check_output("v4l2-ctl --list-devices", shell=True, stderr=subprocess.STDOUT)
+        output_str = output.decode("utf-8")
+
+        lines = output_str.split('\n')
+        for i, line in enumerate(lines):
+            if model_name in line:
+                next_line = lines[i + 1]  # Next line after name of model
+                device_index = next_line.split("/dev/video")[-1]
+                #return device_index.strip()
+                return device_index
+    except subprocess.CalledProcessError as e:
+        print("Error while executing the command :", e.output.decode("utf-8"))
+    return None
 
 def main(args=None):
     rclpy.init(args=args)
@@ -28,8 +44,16 @@ def main(args=None):
     publisher_camera = node.create_publisher(Image, '/pneutrunk/gesture/camera', 1)
     publisher_gesture_cmd = node.create_publisher(String, '/pneutrunk/gesture/cmd', 1)
     bridge = CvBridge()
-    
-    cap_device = 0
+
+    """
+    TU SA NASTAVUJE PORT KAMERY
+    """ 
+    model_name = "Integrated Camera" #"USB2.0 PC CAMERA"# You can change the model of camera v4l2-ctl --list-devices
+    video_index = str()
+    video_index = get_video_index_by_model(model_name) #index camera in string format
+    video_index_as_int = int(video_index)#convert index camera format from string to int format 
+    cap_device = video_index_as_int
+   
     cap_width = 960
     cap_height = 540
 
@@ -39,7 +63,8 @@ def main(args=None):
 
     use_brect = True
 
-    cap = cv.VideoCapture(cap_device)
+   
+    cap = cv.VideoCapture(cap_device)   
     cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
 
@@ -164,7 +189,7 @@ def main(args=None):
             point_history.append([0, 0])
 
         debug_image = draw_point_history(debug_image, point_history)
-        debug_image = draw_info(debug_image, fps, mode, number)
+        # debug_image = draw_info(debug_image, fps, mode, number)
 
         # 画面反映 #############################################################
         # cv.imshow('Hand Gesture Recognition', debug_image)
@@ -495,12 +520,12 @@ def draw_info_text(image, brect, handedness, hand_sign_text,
         info_text = info_text + ':' + hand_sign_text
     cv.putText(image, info_text, (brect[0] + 5, brect[1] - 4),
                cv.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv.LINE_AA)
-    if finger_gesture_text != "":
-        cv.putText(image, "Finger Gesture:" + finger_gesture_text, (10, 60),
-                   cv.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 4, cv.LINE_AA)
-        cv.putText(image, "Finger Gesture:" + finger_gesture_text, (10, 60),
-                   cv.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 2,
-                   cv.LINE_AA)
+    # if finger_gesture_text != "":
+    #     cv.putText(image, "Finger Gesture:" + finger_gesture_text, (10, 60),
+    #                cv.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 4, cv.LINE_AA)
+    #     cv.putText(image, "Finger Gesture:" + finger_gesture_text, (10, 60),
+    #                cv.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 2,
+    #                cv.LINE_AA)
 
     return image
 

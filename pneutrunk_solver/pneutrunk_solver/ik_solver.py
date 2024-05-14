@@ -37,6 +37,7 @@ class InverseKinematicsSolver(Node):
         self.subscriber2_ = self.create_subscription(String, "/pneutrunk/gesture/cmd", self.gesture_detection, 10)
         self.subscriber3_ = self.create_subscription(Pose, "/pneutrunk/desired_position/cmd", self.desired_position, 10)
         self.subscriber4_ = self.create_subscription(String, "/pneutrunk/object_color", self.ball_color_detection, 10)
+        #self.timer_ = self.create_timer(0.1, self.ball_color_detection)
         #self.subscriber3_ = self.create_subscription(Pose, "/pneutrunk/object_detection/cmd", self.object_detection, 10)
         self.get_logger().info("IK Solver has been started...1")
     # =========================================================
@@ -91,16 +92,6 @@ class InverseKinematicsSolver(Node):
         self.effector[1] = round(msg.position.y, 2)
         self.effector[2] = round(msg.position.z, 2)
 
-    """    
-    def publisher_udp(self):
-        UDP_IP = "192.168.1.38"
-        UDP_PORT = 12050
-        MESSAGE = b"q:12.25,20.25,16.78,-14.75,21.47,5.27,-7.87,13.65,9.25,-14.25,11.11,-10.45,20.25c:0,0,1,0,0,0,0,0,0,0,1,0,0,0"
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        msg = String()
-        msg.data = "a"
-        sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
-    """    
     # =========================================================
     # =============== Inverse kinematics solver ===============
     # =========================================================

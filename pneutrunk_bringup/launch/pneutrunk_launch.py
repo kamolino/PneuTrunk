@@ -49,27 +49,31 @@ def generate_launch_description():
     """
     Cameras node
     """
-    camera_gesture_node = Node(
-        package='pneutrunk_gesture_control',
-        executable='pneutrunk_gesture_control',
-        name='pneutrunk_gesture_control',
-        output='screen',
-    )
-    camera_object_detect_node = Node(
-        package='pneutrunk_object_detection',
-        executable='pneutrunk_object_detection',
-        name='pneutrunk_object_detection',
-        output='screen',
-    )
-
-    
+    # camera_gesture_node = Node(
+    #     package='pneutrunk_gesture_control',
+    #     executable='pneutrunk_gesture_control',
+    #     name='pneutrunk_gesture_control',
+    #     output='screen',
+    # )
+    # camera_object_detect_node = Node(
+    #     package='pneutrunk_object_detection',
+    #     executable='pneutrunk_object_detection',
+    #     name='pneutrunk_object_detection',
+    #     output='screen',
+    # )
 
     return LaunchDescription([
-        rviz_node,
-        robot_state_publisher_node,
-        continuum_model_node,
-        gui_node,
-        camera_gesture_node
+        gui_node
         #camera_object_detect_node
     ])
+    
+
+    # return LaunchDescription([
+    #     rviz_node,
+    #     robot_state_publisher_node,
+    #     continuum_model_node,
+    #     gui_node,
+    #     camera_gesture_node
+    #     #camera_object_detect_node
+    # ])
 

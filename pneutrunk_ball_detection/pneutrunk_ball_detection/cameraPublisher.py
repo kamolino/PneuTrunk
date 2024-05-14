@@ -34,14 +34,19 @@ class PublisherNodeClass(Node):
         video_index_as_int = int(video_index)#convert index camera format from string to int format 
 
         self.cameraDeviceNumber = video_index_as_int
+        """
+        TU SA NASTAVUJE PORT KAMERY
+        """ 
         self.camera = cv2.VideoCapture(self.cameraDeviceNumber)
         self.bridgeObject = CvBridge()
-        self.publisher = self.create_publisher(Image, 'topic_camera_image', 10)
+        self.cam_publisher = self.create_publisher(Image, '/pneutrunk/camera_ball_detection', 10)
         self.color_publisher = self.create_publisher(String, '/pneutrunk/object_color', 10)
         self.timer = self.create_timer(0.1, self.timer_callbackFunction)
 
     def timer_callbackFunction(self):
         success, frame = self.camera.read()
+
+        frame = frame[150:400, 150:500]
         results = model(frame, stream=True)
         hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         cx = 0
@@ -85,7 +90,12 @@ class PublisherNodeClass(Node):
                 color_msg.data = color
                 self.color_publisher.publish(color_msg)
                 org = (x1, y1 - 25)
-                cv2.putText(frame, color, org, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)                 
+                cv2.putText(frame, color, org, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)   
+
+                #crop_frame = frame[]
+               
+                cam_msg = self.bridgeObject.cv2_to_imgmsg(frame, "bgr8")  
+                self.cam_publisher.publish(cam_msg)            
 
 def get_video_index_by_model(model_name):
     try:
