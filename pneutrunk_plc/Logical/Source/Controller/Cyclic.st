@@ -1,6 +1,6 @@
 PROGRAM _CYCLIC
 	
-	TON_0(IN := kalibraciaStart, PT := T#5s0ms);
+	TON_0(IN := kalibraciaStart, PT := T#3s0ms);
 		
 	CASE step OF
 		
@@ -74,9 +74,10 @@ PROGRAM _CYCLIC
 				modull.nula_y[id]:= modul.uhol2[id];
 			END_FOR
 			step					:= 4;
-			I_ON					:= TRUE;
+			
 			global_step 			:= 999;
 			global_step_udp			:= 0;			// aby nahodou nemal na zaciatku gesto z predoslej udalosti
+			I_ON					:= TRUE;
 			
 			FOR id:=0 TO 6 BY 1 DO
 				modul.tlak1[id]	:= 0;
@@ -113,13 +114,14 @@ PROGRAM _CYCLIC
 			I_konstanta_ID6			:= automatika.I_konstanta[5];
 			I_konstanta_ID7			:= automatika.I_konstanta[6];
 			
+			
 			IF buttons.stop = TRUE THEN
 				buttons.start		:= FALSE;
-			//	buttons.startLED	:= FALSE;
+				buttons.startLED	:= FALSE;
 				buttons.stopLED		:= TRUE;
-				step				:= 5;
+				global_step			:= 7;
 			END_IF
-
+			
 			IF buttons.start = TRUE AND buttons.centralStop = TRUE THEN
 				(*
 				FOR id:=0 TO 6 BY 1 DO

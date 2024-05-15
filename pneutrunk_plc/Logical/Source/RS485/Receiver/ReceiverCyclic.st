@@ -185,7 +185,7 @@ PROGRAM _CYCLIC
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
 								modul.uhol2[6] := (modul.uholINT2);
 								modul.uhol2[6] := modul.uhol2[6]*260/1024 - 130;
-								IF Receiver.receive_data[4] = 3 THEN
+								IF Receiver.receive_data[4] = 1 OR Receiver.receive_data[4] = 2 THEN //lebo dve moduly su zapojene do jednej dosky
 									modul.naraz[6]	:= TRUE;
 								ELSE
 									modul.naraz[6]	:= FALSE;

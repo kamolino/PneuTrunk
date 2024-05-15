@@ -82,7 +82,7 @@ PROGRAM _CYCLIC
 		
 		FRM_PREPARE_SENDDATA: (*--- prepare senddata, copy data to sendbuffer*)
 			
-			IF packet485.id = 8 THEN
+			IF packet485.id = 7 THEN
 				packet485.id := 1;
 			ELSE
 				packet485.id := packet485.id + 1;

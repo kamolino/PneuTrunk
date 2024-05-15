@@ -35,7 +35,6 @@ VAR
 	id : INT;
 	FF_PID_r_t_1 : FF_PID_r_t;
 	FF_PID_r_t_2 : FF_PID_r_t;
-	I_ON : BOOL;
 	switch : BOOL;
 	maxUhol : INT;
 	TON_0 : TON;

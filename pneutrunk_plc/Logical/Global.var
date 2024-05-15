@@ -3,6 +3,7 @@ VAR
 	Yellow_tab_ID7 : REAL;
 	zasobnik : podavac;
 	Yellow_tab_ID6 : REAL;
+	I_ON : BOOL;
 	Yellow_tab_ID5 : REAL;
 	step : INT;
 	Yellow_tab_ID4 : REAL;

@@ -1,8 +1,8 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Program 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index=0 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index=178 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                             global_step                                      INT    0 "                                                               0"    0    3    1   10    0    0         
-                         global_step_udp                                      INT    0 "                                                               4"    0    3    1   10    0    0         
+                             global_step                                      INT    0 "                                                               *"    0    3    1   10    0    0         
+                         global_step_udp                                      INT    0 "                                                               *"    0    3    1   10    0    0         
                                packetPos                                packetUDP    0 "                                                               *"    0   24    1    0    0    0         
                                  qLength                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                                        c                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -45,31 +45,31 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                                     step                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                               automatika                                automatic    0 "                                                               *"    0   24    1    0    0    1         
                                y_desired                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
-                            y_desired[0]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            y_desired[1]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            y_desired[2]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            y_desired[3]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            y_desired[4]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            y_desired[5]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            y_desired[6]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
+                            y_desired[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            y_desired[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            y_desired[2]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            y_desired[3]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            y_desired[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            y_desired[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            y_desired[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                x_desired                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
-                            x_desired[0]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            x_desired[1]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            x_desired[2]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            x_desired[3]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            x_desired[4]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            x_desired[5]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                            x_desired[6]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                                  linear                                      INT    0 "                                                              23"    1    3    1   10    0    0         
-                                 ball_up                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                 casovac                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                effector                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                       casovac_uchopenie                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                             ball_piston                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                              novyCyklus                                     TIME    0 "                                                           T#01s"    1   12    1    1    0    0         
-                         novyCyklusStart                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                        trajectoryStart2                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                         trajectoryTime2                                     TIME    0 "                                                           T#06s"    1   12    1    1    0    0         
+                            x_desired[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            x_desired[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            x_desired[2]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            x_desired[3]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            x_desired[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            x_desired[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                            x_desired[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                                  linear                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                                 ball_up                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                 casovac                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                effector                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                       casovac_uchopenie                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                             ball_piston                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                              novyCyklus                                     TIME    0 "                                                               *"    1   12    1    1    0    0         
+                         novyCyklusStart                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                        trajectoryStart2                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                         trajectoryTime2                                     TIME    0 "                                                               *"    1   12    1    1    0    0         
                                automatic                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                             holdPosition                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                                      cas                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -94,14 +94,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                    y_desired_previous[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                    y_desired_previous[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                    y_desired_previous[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                             I_konstanta                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    0         
-                          I_konstanta[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                          I_konstanta[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                          I_konstanta[2]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                          I_konstanta[3]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                          I_konstanta[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                          I_konstanta[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                          I_konstanta[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                             I_konstanta                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
+                          I_konstanta[0]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
+                          I_konstanta[1]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
+                          I_konstanta[2]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
+                          I_konstanta[3]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
+                          I_konstanta[4]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
+                          I_konstanta[5]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
+                          I_konstanta[6]                                      INT    0 "                                                               5"    2    3    1   10    0    0         
                                    modul                                   moduly    0 "                                                               *"    0   24    1    0    0    1         
                                    uhol2                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    0         
                                 uhol2[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
@@ -135,16 +135,16 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                                   led[4]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[5]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[6]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                uholINT2                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                                uholINT1                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                                uholINT2                                      INT    0 "                                                             503"    1    3    1   10    0    0         
+                                uholINT1                                      INT    0 "                                                             525"    1    3    1   10    0    0         
                                    tlak1                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
-                                tlak1[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                                tlak1[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                                tlak1[2]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                                tlak1[3]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                                tlak1[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                                tlak1[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                                tlak1[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
+                                tlak1[0]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[1]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[2]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[3]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[4]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[5]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[6]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
                                    tlak2                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    0         
                                 tlak2[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak2[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
@@ -161,7 +161,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                                 tlak3[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak3[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak3[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                              tlakLinear                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              tlakLinear                                      INT    3 "                                                               0"    1    3    1   10    0    0         
                           uhol_XminusRef                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    0         
                        uhol_XminusRef[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_XminusRef[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -178,8 +178,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                        uhol_YminusRef[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_YminusRef[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_YminusRef[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                              linearReal                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-                                   naraz                               BOOL[0..7]    0 "                                                               *"    1    1    8    0    0    0         
+                              linearReal                                     REAL    0 "                                                            23.0"    1    8    1   10    0    0         
+                                   naraz                               BOOL[0..7]    0 "                                                               *"    1    1    8    0    0    1         
                                 naraz[0]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                 naraz[1]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                 naraz[2]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         

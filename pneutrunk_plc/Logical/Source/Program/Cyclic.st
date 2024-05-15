@@ -9,7 +9,7 @@ PROGRAM _CYCLIC
 	CASE global_step OF
 		
 		0:	// caka kym spravi uvodne odmeranie referencii....v controlleri ak je krok 4, vtedy prechadza global_step = 1
-			
+			(*
 			automatika.y_desired[0]	:= 0;
 			automatika.y_desired[1]	:= 0;
 			automatika.y_desired[2]	:= 0;
@@ -25,10 +25,10 @@ PROGRAM _CYCLIC
 			automatika.x_desired[4]	:= 0;
 			automatika.x_desired[5]	:= 0;
 			automatika.x_desired[6]	:= 0;
-			
+			*)
 			automatika.linear		:= 23;
 			FOR i:=0 TO 6 BY 1 DO
-				automatika.I_konstanta[i]	:= 20;
+				automatika.I_konstanta[i]	:= 5;
 			END_FOR
 			automatika.automatic	:= FALSE;
 			(*
@@ -49,14 +49,17 @@ PROGRAM _CYCLIC
 				automatika.effector		:= FALSE;
 			//	global_step_udp			:= 0;
 				global_step				:= 1;
+				automatika.automatic	:= FALSE;
+				I_ON					:= FALSE;
 			END_IF
 			FOR i:=0 TO 6 BY 1 DO
-				automatika.I_konstanta[i]	:= 20;
+				automatika.I_konstanta[i]	:= 5;
 			END_FOR
 			
 		1:	
 			automatika.cas			:= 1000;
 			automatika.casovac		:= TRUE;
+			I_ON					:= TRUE;
 			global_step				:= 100;
 			
 		100:
@@ -68,7 +71,6 @@ PROGRAM _CYCLIC
 					automatika.cas			:= 1000;
 					automatika.casovac		:= TRUE;
 					global_step				:= 2;
-					automatika.automatic	:= FALSE;
 				END_IF
 			END_IF
 			
@@ -143,7 +145,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		555:
-			automatika.cas						:= 3000;
+			automatika.cas						:= 1500;
 			automatika.casovac					:= TRUE;
 			global_step							:= 5;
 			
@@ -408,7 +410,7 @@ PROGRAM _CYCLIC
 			global_step						:= 12224;
 			
 		12224:
-			automatika.popcorn				:= TRUE;
+			
 			// nulova poloha
 			automatika.y_desired[0]	:= (automatika.y_desired_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
 			automatika.y_desired[1]	:= (automatika.y_desired_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));	
@@ -439,6 +441,7 @@ PROGRAM _CYCLIC
 				automatika.y_desired_previous[i]:= automatika.y_desired[i];
 			END_FOR
 			automatika.casovac				:= TRUE;
+			automatika.popcorn				:= TRUE;
 			global_step						:= 12226;
 			
 		12226:
@@ -562,22 +565,35 @@ PROGRAM _CYCLIC
 			
 		18:
 			IF global_step_udp = 4 THEN
-			//	automatika.cas				:= 4000;
+				
 				automatika.automatic		:= FALSE;
 				automatika.holdPosition		:= FALSE;
-				FOR i:=0 TO 6 BY 1 DO
-				//	automatika.x_desired_previous[i]	:= REAL_TO_INT(packetPos.qDesired[i*2]); //automatika.x_desired[i];
-				//	automatika.y_desired_previous[i]	:= REAL_TO_INT(-packetPos.qDesired[i*2+1]); //automatika.y_desired[i];
-					automatika.y_desired[i]				:= 1;
-					automatika.x_desired[i]				:= 1;
-					automatika.I_konstanta[i]			:= 30;
-				END_FOR
-			//	automatika.casovac			:= TRUE;
-			//	global_step					:= 999;//19
+				I_ON						:= FALSE;
+				global_step					:= 19;//19
 			END_IF
 			
 		19:
-			(*
+			
+			
+			FOR i:=0 TO 6 BY 1 DO
+				automatika.x_desired_previous[i]	:= REAL_TO_INT(packetPos.qDesired[i*2]); //automatika.x_desired[i];
+				automatika.y_desired_previous[i]	:= REAL_TO_INT(-packetPos.qDesired[i*2+1]); //automatika.y_desired[i];
+				automatika.x_desired[i]				:= 0;
+				automatika.y_desired[i]				:= 0;
+				packetPos.qDesired[i*2]				:= 0;
+				packetPos.qDesired[i*2+1]			:= 0;
+				automatika.I_konstanta[i]			:= 5;
+			END_FOR
+			
+			global_step				:= 20;
+		20:
+			I_ON					:= TRUE;
+			automatika.cas			:= 5000;
+			automatika.casovac		:= TRUE;
+			global_step				:= 21;
+		21:
+			
+			
 			automatika.y_desired[0]	:= 0;
 			automatika.y_desired[1]	:= 0;	// 5000ms
 			automatika.y_desired[2]	:= 0;
@@ -593,17 +609,39 @@ PROGRAM _CYCLIC
 			automatika.x_desired[4]	:= 0;
 			automatika.x_desired[5]	:= 0;
 			automatika.x_desired[6]	:= 0;
+			(*
+			automatika.y_desired[0]	:= (automatika.y_desired_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			automatika.y_desired[1]	:= (automatika.y_desired_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			automatika.y_desired[2]	:= (automatika.y_desired_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			automatika.y_desired[3]	:= (automatika.y_desired_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			automatika.y_desired[4]	:= (automatika.y_desired_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			automatika.y_desired[5]	:= (automatika.y_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			automatika.y_desired[6]	:= (automatika.y_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[0]))/((automatika.cas));
+			
+			automatika.x_desired[0]	:= (automatika.x_desired_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
+			automatika.x_desired[1]	:= (automatika.x_desired_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
+			automatika.x_desired[2]	:= (automatika.x_desired_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
+			automatika.x_desired[3]	:= (automatika.x_desired_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
+			automatika.x_desired[4]	:= (automatika.x_desired_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
+			automatika.x_desired[5]	:= (automatika.x_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
+			automatika.x_desired[6]	:= (automatika.x_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(REAL_TO_INT(packetPos.qDesired[1]))/((automatika.cas));
 			*)
+			automatika.linear		:= 23;
+			
+			IF TON_0.Q = TRUE THEN
+				automatika.casovac	:= FALSE;
+				global_step			:= 999;
+			END_IF
+			
+			(*
 			FOR i:=0 TO 6 BY 1 DO
-			//	modul.tlak1[i] 				:= 0;
-			//	modul.tlak2[i]				:= 0;
-			//	modul.tlak3[i] 				:= 0;
 				packetPos.qDesired[i*2]		:= 0;
 				packetPos.qDesired[i*2+1]	:= 0;
 				automatika.y_desired[i]		:= 0;
 				automatika.x_desired[i]		:= 0;
 			END_FOR
-			automatika.linear		:= 23;
+		*)
+			
 			
 		//	IF TON_0.Q = TRUE THEN
 		//		automatika.casovac		:= FALSE;
@@ -612,7 +650,7 @@ PROGRAM _CYCLIC
 			
 		//	global_step						:= 20;
 			
-		20:
+		22:
 			
 			
 			(*

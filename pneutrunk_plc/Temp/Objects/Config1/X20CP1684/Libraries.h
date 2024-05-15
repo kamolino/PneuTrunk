@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _LIBRARIES_20240514192501_
-#define _LIBRARIES_20240514192501_
+#ifndef _LIBRARIES_20240515125543_
+#define _LIBRARIES_20240515125543_
 
 __asm__(".section \".plc\"");
 
@@ -678,5 +678,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/regulatory/regulatory.var\\\" sc
 __asm__(".previous");
 
 
-#endif /* _LIBRARIES_20240514192501_ */
+#endif /* _LIBRARIES_20240515125543_ */
 
