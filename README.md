@@ -1,5 +1,7 @@
 # PneuTrunk
 
+= Install =
+===========
 pip3 install mediapipe
 
 pip3 install tensorflow
