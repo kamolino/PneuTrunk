@@ -20,7 +20,7 @@
     <Task Name="Identifika" Source="Source.Identifikacia.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="meranie" Source="meranie.prg" Memory="UserROM" Language="ANSIC" AdditionalIncludeDirectories="\Logical\MATLAB_includes\R2022b\" BuildOptions="-lm -DMODEL=pneutrunkMeranie -DNUMST=1 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -DEXT_MODE -DEXTMODE_STATIC -DEXTMODE_STATIC_SIZE=1000000 -DON_TARGET_WAIT_FOR_START=0 -DCLASSIC_INTERFACE=1 -DALLOCATIONFCN=0 -DTID01EQ=0 -DMAT_FILE=0 -DONESTEPFCN=0 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 " Debugging="false" Disabled="true" />
     <Task Name="Testing" Source="Source.Testing.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="Program" Source="Source.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="Program" Source="Source.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Controller" Source="Source.Controller.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
