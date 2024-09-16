@@ -38,8 +38,12 @@ TYPE
 		I_konstanta : ARRAY[0..6]OF INT;
 		levitacia : BOOL;
 		rigidMotion : BOOL;
+		desiredPressure2_previous : ARRAY[0..6]OF INT;
 		desiredPressure2 : ARRAY[0..6]OF INT;
+		desiredPressure3_previous : ARRAY[0..6]OF INT;
 		desiredPressure3 : ARRAY[0..6]OF INT;
+		desiredPressure1_previous : ARRAY[0..6]OF INT;
+		desiredPressureLinear : INT;
 		desiredPressure1 : ARRAY[0..6]OF INT;
 	END_STRUCT;
 	podavac : 	STRUCT 

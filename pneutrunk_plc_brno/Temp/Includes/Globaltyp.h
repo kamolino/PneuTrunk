@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1726142613_1_
-#define _BUR_1726142613_1_
+#ifndef _BUR_1726484254_1_
+#define _BUR_1726484254_1_
 
 #include <bur/plctypes.h>
 
@@ -46,8 +46,12 @@ typedef struct automatic
 	signed short I_konstanta[7];
 	plcbit levitacia;
 	plcbit rigidMotion;
+	signed short desiredPressure2_previous[7];
 	signed short desiredPressure2[7];
+	signed short desiredPressure3_previous[7];
 	signed short desiredPressure3[7];
+	signed short desiredPressure1_previous[7];
+	signed short desiredPressureLinear;
 	signed short desiredPressure1[7];
 } automatic;
 
@@ -146,5 +150,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1726142613_1_ */
+#endif /* _BUR_1726484254_1_ */
 

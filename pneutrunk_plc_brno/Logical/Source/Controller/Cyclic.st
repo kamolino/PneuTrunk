@@ -8,7 +8,6 @@ PROGRAM _CYCLIC
 		buttons.stropBielaLED	:= FALSE;
 	END_IF
 	
-	
 	CASE step OF
 		
 		0:  // Detekcia referencnej polohy
@@ -275,7 +274,8 @@ PROGRAM _CYCLIC
 					END_FOR
 
 					//lin_modul
-					modul.tlakLinear:= REAL_TO_INT(lin_pressure*32767/9);
+					//modul.tlakLinear:= REAL_TO_INT(lin_pressure*32767/9);
+					modul.tlakLinear	:= automatika.desiredPressureLinear;
 					
 				END_IF
 				

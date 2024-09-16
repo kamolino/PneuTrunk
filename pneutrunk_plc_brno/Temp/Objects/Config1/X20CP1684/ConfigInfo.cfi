@@ -140,7 +140,7 @@
     </Task>
     <Task
       Name="Program"
-      Disable="false"
+      Disable="true"
       Source="Source.Program"
       Language="IEC">
       <InternalFile
