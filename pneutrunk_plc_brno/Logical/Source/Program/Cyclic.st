@@ -782,33 +782,34 @@ PROGRAM _CYCLIC
 			automatika.x_desired[5]	:= (automatika.x_desired_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
 			automatika.x_desired[6]	:= (automatika.x_desired_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(1)/((automatika.cas));
 			*)
-			automatika.desiredPressure1[0]:= (automatika.desiredPressure1_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure1[1]:= (automatika.desiredPressure1_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure1[2]:= (automatika.desiredPressure1_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure1[3]:= (automatika.desiredPressure1_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure1[4]:= (automatika.desiredPressure1_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure1[5]:= (automatika.desiredPressure1_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure1[6]:= (automatika.desiredPressure1_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[0]:= (automatika.desiredPressure1_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[1]:= (automatika.desiredPressure1_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[2]:= (automatika.desiredPressure1_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[3]:= (automatika.desiredPressure1_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[4]:= (automatika.desiredPressure1_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[5]:= (automatika.desiredPressure1_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[6]:= (automatika.desiredPressure1_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
 				
-			automatika.desiredPressure2[0]:= (automatika.desiredPressure2_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure2[1]:= (automatika.desiredPressure2_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure2[2]:= (automatika.desiredPressure2_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure2[3]:= (automatika.desiredPressure2_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure2[4]:= (automatika.desiredPressure2_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure2[5]:= (automatika.desiredPressure2_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure2[6]:= (automatika.desiredPressure2_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[0]:= (automatika.desiredPressure2_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[1]:= (automatika.desiredPressure2_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[2]:= (automatika.desiredPressure2_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[3]:= (automatika.desiredPressure2_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[4]:= (automatika.desiredPressure2_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[5]:= (automatika.desiredPressure2_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[6]:= (automatika.desiredPressure2_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
 				
-			automatika.desiredPressure3[0]:= (automatika.desiredPressure3_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure3[1]:= (automatika.desiredPressure3_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure3[2]:= (automatika.desiredPressure3_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure3[3]:= (automatika.desiredPressure3_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure3[4]:= (automatika.desiredPressure3_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure3[5]:= (automatika.desiredPressure3_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
-			automatika.desiredPressure3[6]:= (automatika.desiredPressure3_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[0]:= (automatika.desiredPressure3_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[1]:= (automatika.desiredPressure3_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[2]:= (automatika.desiredPressure3_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[3]:= (automatika.desiredPressure3_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[4]:= (automatika.desiredPressure3_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[5]:= (automatika.desiredPressure3_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[6]:= (automatika.desiredPressure3_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(0*32767/9)/(automatika.cas);
 			
 			IF TON_0.Q = TRUE THEN
 				automatika.casovac			:= FALSE;
 				automatika.automatic		:= TRUE;
+				automatika.rigidMotion		:= TRUE;
 				global_step					:= 15;//12227
 			END_IF
 			
@@ -865,6 +866,7 @@ PROGRAM _CYCLIC
 				END_FOR 
 				automatika.automatic			:= TRUE;
 				automatika.holdPosition			:= FALSE;
+				automatika.rigidMotion			:= TRUE;
 				global_step						:= 15;
 				automatika.popcorn				:= FALSE;
 			END_IF	
@@ -948,6 +950,7 @@ PROGRAM _CYCLIC
 			automatika.x_desired[5]	:= 0;
 			automatika.x_desired[6]	:= 0;
 			*)
+			(*
 			automatika.desiredPressure1[0]:= 0;
 			automatika.desiredPressure1[1]:= 0;
 			automatika.desiredPressure1[2]:= 0;
@@ -971,7 +974,30 @@ PROGRAM _CYCLIC
 			automatika.desiredPressure3[4]:= 0;
 			automatika.desiredPressure3[5]:= 0;
 			automatika.desiredPressure3[6]:= 0;
-			
+			*)
+			automatika.desiredPressure1[0]:= (automatika.desiredPressure1_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[1]:= (automatika.desiredPressure1_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[2]:= (automatika.desiredPressure1_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[3]:= (automatika.desiredPressure1_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[4]:= (automatika.desiredPressure1_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[5]:= (automatika.desiredPressure1_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure1[6]:= (automatika.desiredPressure1_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+				
+			automatika.desiredPressure2[0]:= (automatika.desiredPressure2_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[1]:= (automatika.desiredPressure2_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[2]:= (automatika.desiredPressure2_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[3]:= (automatika.desiredPressure2_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[4]:= (automatika.desiredPressure2_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[5]:= (automatika.desiredPressure2_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure2[6]:= (automatika.desiredPressure2_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+				
+			automatika.desiredPressure3[0]:= (automatika.desiredPressure3_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[1]:= (automatika.desiredPressure3_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[2]:= (automatika.desiredPressure3_previous[2]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[3]:= (automatika.desiredPressure3_previous[3]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[4]:= (automatika.desiredPressure3_previous[4]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[5]:= (automatika.desiredPressure3_previous[5]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
+			automatika.desiredPressure3[6]:= (automatika.desiredPressure3_previous[6]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(2*32767/9)/(automatika.cas);
 			
 			
 			(*
@@ -997,6 +1023,7 @@ PROGRAM _CYCLIC
 			IF TON_0.Q = TRUE THEN
 				automatika.casovac	:= FALSE;
 				global_step			:= 999;
+				automatika.rigidMotion	:= FALSE;
 			END_IF
 			
 			(*
