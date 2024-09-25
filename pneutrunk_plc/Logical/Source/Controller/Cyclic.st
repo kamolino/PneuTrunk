@@ -1,7 +1,14 @@
 PROGRAM _CYCLIC
 	
-	TON_0(IN := kalibraciaStart, PT := T#3s0ms);
+	TON_0(IN := kalibraciaStart, PT := T#5s0ms);
 		
+	IF buttons.klucik = FALSE THEN
+		global_step		:= 0;
+		step 			:= 7;
+		buttons.stropBielaLED	:= FALSE;
+	END_IF
+	
+	
 	CASE step OF
 		
 		0:  // Detekcia referencnej polohy
@@ -35,9 +42,9 @@ PROGRAM _CYCLIC
 					switch 						:= TRUE;
 					kalibraciaStart 			:= TRUE;
 					FOR id:=0 TO 6 BY 1 DO
-						modul.tlak1[id]			:= REAL_TO_INT(3*32767/9);
-						modul.tlak2[id]			:= REAL_TO_INT(3*32767/9);
-						modul.tlak3[id]			:= REAL_TO_INT(3*32767/9);
+						modul.tlak1[id]			:= REAL_TO_INT(4*32767/9);
+						modul.tlak2[id]			:= REAL_TO_INT(4*32767/9);
+						modul.tlak3[id]			:= REAL_TO_INT(4*32767/9);
 					END_FOR
 				END_IF
 				
@@ -48,7 +55,7 @@ PROGRAM _CYCLIC
 				END_IF	
 			END_IF
 			global_step				:= 0;
-			
+			buttons.stropBielaLED	:= TRUE;
 		1:	// Vypustenie vzduchu zo vsetkych mechov, zapnutie I-regulatora 
 			(*
 			FOR id:=0 TO 6 BY 1 DO
@@ -60,6 +67,7 @@ PROGRAM _CYCLIC
 			//I_ON					:= TRUE;
 			switch2 				:= FALSE;
 			kalibraciaStart			:= TRUE;
+			
 			step					:= 2;
 		
 		2:	// cakaj
@@ -69,6 +77,11 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		3:
+			FOR id:=0 TO 6 BY 1 DO
+				modull.nula_x[id]:= 0;
+				modull.nula_y[id]:= 0;
+			END_FOR
+			
 			FOR id:=0 TO 6 BY 1 DO
 				modull.nula_x[id]:= modul.uhol1[id];
 				modull.nula_y[id]:= modul.uhol2[id];
@@ -400,7 +413,20 @@ PROGRAM _CYCLIC
 			modull.pozadovanyLinear	:= 23;
 			zasobnik.ball			:= FALSE;
 			zasobnik.ball_piston	:= FALSE;
-			step					:= 0;
+			IF buttons.klucik = FALSE THEN
+				step				:= 8;
+				global_step			:= 0;
+			ELSE
+				step				:= 0;
+			END_IF
+		8:
+			IF buttons.klucik = TRUE THEN
+				step				:= 0;
+				global_step			:= 0;
+			ELSE
+				buttons.stropBielaLED	:= FALSE;
+			END_IF
+		
 	END_CASE
 	
 	IF I_ON= TRUE THEN

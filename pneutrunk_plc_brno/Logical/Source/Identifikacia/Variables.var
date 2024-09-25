@@ -1,6 +1,0 @@
-VAR
-	cMod : INT;
-	i : INT;
-	TON_0 : TON;
-	TON_1 : TON;
-END_VAR

@@ -31,7 +31,10 @@ PROGRAM _INIT
 	I_konstanta_ID6:=30;
 	I_konstanta_ID7:=30;
 	
-	buttons.stropBielaLED	:= TRUE;
+	IF buttons.klucik = TRUE THEN
+		buttons.stropBielaLED	:= TRUE;
+	END_IF
+	
 	buttons.stropCervenaLED	:= FALSE;
 	
 END_PROGRAM

@@ -33,4 +33,5 @@ VAR_CONFIG
 	::buttons.startButton AT %IX."X20DM9324".DigitalInput01;
 	::buttons.stop AT %IX."X20DM9324".DigitalInput02;
 	::buttons.centralStop AT %IX."X20DM9324".DigitalInput04;
+	::buttons.klucik AT %IX."X20DM9324".DigitalInput03;
 END_VAR

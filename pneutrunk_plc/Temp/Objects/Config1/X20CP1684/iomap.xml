@@ -1234,6 +1234,7 @@
 </LN>
 <LN ID="%IX.IF6.ST3.DigitalInput03" Type="BOOL">
 <Prod Device="IF6.ST3" DPName="DigitalInput03" Kind="io"/>
+<Cons Device="TC#4-CPYDEV" DPName="::buttons.klucik" Kind="pv"/>
 </LN>
 <LN ID="%IX.IF6.ST3.DigitalInput04" Type="BOOL">
 <Prod Device="IF6.ST3" DPName="DigitalInput04" Kind="io"/>

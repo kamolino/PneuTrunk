@@ -10,6 +10,7 @@ TYPE
 		centralStop : BOOL;
 		stropBielaLED : BOOL;
 		stropCervenaLED : BOOL;
+		klucik : BOOL;
 	END_STRUCT;
 	automatic : 	STRUCT 
 		y_desired : ARRAY[0..6]OF INT := [7(0)];

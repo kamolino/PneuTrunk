@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1715619838_1_
-#define _BUR_1715619838_1_
+#ifndef _BUR_1726139130_1_
+#define _BUR_1726139130_1_
 
 #include <bur/plctypes.h>
 
@@ -17,6 +17,7 @@ typedef struct tlacidla
 	plcbit centralStop;
 	plcbit stropBielaLED;
 	plcbit stropCervenaLED;
+	plcbit klucik;
 } tlacidla;
 
 typedef struct automatic
@@ -141,5 +142,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1715619838_1_ */
+#endif /* _BUR_1726139130_1_ */
 
