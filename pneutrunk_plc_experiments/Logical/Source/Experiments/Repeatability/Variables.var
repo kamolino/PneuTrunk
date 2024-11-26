@@ -1,0 +1,8 @@
+VAR
+	casovac_start : BOOL;
+	step_repeatability : USINT;
+	TON_0 : TON;
+	i : INT;
+	TON_1 : TON;
+	pauza : BOOL;
+END_VAR
