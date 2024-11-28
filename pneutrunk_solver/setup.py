@@ -22,7 +22,8 @@ setup(
         'console_scripts': [
             "ik_solver = pneutrunk_solver.ik_solver:main",
             "plc_message = pneutrunk_solver.plc_message:main",
-            "desired_position = pneutrunk_solver.desired_position:main"
+            "desired_position = pneutrunk_solver.desired_position:main",
+            "experiment_camera_ready = pneutrunk_solver.experiment_camera_ready:main"
         ],
     },
 )
