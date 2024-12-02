@@ -14,7 +14,7 @@ class DesiredPosition(Node):
     def __init__(self):
         super().__init__("desired_position")
         self.publisher_ = self.create_publisher(Pose, '/pneutrunk/desired_position/cmd',10)
-        self.subscriber_ = self.create_subscription(PoseStamped, '/Robot_1/pose', self.optitrack_position, 10)
+        self.subscriber_ = self.create_subscription(PoseStamped, '/Robot_2/pose', self.optitrack_position, 10)
         #self.subscriber2_ = self.create_subscription(PneutrunkJointState, "/pneutrunk/joints/state", self.is_in_workspace, 10)
         self.timer_ = self.create_timer(0.01, self.position)
         self.get_logger().info("Desired position...")
@@ -30,9 +30,9 @@ class DesiredPosition(Node):
 
     def position(self):
         msg_object = Pose()
-        msg_object.position.x = 300.0#-(self.end_effector[0]) + 700
-        msg_object.position.y = 600.0#-(self.end_effector[1]) + 550
-        msg_object.position.z = -530.0#-(self.end_effector[2])
+        msg_object.position.x = -(self.end_effector[0]) + 700 #300.0
+        msg_object.position.y = -(self.end_effector[1]) + 550 #600.0
+        msg_object.position.z = -(self.end_effector[2]) #-530.0
         self.publisher_.publish(msg_object)
 
 def main(args=None):
