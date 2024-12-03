@@ -5,7 +5,7 @@
     Name="Cyclic#1">
     <Task
       Name="Client"
-      Disable="true"
+      Disable="false"
       Source="Source.UDP.Client"
       Language="IEC">
       <InternalFile
@@ -33,7 +33,7 @@
     </Task>
     <Task
       Name="Server"
-      Disable="true"
+      Disable="false"
       Source="Source.UDP.Server"
       Language="IEC">
       <InternalFile

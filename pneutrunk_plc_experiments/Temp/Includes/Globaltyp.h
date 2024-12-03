@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1732607249_1_
-#define _BUR_1732607249_1_
+#ifndef _BUR_1732785729_1_
+#define _BUR_1732785729_1_
 
 #include <bur/plctypes.h>
 
@@ -53,6 +53,7 @@ typedef struct automatic
 	signed short desiredPressureLinear;
 	signed short desiredPressure1[7];
 	plcbit repeatability;
+	signed short step_repeatability;
 } automatic;
 
 typedef struct podavac
@@ -150,5 +151,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1732607249_1_ */
+#endif /* _BUR_1732785729_1_ */
 

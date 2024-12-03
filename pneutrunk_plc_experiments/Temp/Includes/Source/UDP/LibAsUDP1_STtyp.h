@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1732191031_4_
-#define _BUR_1732191031_4_
+#ifndef _BUR_1732785655_4_
+#define _BUR_1732785655_4_
 
 #include <bur/plctypes.h>
 
@@ -27,5 +27,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Source/UDP/LibAsUDP1_ST.typ\\\" scope \\\"
 __asm__(".previous");
 
 
-#endif /* _BUR_1732191031_4_ */
+#endif /* _BUR_1732785655_4_ */
 

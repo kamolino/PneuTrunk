@@ -1,38 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BuildReasons>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\cyclic.st.o">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\source\experiments\repeatability\cyclic.st" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\client.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\source\udp\client\client.st" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\init.st.o">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\source\experiments\repeatability\variables.var" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\_bur_pvdef.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\client.st.o" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\exit.st.o">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\source\experiments\repeatability\variables.var" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\a.out">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\client.st.o" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\_bur_pvdef.st.o">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\cyclic.st.o" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\client.ox">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\a.out" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\a.out">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\cyclic.st.o" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\repeatabil.ox">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\a.out" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil.br">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil\repeatabil.ox" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client.br">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client\client.ox" differs.
 </BuildReason>
   </Rule>
   <Rule ID="#cpu_tp.mak">
     <BuildReason>Rule is forced.</BuildReason>
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\binaries\config1\x20cp1684\transfer.lst">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\repeatabil.br" differs.
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1684\client.br" differs.
 </BuildReason>
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\binaries\config1\x20cp1684\rucpackage\rucpackage.zip">

@@ -1,16 +1,17 @@
 PROGRAM _CYCLIC
 	
 	TON_0(IN := casovac_start, PT := INT_TO_TIME(automatika.cas));
-	TON_1(IN := pauza, PT := T#3s0ms);
+	TON_1(IN := pauza, PT := T#10s0ms);
+	TON_2(IN := kameraBool, PT := T#1s0ms);
 	
 	IF step = 4 THEN
 		
-		CASE step_repeatability OF 
+		CASE automatika.step_repeatability OF 
 			0:
-				casovac_start				:= TRUE;
-				step_repeatability			:= 1;
-				automatika.repeatability	:= TRUE;
-				automatika.cas				:= 5000;
+				casovac_start					:= TRUE;
+				automatika.step_repeatability	:= 1;
+				automatika.repeatability		:= TRUE;
+				automatika.cas					:= 5000;
 				
 			1:	// Point A
 				automatika.desiredPressure1[0]:= TIME_TO_INT(TON_0.ET)*1669/((automatika.cas));
@@ -40,8 +41,8 @@ PROGRAM _CYCLIC
 				automatika.desiredPressureLinear := TIME_TO_INT(TON_0.ET)*10800/((automatika.cas));
 			
 				IF TON_0.Q = TRUE THEN
-					casovac_start		:= FALSE;
-					step_repeatability	:= 2;
+					casovac_start					:= FALSE;
+					automatika.step_repeatability	:= 2;
 					FOR i:=0 TO 6 BY 1 DO
 						automatika.desiredPressure1_previous[i]		:= automatika.desiredPressure1[i];
 						automatika.desiredPressure2_previous[i]		:= automatika.desiredPressure2[i];
@@ -50,14 +51,20 @@ PROGRAM _CYCLIC
 				END_IF
 				
 			2:	// Pause 
-				pauza					:= TRUE;
-				step_repeatability		:= 3;
+				pauza								:= TRUE;
+				automatika.step_repeatability		:= 3;
 			3:
 				IF TON_1.Q = TRUE THEN
-					pauza				:= FALSE;
-					step_repeatability	:= 4;
-					casovac_start		:= TRUE;
+					pauza							:= FALSE;
+					automatika.step_repeatability	:= 44;
+					casovac_start					:= TRUE;
+					kameraBool						:= TRUE;
 				END_IF				
+			44:
+				IF TON_2.Q = TRUE THEN
+					kameraBool						:= FALSE;
+					automatika.step_repeatability	:= 4;
+				END_IF
 			
 			4:	// Point B
 				automatika.desiredPressure1[0]:= (automatika.desiredPressure1_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(5403)/(automatika.cas);
@@ -87,8 +94,8 @@ PROGRAM _CYCLIC
 				automatika.desiredPressureLinear := TIME_TO_INT(TON_0.ET)*10800/((automatika.cas));
 				
 				IF TON_0.Q = TRUE THEN
-					casovac_start		:= FALSE;
-					step_repeatability	:= 5;
+					casovac_start					:= FALSE;
+					automatika.step_repeatability	:= 5;
 					FOR i:=0 TO 6 BY 1 DO
 						automatika.desiredPressure1_previous[i]	:= automatika.desiredPressure1[i];
 						automatika.desiredPressure2_previous[i]	:= automatika.desiredPressure2[i];
@@ -96,15 +103,21 @@ PROGRAM _CYCLIC
 					END_FOR
 				END_IF
 			5:	// Pause
-				pauza					:= TRUE;
-				step_repeatability		:= 6;
+				pauza								:= TRUE;
+				automatika.step_repeatability		:= 6;
 			6:
 				IF TON_1.Q = TRUE THEN
-					pauza				:= FALSE;
-					step_repeatability	:= 7;
-					casovac_start		:= TRUE;
+					pauza							:= FALSE;
+					automatika.step_repeatability	:= 77;
+					casovac_start					:= TRUE;
+					kameraBool						:= TRUE;
 				END_IF
-				
+			77: 
+				IF TON_2.Q = TRUE THEN
+					kameraBool						:= FALSE;
+					automatika.step_repeatability	:= 7;
+				END_IF
+			
 			7:	// Point A
 				automatika.desiredPressure1[0]:= (automatika.desiredPressure1_previous[0]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(1669)/(automatika.cas);
 				automatika.desiredPressure1[1]:= (automatika.desiredPressure1_previous[1]*(automatika.cas - TIME_TO_INT(TON_0.ET))/automatika.cas) + TIME_TO_INT(TON_0.ET)*(3013)/(automatika.cas);
@@ -133,8 +146,8 @@ PROGRAM _CYCLIC
 				automatika.desiredPressureLinear := TIME_TO_INT(TON_0.ET)*10800/((automatika.cas));
 			
 				IF TON_0.Q = TRUE THEN
-					casovac_start		:= FALSE;
-					step_repeatability	:= 8;
+					casovac_start					:= FALSE;
+					automatika.step_repeatability	:= 8;
 					FOR i:=0 TO 6 BY 1 DO
 						automatika.desiredPressure1_previous[i]	:= automatika.desiredPressure1[i];
 						automatika.desiredPressure2_previous[i]	:= automatika.desiredPressure2[i];
@@ -142,13 +155,19 @@ PROGRAM _CYCLIC
 					END_FOR
 				END_IF
 			8:	// Pause
-				pauza					:= TRUE;
-				step_repeatability		:= 9;
+				pauza								:= TRUE;
+				automatika.step_repeatability		:= 9;
 			9:
 				IF TON_1.Q = TRUE THEN
-					pauza				:= FALSE;
-					step_repeatability	:= 4;
-					casovac_start		:= TRUE;
+					pauza							:= FALSE;
+					automatika.step_repeatability	:= 99;
+					casovac_start					:= TRUE;
+					kameraBool						:= TRUE;
+				END_IF
+			99:
+				IF TON_2.Q = TRUE THEN
+					kameraBool						:= FALSE;
+					automatika.step_repeatability	:= 4;
 				END_IF
 			
 		END_CASE			

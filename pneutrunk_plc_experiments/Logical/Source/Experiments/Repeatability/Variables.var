@@ -1,8 +1,9 @@
 VAR
 	casovac_start : BOOL;
-	step_repeatability : USINT;
 	TON_0 : TON;
 	i : INT;
 	TON_1 : TON;
 	pauza : BOOL;
+	TON_2 : TON;
+	kameraBool : BOOL;
 END_VAR

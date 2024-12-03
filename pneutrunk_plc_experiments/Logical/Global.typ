@@ -45,6 +45,7 @@ TYPE
 		desiredPressureLinear : INT;
 		desiredPressure1 : ARRAY[0..6]OF INT;
 		repeatability : BOOL;
+		step_repeatability : INT;
 	END_STRUCT;
 	podavac : 	STRUCT 
 		levitovanie : BOOL;

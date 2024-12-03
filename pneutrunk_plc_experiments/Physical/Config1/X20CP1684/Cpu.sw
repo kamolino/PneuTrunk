@@ -2,9 +2,9 @@
 <?AutomationStudio FileVersion="4.9"?>
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
-    <Task Name="Client" Source="Source.UDP.Client.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="Client" Source="Source.UDP.Client.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Narazy" Source="Source.Narazy.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="Server" Source="Source.UDP.Server.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="Server" Source="Source.UDP.Server.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Receiver" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <Task Name="Sender" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>

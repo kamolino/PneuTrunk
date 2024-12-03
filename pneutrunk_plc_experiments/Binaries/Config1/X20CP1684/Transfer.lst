@@ -9,14 +9,16 @@
   <Operation Delete="Receiver1.br"/>
   <Operation Delete="solo_reg.br"/>
   <Operation Delete="test_input.br"/>
+  <Operation Delete="Server.br"/>
+  <Operation Delete="Client.br"/>
   <Operation Delete="regulatory.br"/>
-  <Operation Delete="AsUDP.br"/>
   <Operation Delete="dvframe.br"/>
-  <Operation Delete="asieccon.br"/>
   <Operation Delete="AsTCP.br"/>
   <Operation Delete="AsArLog.br"/>
   <Operation Delete="sys_lib.br"/>
   <Operation Delete="brsystem.br"/>
+  <Operation Delete="AsUDP.br"/>
+  <Operation Delete="asieccon.br"/>
   <Operation Delete="astime.br"/>
   <Operation Download="ashwd.br" Memory="SystemROM"/>
   <Operation Download="asfw.br" Memory="SystemROM"/>
@@ -34,14 +36,16 @@
   <Operation Download="asstring.br" Memory="UserROM"/>
   <Operation Download="standard.br" Memory="UserROM"/>
   <Operation Download="astime.br" Memory="UserROM"/>
+  <Operation Download="asieccon.br" Memory="UserROM"/>
+  <Operation Download="AsUDP.br" Memory="UserROM"/>
   <Operation Download="brsystem.br" Memory="UserROM"/>
   <Operation Download="sys_lib.br" Memory="UserROM"/>
   <Operation Download="AsArLog.br" Memory="UserROM"/>
   <Operation Download="AsTCP.br" Memory="UserROM"/>
-  <Operation Download="asieccon.br" Memory="UserROM"/>
   <Operation Download="dvframe.br" Memory="UserROM"/>
-  <Operation Download="AsUDP.br" Memory="UserROM"/>
   <Operation Download="regulatory.br" Memory="UserROM"/>
+  <Operation Download="Client.br" Memory="UserROM"/>
+  <Operation Download="Server.br" Memory="UserROM"/>
   <Operation Download="test_input.br" Memory="UserROM"/>
   <Operation Download="solo_reg.br" Memory="UserROM"/>
   <Operation Download="Receiver1.br" Memory="UserROM"/>
