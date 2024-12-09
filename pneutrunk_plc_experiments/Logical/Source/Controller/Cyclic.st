@@ -131,7 +131,7 @@ PROGRAM _CYCLIC
 			zasobnik.ball_piston	:= automatika.ball_piston;
 			zasobnik.ball_piston_sjf:= automatika.popcorn;
 			zasobnik.levitovanie	:= automatika.levitacia;
-			modull.efektor			:= automatika.effector;
+			//modull.efektor			:= automatika.effector;
 			I_konstanta_ID1			:= automatika.I_konstanta[0];
 			I_konstanta_ID2			:= automatika.I_konstanta[1];
 			I_konstanta_ID3			:= automatika.I_konstanta[2];
@@ -196,6 +196,8 @@ PROGRAM _CYCLIC
 				ref_alfa_x_ID7:= modull.pozadovany_uhol_x[6];
 				ref_alfa_y_ID7:= modull.pozadovany_uhol_y[6];
 				
+				
+				
 				// Obmedzenie pre linearny posun (ak je hodnota nad 30 regulator sa sprava divne, nechce sa vypnut)
 				IF modull.pozadovanyLinear >30 THEN
 					ref_linearny_posun	:= 30;
@@ -220,6 +222,23 @@ PROGRAM _CYCLIC
 				act_alfa_y_ID6:= modull.real_uhol_y_kalibrovane[5] - modull.nula_y[5];
 				act_alfa_x_ID7:= modull.real_uhol_x_kalibrovane[6] - modull.nula_x[6];
 				act_alfa_y_ID7:= modull.real_uhol_y_kalibrovane[6] - modull.nula_y[6];
+				
+				
+				// Pre experiment 2
+				uhly.ref_alfa_x[0]	:= act_alfa_x_ID1;
+				uhly.ref_alfa_y[0]	:= act_alfa_y_ID1;
+				uhly.ref_alfa_x[1]	:= act_alfa_x_ID2;
+				uhly.ref_alfa_y[1]	:= act_alfa_y_ID2;
+				uhly.ref_alfa_x[2]	:= act_alfa_x_ID3;
+				uhly.ref_alfa_y[2]	:= act_alfa_y_ID3;
+				uhly.ref_alfa_x[3]	:= act_alfa_x_ID4;
+				uhly.ref_alfa_y[3]	:= act_alfa_y_ID4;
+				uhly.ref_alfa_x[4]	:= act_alfa_x_ID5;
+				uhly.ref_alfa_y[4]	:= act_alfa_y_ID5;
+				uhly.ref_alfa_x[5]	:= act_alfa_x_ID6;
+				uhly.ref_alfa_y[5]	:= act_alfa_y_ID6;
+				uhly.ref_alfa_x[6]	:= act_alfa_x_ID7;
+				uhly.ref_alfa_y[6]	:= act_alfa_y_ID7;
 				
 				IF automatika.repeatability = FALSE THEN
 					
@@ -339,7 +358,7 @@ PROGRAM _CYCLIC
 					modull.nula_y[i]			:= 0;
 				END_FOR
 				modul.tlakLinear		:= 0;
-				modull.efektor			:= FALSE;
+			//	modull.efektor			:= FALSE;
 				modull.pozadovanyLinear	:= 23;
 				zasobnik.ball			:= FALSE;
 				zasobnik.ball_piston	:= FALSE;
@@ -424,7 +443,7 @@ PROGRAM _CYCLIC
 				modull.nula_y[i]			:= 0;
 			END_FOR
 			modul.tlakLinear		:= 0;
-			modull.efektor			:= FALSE;
+		//	modull.efektor			:= FALSE;
 			modull.pozadovanyLinear	:= 23;
 			zasobnik.ball			:= FALSE;
 			zasobnik.ball_piston	:= FALSE;

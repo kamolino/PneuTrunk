@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1732785655_2_
-#define _BUR_1732785655_2_
+#ifndef _BUR_1733744374_2_
+#define _BUR_1733744374_2_
 
 #include <bur/plctypes.h>
 
@@ -45,6 +45,7 @@ _GLOBAL signed short step_color;
 _GLOBAL float Green_tab_ID1;
 _GLOBAL float Green_tab_ID2;
 _GLOBAL float Green_tab_ID3;
+_GLOBAL struct experimentyUhly uhly;
 _GLOBAL float Green_tab_ID4;
 _GLOBAL float Green_tab_ID5;
 _GLOBAL plcbit trajectoryStart;
@@ -130,5 +131,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.var\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1732785655_2_ */
+#endif /* _BUR_1733744374_2_ */
 

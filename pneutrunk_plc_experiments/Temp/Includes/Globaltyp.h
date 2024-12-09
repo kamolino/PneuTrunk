@@ -1,12 +1,17 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1732785729_1_
-#define _BUR_1732785729_1_
+#ifndef _BUR_1733746189_1_
+#define _BUR_1733746189_1_
 
 #include <bur/plctypes.h>
 
 /* Datatypes and datatypes of function blocks */
+typedef struct experimentyUhly
+{	float ref_alfa_y[7];
+	float ref_alfa_x[7];
+} experimentyUhly;
+
 typedef struct tlacidla
 {	plcbit start;
 	plcbit ros;
@@ -21,8 +26,8 @@ typedef struct tlacidla
 } tlacidla;
 
 typedef struct automatic
-{	signed short y_desired[7];
-	signed short x_desired[7];
+{	float y_desired[7];
+	float x_desired[7];
 	signed short linear;
 	plcbit ball_up;
 	plcbit casovac;
@@ -151,5 +156,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1732785729_1_ */
+#endif /* _BUR_1733746189_1_ */
 

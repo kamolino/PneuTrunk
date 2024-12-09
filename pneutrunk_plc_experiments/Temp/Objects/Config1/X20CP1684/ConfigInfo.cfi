@@ -156,7 +156,7 @@
     </Task>
     <Task
       Name="Repeatabil"
-      Disable="false"
+      Disable="true"
       Source="Source.Experiments.Repeatability"
       Language="IEC">
       <InternalFile
@@ -170,6 +170,22 @@
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Repeatability\Variables.var" />
     </Task>
+    <Task
+      Name="HandContro"
+      Disable="false"
+      Source="Source.Experiments.HandControl"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\HandContro\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\HandContro\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\HandContro\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\HandControl\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\HandControl\Variables.var" />
+    </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#5">
@@ -182,12 +198,12 @@
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
       <InternalFile
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Controller\Types.typ" />
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Controller\Variables.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Controller\Types.typ" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
     </Task>
   </TaskClass>
   <TaskClass

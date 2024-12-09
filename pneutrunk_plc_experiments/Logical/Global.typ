@@ -1,5 +1,9 @@
 
 TYPE
+	experimentyUhly : 	STRUCT 
+		ref_alfa_y : ARRAY[0..6]OF REAL;
+		ref_alfa_x : ARRAY[0..6]OF REAL;
+	END_STRUCT;
 	tlacidla : 	STRUCT 
 		start : BOOL;
 		ros : BOOL;
@@ -13,8 +17,8 @@ TYPE
 		klucik : BOOL;
 	END_STRUCT;
 	automatic : 	STRUCT 
-		y_desired : ARRAY[0..6]OF INT := [7(0)];
-		x_desired : ARRAY[0..6]OF INT := [7(0)];
+		y_desired : ARRAY[0..6]OF REAL := [7(0.0)];
+		x_desired : ARRAY[0..6]OF REAL := [7(0.0)];
 		linear : INT;
 		ball_up : BOOL;
 		casovac : BOOL;

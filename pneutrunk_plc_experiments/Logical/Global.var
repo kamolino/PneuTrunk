@@ -69,6 +69,7 @@ VAR
 	trajectoryStart : BOOL;
 	Green_tab_ID5 : REAL;
 	Green_tab_ID4 : REAL;
+	uhly : experimentyUhly;
 	Green_tab_ID3 : REAL;
 	Green_tab_ID2 : REAL;
 	Green_tab_ID1 : REAL;
