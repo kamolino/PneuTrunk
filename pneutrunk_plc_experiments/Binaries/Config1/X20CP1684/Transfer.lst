@@ -4,7 +4,7 @@
   <OperatingSystem Version="D4.92"/>
   <Hardware Target="SG4"/>
   <Operation Delete="Controller.br"/>
-  <Operation Delete="HandContro.br"/>
+  <Operation Delete="Continuum.br"/>
   <Operation Delete="Sender1.br"/>
   <Operation Delete="Receiver1.br"/>
   <Operation Delete="solo_reg.br"/>
@@ -50,6 +50,6 @@
   <Operation Download="solo_reg.br" Memory="UserROM"/>
   <Operation Download="Receiver1.br" Memory="UserROM"/>
   <Operation Download="Sender1.br" Memory="UserROM"/>
-  <Operation Download="HandContro.br" Memory="UserROM"/>
+  <Operation Download="Continuum.br" Memory="UserROM"/>
   <Operation Download="Controller.br" Memory="UserROM"/>
 </Transfer>

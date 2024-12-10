@@ -1,43 +1,43 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Controller 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=177 Type=87 Scope=59 Force=31 Index=119 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=177 Type=87 Scope=59 Force=31 Index=0 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                    step                                      INT    0 "                                                               *"    0    3    1   10    0    0         
+                                    step                                      INT    0 "                                                               4"    0    3    1   10    0    0         
                                  buttons                                 tlacidla    0 "                                                               *"    0   24    1    0    0    1         
-                                   start                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                     ros                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                 stopLED                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                    stop                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                startLED                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                             startButton                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                             centralStop                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                           stropBielaLED                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                         stropCervenaLED                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                  klucik                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                             global_step                                      INT    0 "                                                               *"    0    3    1   10    0    0         
+                                   start                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                     ros                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                 stopLED                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                                    stop                                     BOOL    1 "                                                           FALSE"    1    1    1    2    0    0         
+                                startLED                                     BOOL    3 "                                                            TRUE"    1    1    1    2    0    0         
+                             startButton                                     BOOL    1 "                                                           FALSE"    1    1    1    2    0    0         
+                             centralStop                                     BOOL    1 "                                                            TRUE"    1    1    1    2    0    0         
+                           stropBielaLED                                     BOOL    3 "                                                            TRUE"    1    1    1    2    0    0         
+                         stropCervenaLED                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                                  klucik                                     BOOL    1 "                                                            TRUE"    1    1    1    2    0    0         
+                             global_step                                      INT    0 "                                                             999"    0    3    1   10    0    0         
                                 zasobnik                                  podavac    0 "                                                               *"    0   24    1    0    0    1         
-                             levitovanie                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                         ball_piston_sjf                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                    ball                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                             ball_piston                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                  switch                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         
-                                 switch2                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         
+                             levitovanie                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                         ball_piston_sjf                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                                    ball                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                             ball_piston                                     BOOL    3 "                                                           FALSE"    1    1    1    2    0    0         
+                                  switch                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                                 switch2                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                                    modul                                   moduly    0 "                                                               *"    0   24    1    0    0    1         
                                    uhol2                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    1         
-                                uhol2[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[2]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[3]                                     REAL    0 "                                                        -6.09375"    2    8    1   10    0    0         
-                                uhol2[4]                                     REAL    0 "                                                      1.77734375"    2    8    1   10    0    0         
-                                uhol2[5]                                     REAL    0 "                                                     -3.30078125"    2    8    1   10    0    0         
-                                uhol2[6]                                     REAL    0 "                                                      -3.5546875"    2    8    1   10    0    0         
+                                uhol2[0]                                     REAL    0 "                                                      -3.5546875"    2    8    1   10    0    0         
+                                uhol2[1]                                     REAL    0 "                                                       -3.046875"    2    8    1   10    0    0         
+                                uhol2[2]                                     REAL    0 "                                                       -3.046875"    2    8    1   10    0    0         
+                                uhol2[3]                                     REAL    0 "                                                         -4.0625"    2    8    1   10    0    0         
+                                uhol2[4]                                     REAL    0 "                                                     -1.26953125"    2    8    1   10    0    0         
+                                uhol2[5]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                                uhol2[6]                                     REAL    0 "                                                      1.77734375"    2    8    1   10    0    0         
                                    uhol1                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    1         
-                                uhol1[0]                                     REAL    0 "                                                        3.046875"    2    8    1   10    0    0         
-                                uhol1[1]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                                uhol1[0]                                     REAL    0 "                                                      0.76171875"    2    8    1   10    0    0         
+                                uhol1[1]                                     REAL    0 "                                                     -1.77734375"    2    8    1   10    0    0         
                                 uhol1[2]                                     REAL    0 "                                                          -130.0"    2    8    1   10    0    0         
-                                uhol1[3]                                     REAL    0 "                                                      4.31640625"    2    8    1   10    0    0         
-                                uhol1[4]                                     REAL    0 "                                                     -0.76171875"    2    8    1   10    0    0         
-                                uhol1[5]                                     REAL    0 "                                                        3.046875"    2    8    1   10    0    0         
-                                uhol1[6]                                     REAL    0 "                                                        1.015625"    2    8    1   10    0    0         
+                                uhol1[3]                                     REAL    0 "                                                       3.5546875"    2    8    1   10    0    0         
+                                uhol1[4]                                     REAL    0 "                                                      -2.5390625"    2    8    1   10    0    0         
+                                uhol1[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                uhol1[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                   koncak                               BOOL[0..6]    0 "                                                               *"    1    1    7    0    0    0         
                                koncak[0]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                koncak[1]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -54,8 +54,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=177 Type=87 Scope=59 Force=31 In
                                   led[4]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[5]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[6]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                uholINT2                                      INT    0 "                                                             519"    1    3    1   10    0    0         
-                                uholINT1                                      INT    0 "                                                             509"    1    3    1   10    0    0         
+                                uholINT2                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                                uholINT1                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                                    tlak1                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    0         
                                 tlak1[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak1[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
@@ -80,7 +80,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=177 Type=87 Scope=59 Force=31 In
                                 tlak3[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak3[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak3[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                              tlakLinear                                      INT    0 "                                                               0"    1    3    1   10    0    0         
+                              tlakLinear                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                           uhol_XminusRef                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    0         
                        uhol_XminusRef[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_XminusRef[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -97,7 +97,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=177 Type=87 Scope=59 Force=31 In
                        uhol_YminusRef[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_YminusRef[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_YminusRef[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                              linearReal                                     REAL    0 "                                                            23.0"    1    8    1   10    0    0         
+                              linearReal                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
                                    naraz                               BOOL[0..7]    0 "                                                               *"    1    1    8    0    0    0         
                                 naraz[0]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                 naraz[1]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -107,20 +107,20 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=177 Type=87 Scope=59 Force=31 In
                                 naraz[5]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                 naraz[6]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                 naraz[7]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            narazAktivny                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                    I_ON                                     BOOL    0 "                                                           FALSE"    0    1    1    2    0    0         
+                            narazAktivny                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                    I_ON                                     BOOL    0 "                                                               *"    0    1    1    2    0    0         
                               automatika                                automatic    0 "                                                               *"    0   24    1    0    0    1         
                                y_desired                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    1         
-                            y_desired[0]                                     REAL    0 "                                                      12.9492188"    2    8    1   10    0    0         
-                            y_desired[1]                                     REAL    0 "                                                           8.125"    2    8    1   10    0    0         
-                            y_desired[2]                                     REAL    0 "                                                      7.36328125"    2    8    1   10    0    0         
-                            y_desired[3]                                     REAL    0 "                                                       -9.140625"    2    8    1   10    0    0         
-                            y_desired[4]                                     REAL    0 "                                                      10.6640625"    2    8    1   10    0    0         
-                            y_desired[5]                                     REAL    0 "                                                     -10.6640625"    2    8    1   10    0    0         
-                            y_desired[6]                                     REAL    0 "                                                     -17.7734375"    2    8    1   10    0    0         
+                            y_desired[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            y_desired[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            y_desired[2]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            y_desired[3]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            y_desired[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            y_desired[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            y_desired[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                x_desired                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    1         
-                            x_desired[0]                                     REAL    0 "                                                        9.902344"    2    8    1   10    0    0         
-                            x_desired[1]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                            x_desired[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            x_desired[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             x_desired[2]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             x_desired[3]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             x_desired[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         

@@ -172,7 +172,7 @@
     </Task>
     <Task
       Name="HandContro"
-      Disable="false"
+      Disable="true"
       Source="Source.Experiments.HandControl"
       Language="IEC">
       <InternalFile
@@ -185,6 +185,22 @@
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\HandControl\Types.typ" />
       <File
         Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\HandControl\Variables.var" />
+    </Task>
+    <Task
+      Name="Continuum"
+      Disable="false"
+      Source="Source.Experiments.Continuum"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Continuum\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Continuum\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Continuum\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Continuum\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Continuum\Variables.var" />
     </Task>
   </TaskClass>
   <TaskClass

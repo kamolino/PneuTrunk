@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="Program" Language="IEC">Repeatability</Object>
     <Object Type="Program" Language="IEC">HandControl</Object>
+    <Object Type="Program" Language="IEC">Continuum</Object>
   </Objects>
 </Package>

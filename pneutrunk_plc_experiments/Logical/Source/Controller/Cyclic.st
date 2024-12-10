@@ -288,12 +288,18 @@ PROGRAM _CYCLIC
 					//lin_modul
 					modul.tlakLinear:= REAL_TO_INT(lin_pressure*32767/9);
 				ELSE
-					FOR id:= 0 TO 5 BY 1 DO
-						modul.tlak1[id] := automatika.desiredPressure1[id];		
-						modul.tlak2[id] := automatika.desiredPressure2[id];
-						modul.tlak3[id] := automatika.desiredPressure3[id];
-					END_FOR
-					modul.tlakLinear	:= automatika.desiredPressureLinear;
+					IF automatika.continuum = TRUE THEN
+						
+					ELSE
+						
+						FOR id:= 0 TO 5 BY 1 DO
+							modul.tlak1[id] := automatika.desiredPressure1[id];		
+							modul.tlak2[id] := automatika.desiredPressure2[id];
+							modul.tlak3[id] := automatika.desiredPressure3[id];
+						END_FOR
+						modul.tlakLinear	:= automatika.desiredPressureLinear;
+					END_IF
+					
 				END_IF
 					
 			ELSIF buttons.centralStop = FALSE OR buttons.start = FALSE THEN

@@ -22,7 +22,8 @@
     <Task Name="Testing" Source="Source.Testing.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="Program" Source="Source.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="Repeatabil" Source="Source.Experiments.Repeatability.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="HandContro" Source="Source.Experiments.HandControl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="HandContro" Source="Source.Experiments.HandControl.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="Continuum" Source="Source.Experiments.Continuum.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5">
     <Task Name="Controller" Source="Source.Controller.prg" Memory="UserROM" Language="IEC" Debugging="true" />
