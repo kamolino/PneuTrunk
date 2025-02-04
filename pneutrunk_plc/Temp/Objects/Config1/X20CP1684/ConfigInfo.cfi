@@ -9,27 +9,27 @@
       Source="Source.UDP.Client"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Client\Client.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Client\Client.st.var" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\UDP\Client\Client.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\UDP\Client\Client.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\UDP\Client\Client.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\UDP\Client\Client.var" />
     </Task>
     <Task
       Name="Narazy"
-      Disable="false"
+      Disable="true"
       Source="Source.Narazy"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Narazy\Cyclic.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Narazy\Cyclic.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Narazy\Init.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Narazy\Init.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Narazy\Exit.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Narazy\Exit.st.var" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Narazy\Types.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Narazy\Types.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Narazy\Variables.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Narazy\Variables.var" />
     </Task>
     <Task
       Name="Server"
@@ -37,80 +37,80 @@
       Source="Source.UDP.Server"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Server\Server.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Server\Server.st.var" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\UDP\Server\Server.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\UDP\Server\Server.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\UDP\Server\Server.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\UDP\Server\Server.var" />
     </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#2">
-    <Task
-      Name="Receiver1"
-      Disable="false"
-      Source="Source.RS485.Receiver"
-      Language="IEC">
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Receiver1\ReceiverCyclic.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\RS485\Receiver\Receiver.typ" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\RS485\Receiver\Receiver.var" />
-    </Task>
     <Task
       Name="test_input"
       Disable="false"
       Source="test_input"
       Language="ANSIC">
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\test_input\local.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\test_input\local.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\test_input\local.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\test_input\local.var" />
     </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#3">
-    <Task
-      Name="Sender1"
-      Disable="false"
-      Source="Source.RS485.Sender"
-      Language="IEC">
-      <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Sender1\SenderCyclic.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\RS485\Sender\Sender.typ" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\RS485\Sender\Sender.var" />
-    </Task>
     <Task
       Name="solo_reg"
       Disable="false"
       Source="solo_reg"
       Language="ANSIC">
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\solo_reg\local.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\solo_reg\local.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\solo_reg\local.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\solo_reg\local.var" />
     </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#4">
+    <Task
+      Name="Receiver1"
+      Disable="false"
+      Source="Source.RS485.Receiver"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Receiver1\ReceiverCyclic.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\RS485\Receiver\Receiver.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\RS485\Receiver\Receiver.var" />
+    </Task>
+    <Task
+      Name="Sender1"
+      Disable="false"
+      Source="Source.RS485.Sender"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Sender1\SenderCyclic.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\RS485\Sender\Sender.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\RS485\Sender\Sender.var" />
+    </Task>
     <Task
       Name="Identifika"
       Disable="true"
       Source="Source.Identifikacia"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Identifika\Cyclic.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Identifika\Cyclic.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Identifika\Init.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Identifika\Init.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Identifika\Exit.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Identifika\Exit.st.var" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Identifikacia\Types.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Identifikacia\Types.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Identifikacia\Variables.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Identifikacia\Variables.var" />
     </Task>
     <Task
       Name="meranie"
@@ -118,9 +118,9 @@
       Source="meranie"
       Language="ANSIC">
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\meranie\local.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\meranie\local.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\meranie\local.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\meranie\local.var" />
     </Task>
     <Task
       Name="Testing"
@@ -128,51 +128,100 @@
       Source="Source.Testing"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Testing\Cyclic.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Testing\Cyclic.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Testing\Init.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Testing\Init.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Testing\Exit.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Testing\Exit.st.var" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Testing\Types.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Testing\Types.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Testing\Variables.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Testing\Variables.var" />
     </Task>
     <Task
       Name="Program"
-      Disable="false"
+      Disable="true"
       Source="Source.Program"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Program\Cyclic.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Program\Cyclic.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Program\Init.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Program\Init.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Program\Exit.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Program\Exit.st.var" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Program\Types.typ" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Program\Types.typ" />
       <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Program\Variables.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Program\Variables.var" />
     </Task>
+    <Task
+      Name="Repeatabil"
+      Disable="true"
+      Source="Source.Experiments.Repeatability"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Repeatabil\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Repeatabil\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Repeatabil\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Repeatability\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Repeatability\Variables.var" />
+    </Task>
+    <Task
+      Name="HandContro"
+      Disable="true"
+      Source="Source.Experiments.HandControl"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\HandContro\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\HandContro\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\HandContro\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\HandControl\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\HandControl\Variables.var" />
+    </Task>
+    <Task
+      Name="Continuum"
+      Disable="true"
+      Source="Source.Experiments.Continuum"
+      Language="IEC">
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Continuum\Cyclic.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Continuum\Init.st.var" />
+      <InternalFile
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Continuum\Exit.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Continuum\Types.typ" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Experiments\Continuum\Variables.var" />
+    </Task>
+  </TaskClass>
+  <TaskClass
+    Name="Cyclic#5">
     <Task
       Name="Controller"
       Disable="false"
       Source="Source.Controller"
       Language="IEC">
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Cyclic.st.var" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Init.st.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Controller\Variables.var" />
+      <File
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Logical\Source\Controller\Types.typ" />
       <InternalFile
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Controller\Types.typ" />
-      <File
-        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Logical\Source\Controller\Variables.var" />
+        Path="C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684\Controller\Exit.st.var" />
     </Task>
   </TaskClass>
-  <TaskClass
-    Name="Cyclic#5" />
   <TaskClass
     Name="Cyclic#6" />
   <TaskClass

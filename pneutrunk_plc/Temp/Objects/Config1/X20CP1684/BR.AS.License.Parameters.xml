@@ -5,10 +5,10 @@
     <ConnectionParameters>/COMT=2500 /AM=* /DAIP=192.168.1.45 /REPO=11159 /ANSL=1 /PT=11169</ConnectionParameters>
   </Connection>
   <AsProject>
-    <ApjFullFileName>C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\pneutrunk_V2.apj</ApjFullFileName>
+    <ApjFullFileName>C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\pneutrunk_V2.apj</ApjFullFileName>
     <ProjectName>pneutrunk_V2</ProjectName>
     <ActiveConfigurationName>Config1</ActiveConfigurationName>
-    <LicenseDataFolder>C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_Nitra\Temp\Objects\Config1\X20CP1684</LicenseDataFolder>
+    <LicenseDataFolder>C:\Users\km_2\Desktop\Pneutrunk PLC\pneutrunk_V8_final_RAL\Temp\Objects\Config1\X20CP1684</LicenseDataFolder>
   </AsProject>
   <General>
     <DeleteParameterFile>false</DeleteParameterFile>

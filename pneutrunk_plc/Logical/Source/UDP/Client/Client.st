@@ -13,7 +13,7 @@ PROGRAM _CYCLIC
 
 	//LibAsUDP1_ST.send_data[0] := LibAsUDP1_ST.send_data[0] + 1;  (* Generate a "running" variable for Data transfer *)
 	//LibAsUDP1_ST.send_data := '20.12 12.54 10.24 -13.25';
-	
+	(*
 	memset(ADR(LibAsUDP1_ST.send_data), 0, SIZEOF(LibAsUDP1_ST.send_data));
 	memset(ADR(helpString), 0, SIZEOF(helpString));
 	
@@ -27,8 +27,15 @@ PROGRAM _CYCLIC
 	END_FOR
 	ftoa(modul.linearReal, ADR(helpString)); // vymenit za linearny 
 	strcat(ADR(LibAsUDP1_ST.send_data), ADR(helpString));
+	*)
 	//strcat(ADR(LibAsUDP1_ST.send_data), ADR(','));
 	
+	memset(ADR(LibAsUDP1_ST.send_data), 0, SIZEOF(LibAsUDP1_ST.send_data));
+	IF (automatika.step_repeatability=44) OR (automatika.step_repeatability=77) OR (automatika.step_repeatability=99) THEN
+		strcat(ADR(LibAsUDP1_ST.send_data), ADR('1'));
+	ELSE
+		strcat(ADR(LibAsUDP1_ST.send_data), ADR('0'));
+	END_IF
 	
 	(*
 	memset(ADR(LibAsUDP1_ST.send_data), 0, SIZEOF(LibAsUDP1_ST.send_data));
@@ -64,7 +71,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		1:	(* Send Data to the Server *)
-			Client.server_address := '192.168.1.43';	(* IP Address of the Server *)
+			Client.server_address := '192.168.1.47';	(* IP Address of the Server *)
 			Client.server_portnumber := 12050;	(* Port number of the Server *)
 			
 			Client.UdpSend_0.enable := 1;

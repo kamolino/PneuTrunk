@@ -92,36 +92,36 @@ PROGRAM _CYCLIC
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[0] := modul.uholINT1;
+								modul.uhol1[0] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[0] := modul.uhol1[0]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[0] := (modul.uholINT2);
+								modul.uhol2[0] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[0] := modul.uhol2[0]*260/1024 - 130;
 							ELSIF(Receiver.receive_data[2] = 2)THEN
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[1] := (modul.uholINT1);
+								modul.uhol1[1] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[1] := modul.uhol1[1]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[1] := (modul.uholINT2);
+								modul.uhol2[1] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[1] := modul.uhol2[1]*260/1024 - 130;
 							ELSIF(Receiver.receive_data[2] = 3)THEN
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[2] := (modul.uholINT1);
+								modul.uhol1[2] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[2] := modul.uhol1[2]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[2] := (modul.uholINT2);
+								modul.uhol2[2] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[2] := modul.uhol2[2]*260/1024 - 130;
-								IF Receiver.receive_data[4] = 3 THEN
+								IF Receiver.receive_data[4] = 3 OR Receiver.receive_data[4] > 15 THEN
 									modul.naraz[2]	:= TRUE;
 								ELSE
 									modul.naraz[2]	:= FALSE;
@@ -130,14 +130,14 @@ PROGRAM _CYCLIC
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[3] := (modul.uholINT1);
+								modul.uhol1[3] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[3] := modul.uhol1[3]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[3] := (modul.uholINT2);
+								modul.uhol2[3] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[3] := modul.uhol2[3]*260/1024 - 130;
-								IF Receiver.receive_data[4] = 3 THEN
+								IF Receiver.receive_data[4] = 3 OR Receiver.receive_data[4] > 15 THEN
 									modul.naraz[3]	:= TRUE;
 								ELSE
 									modul.naraz[3]	:= FALSE;
@@ -146,14 +146,14 @@ PROGRAM _CYCLIC
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[4] := (modul.uholINT1);
+								modul.uhol1[4] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[4] := modul.uhol1[4]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[4] := (modul.uholINT2);
+								modul.uhol2[4] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[4] := modul.uhol2[4]*260/1024 - 130;
-								IF Receiver.receive_data[4] = 3 THEN
+								IF Receiver.receive_data[4] = 3 OR Receiver.receive_data[4] > 15  THEN
 									modul.naraz[4]	:= TRUE;
 								ELSE
 									modul.naraz[4]	:= FALSE;
@@ -162,14 +162,14 @@ PROGRAM _CYCLIC
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[5] := (modul.uholINT1);
+								modul.uhol1[5] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[5] := modul.uhol1[5]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[5] := (modul.uholINT2);
+								modul.uhol2[5] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[5] := modul.uhol2[5]*260/1024 - 130;
-								IF Receiver.receive_data[4] = 3 THEN
+								IF Receiver.receive_data[4] = 3 OR Receiver.receive_data[4] > 15 THEN
 									modul.naraz[5]	:= TRUE;
 								ELSE
 									modul.naraz[5]	:= FALSE;
@@ -178,20 +178,20 @@ PROGRAM _CYCLIC
 								modul.uholINT1 := BYTE_TO_INT(Receiver.receive_data[5]);
 								modul.uholINT1 := SHL(modul.uholINT1,8);
 								modul.uholINT1  := modul.uholINT1  + BYTE_TO_INT(Receiver.receive_data[6]);
-								modul.uhol1[6] := (modul.uholINT1);
+								modul.uhol1[6] := INT_TO_REAL(modul.uholINT1);
 								modul.uhol1[6] := modul.uhol1[6]*260/1024 - 130;
 								modul.uholINT2 := BYTE_TO_INT(Receiver.receive_data[7]);
 								modul.uholINT2 := SHL(modul.uholINT2,8);
 								modul.uholINT2  := modul.uholINT2  + BYTE_TO_INT(Receiver.receive_data[8]);
-								modul.uhol2[6] := (modul.uholINT2);
+								modul.uhol2[6] := INT_TO_REAL(modul.uholINT2);
 								modul.uhol2[6] := modul.uhol2[6]*260/1024 - 130;
-								IF Receiver.receive_data[4] = 1 OR Receiver.receive_data[4] = 2 THEN //lebo dve moduly su zapojene do jednej dosky
+								IF Receiver.receive_data[4] = 1 OR Receiver.receive_data[4] = 2 OR Receiver.receive_data[4] > 15  THEN //lebo dve moduly su zapojene do jednej dosky
 									modul.naraz[6]	:= TRUE;
 								ELSE
 									modul.naraz[6]	:= FALSE;
 								END_IF
 							ELSIF(Receiver.receive_data[2] = 8)THEN
-								IF Receiver.receive_data[4] = 3 THEN
+								IF Receiver.receive_data[4] = 3 OR Receiver.receive_data[4] > 15 THEN
 									modul.naraz[7]	:= TRUE;
 								ELSE
 									modul.naraz[7]	:= FALSE;

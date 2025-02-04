@@ -1,8 +1,8 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Program 
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index=0 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                             global_step                                      INT    0 "                                                               0"    0    3    1   10    0    0         
-                         global_step_udp                                      INT    0 "                                                               4"    0    3    1   10    0    0         
+                             global_step                                      INT    0 "                                                             999"    0    3    1   10    0    0         
+                         global_step_udp                                      INT    0 "                                                               0"    0    3    1   10    0    0         
                                packetPos                                packetUDP    0 "                                                               *"    0   24    1    0    0    0         
                                  qLength                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                                        c                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -45,21 +45,21 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                                     step                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                                    modul                                   moduly    0 "                                                               *"    0   24    1    0    0    1         
                                    uhol2                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
-                                uhol2[0]                                      INT    0 "                                                              -4"    2    3    1   10    0    0         
-                                uhol2[1]                                      INT    0 "                                                              -3"    2    3    1   10    0    0         
+                                uhol2[0]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
+                                uhol2[1]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
                                 uhol2[2]                                      INT    0 "                                                              -3"    2    3    1   10    0    0         
-                                uhol2[3]                                      INT    0 "                                                              -5"    2    3    1   10    0    0         
-                                uhol2[4]                                      INT    0 "                                                              -2"    2    3    1   10    0    0         
-                                uhol2[5]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
-                                uhol2[6]                                      INT    0 "                                                               1"    2    3    1   10    0    0         
+                                uhol2[3]                                      INT    0 "                                                              -4"    2    3    1   10    0    0         
+                                uhol2[4]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
+                                uhol2[5]                                      INT    0 "                                                              -2"    2    3    1   10    0    0         
+                                uhol2[6]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
                                    uhol1                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
-                                uhol1[0]                                      INT    0 "                                                               3"    2    3    1   10    0    0         
-                                uhol1[1]                                      INT    0 "                                                               1"    2    3    1   10    0    0         
-                                uhol1[2]                                      INT    0 "                                                               2"    2    3    1   10    0    0         
-                                uhol1[3]                                      INT    0 "                                                               3"    2    3    1   10    0    0         
-                                uhol1[4]                                      INT    0 "                                                               2"    2    3    1   10    0    0         
+                                uhol1[0]                                      INT    0 "                                                               2"    2    3    1   10    0    0         
+                                uhol1[1]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
+                                uhol1[2]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
+                                uhol1[3]                                      INT    0 "                                                              -4"    2    3    1   10    0    0         
+                                uhol1[4]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
                                 uhol1[5]                                      INT    0 "                                                              -2"    2    3    1   10    0    0         
-                                uhol1[6]                                      INT    0 "                                                             -13"    2    3    1   10    0    0         
+                                uhol1[6]                                      INT    0 "                                                               0"    2    3    1   10    0    0         
                                   koncak                               BOOL[0..6]    0 "                                                               *"    1    1    7    0    0    0         
                                koncak[0]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                koncak[1]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -76,8 +76,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                                   led[4]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[5]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[6]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                uholINT2                                      INT    0 "                                                             504"    1    3    1   10    0    0         
-                                uholINT1                                      INT    0 "                                                             521"    1    3    1   10    0    0         
+                                uholINT2                                      INT    0 "                                                             514"    1    3    1   10    0    0         
+                                uholINT1                                      INT    0 "                                                             513"    1    3    1   10    0    0         
                                    tlak1                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    0         
                                 tlak1[0]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak1[1]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
@@ -102,7 +102,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                                 tlak3[4]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak3[5]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
                                 tlak3[6]                                      INT    0 "                                                               *"    2    3    1   10    0    0         
-                              tlakLinear                                      INT    3 "                                                               0"    1    3    1   10    0    0         
+                              tlakLinear                                      INT    3 "                                                            5082"    1    3    1   10    0    0         
                           uhol_XminusRef                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    0         
                        uhol_XminusRef[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_XminusRef[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -119,7 +119,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=159 Type=0 Scope=0 Force=0 Index
                        uhol_YminusRef[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_YminusRef[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        uhol_YminusRef[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                              linearReal                                     REAL    0 "                                                            23.0"    1    8    1   10    0    0         
+                              linearReal                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
                                    naraz                               BOOL[0..7]    0 "                                                               *"    1    1    8    0    0    0         
                                 naraz[0]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                 naraz[1]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         

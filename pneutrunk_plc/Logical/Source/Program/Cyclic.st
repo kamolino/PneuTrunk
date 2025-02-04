@@ -250,6 +250,7 @@ PROGRAM _CYCLIC
 			IF TON_0.Q=TRUE THEN
 				automatika.casovac					:= FALSE;
 				automatika.ball_piston				:= FALSE;
+				automatika.loptickyVzasobniku		:= TRUE;		// pridane 15.11.2024
 				IF automatika.loptickyVzasobniku = TRUE THEN
 					global_step						:= 9;
 				ELSE

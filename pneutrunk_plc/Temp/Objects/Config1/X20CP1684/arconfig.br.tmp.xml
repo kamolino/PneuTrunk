@@ -27,7 +27,7 @@
   <Module ID="IF3.PLK" Hardware="EPL-V2">
     <Parameter ID="EplInterfaceRedundant" Value="0" />
     <Parameter ID="EplHostName" Value="br-automation" />
-    <Parameter ID="CycleTime" Value="500" Type="UDINT" />
+    <Parameter ID="CycleTime" Value="2000" Type="UDINT" />
     <Parameter ID="Synchron" Value="on" />
     <Parameter ID="MuxPrescaler" Value="8" Type="UDINT" />
     <Parameter ID="Mode" Value="MN" />
