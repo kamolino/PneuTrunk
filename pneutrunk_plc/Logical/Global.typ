@@ -1,9 +1,5 @@
 
 TYPE
-	experimentyUhly : 	STRUCT 
-		ref_alfa_y : ARRAY[0..6]OF REAL;
-		ref_alfa_x : ARRAY[0..6]OF REAL;
-	END_STRUCT;
 	tlacidla : 	STRUCT 
 		start : BOOL;
 		ros : BOOL;
@@ -17,8 +13,8 @@ TYPE
 		klucik : BOOL;
 	END_STRUCT;
 	automatic : 	STRUCT 
-		y_desired : ARRAY[0..6]OF REAL := [7(0.0)];
-		x_desired : ARRAY[0..6]OF REAL := [7(0.0)];
+		y_desired : ARRAY[0..6]OF INT := [7(0)];
+		x_desired : ARRAY[0..6]OF INT := [7(0)];
 		linear : INT;
 		ball_up : BOOL;
 		casovac : BOOL;
@@ -41,16 +37,6 @@ TYPE
 		y_desired_previous : ARRAY[0..6]OF INT;
 		I_konstanta : ARRAY[0..6]OF INT;
 		levitacia : BOOL;
-		desiredPressure2 : ARRAY[0..6]OF INT;
-		desiredPressure3 : ARRAY[0..6]OF INT;
-		desiredPressure3_previous : ARRAY[0..6]OF INT;
-		desiredPressure2_previous : ARRAY[0..6]OF INT;
-		desiredPressure1_previous : ARRAY[0..6]OF INT;
-		desiredPressureLinear : INT;
-		desiredPressure1 : ARRAY[0..6]OF INT;
-		repeatability : BOOL;
-		step_repeatability : INT;
-		continuum : BOOL;
 	END_STRUCT;
 	podavac : 	STRUCT 
 		levitovanie : BOOL;
@@ -110,8 +96,8 @@ TYPE
 		tlak1 : USINT;
 	END_STRUCT;
 	moduly : 	STRUCT 
-		uhol2 : ARRAY[0..6]OF REAL := [7(0.0)];
-		uhol1 : ARRAY[0..6]OF REAL := [7(0.0)];
+		uhol2 : ARRAY[0..6]OF INT := [7(0)];
+		uhol1 : ARRAY[0..6]OF INT := [7(0)];
 		koncak : ARRAY[0..6]OF BOOL;
 		led : ARRAY[0..6]OF BOOL;
 		uholINT2 : INT;

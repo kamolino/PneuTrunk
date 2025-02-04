@@ -1,17 +1,12 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1733831652_1_
-#define _BUR_1733831652_1_
+#ifndef _BUR_1726139130_1_
+#define _BUR_1726139130_1_
 
 #include <bur/plctypes.h>
 
 /* Datatypes and datatypes of function blocks */
-typedef struct experimentyUhly
-{	float ref_alfa_y[7];
-	float ref_alfa_x[7];
-} experimentyUhly;
-
 typedef struct tlacidla
 {	plcbit start;
 	plcbit ros;
@@ -26,8 +21,8 @@ typedef struct tlacidla
 } tlacidla;
 
 typedef struct automatic
-{	float y_desired[7];
-	float x_desired[7];
+{	signed short y_desired[7];
+	signed short x_desired[7];
 	signed short linear;
 	plcbit ball_up;
 	plcbit casovac;
@@ -50,16 +45,6 @@ typedef struct automatic
 	signed short y_desired_previous[7];
 	signed short I_konstanta[7];
 	plcbit levitacia;
-	signed short desiredPressure2[7];
-	signed short desiredPressure3[7];
-	signed short desiredPressure3_previous[7];
-	signed short desiredPressure2_previous[7];
-	signed short desiredPressure1_previous[7];
-	signed short desiredPressureLinear;
-	signed short desiredPressure1[7];
-	plcbit repeatability;
-	signed short step_repeatability;
-	plcbit continuum;
 } automatic;
 
 typedef struct podavac
@@ -125,8 +110,8 @@ typedef struct tlaky
 } tlaky;
 
 typedef struct moduly
-{	float uhol2[7];
-	float uhol1[7];
+{	signed short uhol2[7];
+	signed short uhol1[7];
 	plcbit koncak[7];
 	plcbit led[7];
 	signed short uholINT2;
@@ -157,5 +142,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Global.typ\\\" scope \\\"global\\\"\\n\"")
 __asm__(".previous");
 
 
-#endif /* _BUR_1733831652_1_ */
+#endif /* _BUR_1726139130_1_ */
 

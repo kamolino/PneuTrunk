@@ -1,6 +1,6 @@
 PROGRAM _CYCLIC
 	
-	TON_0(IN := kalibraciaStart, PT := T#5s0ms);
+	TON_0(IN := kalibraciaStart, PT := T#4s0ms);
 		
 	IF buttons.klucik = FALSE THEN
 		global_step		:= 0;
@@ -60,67 +60,91 @@ PROGRAM _CYCLIC
 			END_IF
 			global_step				:= 0;
 			buttons.stropBielaLED	:= TRUE;
-		1:	// Vypustenie vzduchu zo vsetkych mechov, zapnutie I-regulatora 
-			(*
-			FOR id:=0 TO 6 BY 1 DO
-				modul.tlak1[id]	:= 0;
-				modul.tlak2[id]	:= 0;
-				modul.tlak3[id]	:= 0;
-			END_FOR
-			*)
-			//I_ON					:= TRUE;
+		1:	
 			switch2 				:= FALSE;
 			kalibraciaStart			:= TRUE;
-			
 			step					:= 2;
 		
-		2:	// cakaj
+		2:	// wait
 			IF TON_0.Q = TRUE THEN
 				kalibraciaStart		:= FALSE;
 				step				:= 3;
 			END_IF
 			
-		3:
+		3:	
 			FOR id:=0 TO 6 BY 1 DO
 				modull.nula_x[id]:= 0;
 				modull.nula_y[id]:= 0;
 			END_FOR
 			
-			
 			step					:= 44;
-			
 			global_step 			:= 999;
 			global_step_udp			:= 0;			// aby nahodou nemal na zaciatku gesto z predoslej udalosti
-			
 			kalibraciaStart			:= TRUE;
-			(*
+			
+		44:
+			
+			IF TON_0.Q = TRUE THEN
+				kalibraciaStart		:= FALSE;
+				step				:= 45;
+
+				modull.nula_x[0]:= modul.uhol1[0]*1.0233 + 88.745;
+				modull.nula_x[1]:= modul.uhol1[1]*1.0228 + 88.871;
+				modull.nula_x[2]:= modul.uhol1[2]*1.0235 + 90.761;
+				modull.nula_x[3]:= modul.uhol1[3]*1.0254 + 88.307;
+				modull.nula_x[4]:= modul.uhol1[4]*1.0216 + 90.3;
+				modull.nula_x[5]:= modul.uhol1[5]*1.0039 + 87.274;
+				modull.nula_x[6]:= modul.uhol1[6]*1.0065 + 87.623;
+				
+				modull.nula_y[0]:= modul.uhol2[0]*1.0275 + 89.292;
+				modull.nula_y[1]:= modul.uhol2[1]*1.0079 + 89.873;
+				modull.nula_y[2]:= modul.uhol2[2]*1.043 + 92.476;
+				modull.nula_y[3]:= modul.uhol2[3]*1.0308 + 90.739;
+				modull.nula_y[4]:= modul.uhol2[4]*1.008 + 86.877;
+				modull.nula_y[5]:= modul.uhol2[5]*1.0009 + 87.856;
+				modull.nula_y[6]:= modul.uhol2[6]*1.0258 + 90.567;
+			END_IF
+		45:
+			kalibraciaStart		:= TRUE;
+			step				:= 46;
+		46:
+			IF TON_0.Q = TRUE THEN
+				kalibraciaStart	:= FALSE;
+				step			:= 47;
+			END_IF
+		47:
 			FOR id:=0 TO 6 BY 1 DO
 				modul.tlak1[id]	:= 0;
 				modul.tlak2[id]	:= 0;
 				modul.tlak3[id]	:= 0;
 			END_FOR
-			*)
-			
-		44:
+			step				:= 48;
+			kalibraciaStart		:= TRUE;
+		48:
 			IF TON_0.Q = TRUE THEN
-				kalibraciaStart		:= FALSE;
-				step				:= 4;
-				FOR id:=0 TO 6 BY 1 DO
-					modull.nula_x[id]:= modul.uhol1[id];
-					modull.nula_y[id]:= modul.uhol2[id];
-				END_FOR
+				kalibraciaStart	:= FALSE;
+				step			:= 4;
 			END_IF
-			
 			
 		4:
 			
-			FOR id:=0 TO 6 BY 1 DO
-				modull.real_uhol_x_kalibrovane[id]	:= modul.uhol1[id];
-				modull.real_uhol_y_kalibrovane[id]	:= modul.uhol2[id];
-			//	modul.uhol_XminusRef[id] 			:= modull.real_uhol_x_kalibrovane[id] - modull.nula_x[id];
-			//	modul.uhol_YminusRef[id] 			:= modull.real_uhol_y_kalibrovane[id] - modull.nula_y[id];
-				modul.linearReal		 			:= ref_linearny_posun;
-			END_FOR
+			modul.linearReal		 			:= ref_linearny_posun;
+			
+			modull.real_uhol_x_kalibrovane[0]:= modul.uhol1[0]*1.0233 + 88.745;
+			modull.real_uhol_x_kalibrovane[1]:= modul.uhol1[1]*1.0228 + 88.871;
+			modull.real_uhol_x_kalibrovane[2]:= modul.uhol1[2]*1.0235 + 90.761;
+			modull.real_uhol_x_kalibrovane[3]:= modul.uhol1[3]*1.0254 + 88.307;
+			modull.real_uhol_x_kalibrovane[4]:= modul.uhol1[4]*1.0216 + 90.3;
+			modull.real_uhol_x_kalibrovane[5]:= modul.uhol1[5]*1.0039 + 87.274;
+			modull.real_uhol_x_kalibrovane[6]:= modul.uhol1[6]*1.0065 + 87.623;
+				
+			modull.real_uhol_y_kalibrovane[0]:= modul.uhol2[0]*1.0275 + 89.292;
+			modull.real_uhol_y_kalibrovane[1]:= modul.uhol2[1]*1.0079 + 89.873;
+			modull.real_uhol_y_kalibrovane[2]:= modul.uhol2[2]*1.043 + 92.476;
+			modull.real_uhol_y_kalibrovane[3]:= modul.uhol2[3]*1.0308 + 90.739;
+			modull.real_uhol_y_kalibrovane[4]:= modul.uhol2[4]*1.008 + 86.877;
+			modull.real_uhol_y_kalibrovane[5]:= modul.uhol2[5]*1.0009 + 87.856;
+			modull.real_uhol_y_kalibrovane[6]:= modul.uhol2[6]*1.0258 + 90.567;
 			
 			IF (automatika.step_color = 1 OR automatika.step_color = 2) AND global_step = 0 THEN
 				global_step			:= 999;
@@ -159,8 +183,8 @@ PROGRAM _CYCLIC
 					END_IF
 				ELSE
 					FOR id:=0 TO 6 BY 1 DO
-						modull.pozadovany_uhol_x[id]	:= automatika.x_desired[id];
-						modull.pozadovany_uhol_y[id] 	:= automatika.y_desired[id];
+				//		modull.pozadovany_uhol_x[id]	:= automatika.x_desired[id];
+				//		modull.pozadovany_uhol_y[id] 	:= automatika.y_desired[id];
 					END_FOR
 					modull.pozadovanyLinear				:= automatika.linear;
 				END_IF
@@ -207,7 +231,7 @@ PROGRAM _CYCLIC
 					ref_linearny_posun	:= modull.pozadovanyLinear;
 				END_IF
 				
-				
+				(*
 				act_alfa_x_ID1:= modull.real_uhol_x_kalibrovane[0] - modull.nula_x[0];
 				act_alfa_y_ID1:= modull.real_uhol_y_kalibrovane[0] - modull.nula_y[0];
 				act_alfa_x_ID2:= modull.real_uhol_x_kalibrovane[1] - modull.nula_x[1];
@@ -221,10 +245,40 @@ PROGRAM _CYCLIC
 				act_alfa_x_ID6:= modull.real_uhol_x_kalibrovane[5] - modull.nula_x[5];
 				act_alfa_y_ID6:= modull.real_uhol_y_kalibrovane[5] - modull.nula_y[5];
 				act_alfa_x_ID7:= modull.real_uhol_x_kalibrovane[6] - modull.nula_x[6];
-				act_alfa_y_ID7:= modull.real_uhol_y_kalibrovane[6] - modull.nula_y[6];
-				
-				
+				act_alfa_y_ID7:= modull.real_uhol_y_kalibrovane[6] - modull.nula_y[6]; 
+				*)
+				(*
+				act_alfa_x_ID1:= -(modull.real_uhol_x_kalibrovane[0] - modull.nula_x[0]);
+				act_alfa_y_ID1:= -(modull.real_uhol_y_kalibrovane[0] - modull.nula_y[0]);
+				act_alfa_x_ID2:= -(modull.real_uhol_x_kalibrovane[1] - modull.nula_x[1]);
+				act_alfa_y_ID2:= -(modull.real_uhol_y_kalibrovane[1] - modull.nula_y[1]);
+				act_alfa_x_ID3:= -(modull.real_uhol_x_kalibrovane[2] - modull.nula_x[2]);
+				act_alfa_y_ID3:= -(modull.real_uhol_y_kalibrovane[2] - modull.nula_y[2]);
+				act_alfa_x_ID4:= -(modull.real_uhol_x_kalibrovane[3] - modull.nula_x[3]);
+				act_alfa_y_ID4:= -(modull.real_uhol_y_kalibrovane[3] - modull.nula_y[3]);
+				act_alfa_x_ID5:= -(modull.real_uhol_x_kalibrovane[4] - modull.nula_x[4]);
+				act_alfa_y_ID5:= -(modull.real_uhol_y_kalibrovane[4] - modull.nula_y[4]);
+				act_alfa_x_ID6:= -(modull.real_uhol_x_kalibrovane[5] - modull.nula_x[5]);
+				act_alfa_y_ID6:= -(modull.real_uhol_y_kalibrovane[5] - modull.nula_y[5]);
+				act_alfa_x_ID7:= -(modull.real_uhol_x_kalibrovane[6] - modull.nula_x[6]);
+				act_alfa_y_ID7:= -(modull.real_uhol_y_kalibrovane[6] - modull.nula_y[6]);
+				*)
+				act_alfa_x_ID1:= -(modull.real_uhol_x_kalibrovane[0]);
+				act_alfa_y_ID1:= -(modull.real_uhol_y_kalibrovane[0]);
+				act_alfa_x_ID2:= -(modull.real_uhol_x_kalibrovane[1]);
+				act_alfa_y_ID2:= -(modull.real_uhol_y_kalibrovane[1]);
+				act_alfa_x_ID3:= -(modull.real_uhol_x_kalibrovane[2]);
+				act_alfa_y_ID3:= -(modull.real_uhol_y_kalibrovane[2]);
+				act_alfa_x_ID4:= -(modull.real_uhol_x_kalibrovane[3]);
+				act_alfa_y_ID4:= -(modull.real_uhol_y_kalibrovane[3]);
+				act_alfa_x_ID5:= -(modull.real_uhol_x_kalibrovane[4]);
+				act_alfa_y_ID5:= -(modull.real_uhol_y_kalibrovane[4]);
+				act_alfa_x_ID6:= -(modull.real_uhol_x_kalibrovane[5]);
+				act_alfa_y_ID6:= -(modull.real_uhol_y_kalibrovane[5]);
+				act_alfa_x_ID7:= -(modull.real_uhol_x_kalibrovane[6]);
+				act_alfa_y_ID7:= -(modull.real_uhol_y_kalibrovane[6]);
 				// Pre experiment 2
+				(*
 				uhly.ref_alfa_x[0]	:= act_alfa_x_ID1;
 				uhly.ref_alfa_y[0]	:= act_alfa_y_ID1;
 				uhly.ref_alfa_x[1]	:= act_alfa_x_ID2;
@@ -239,7 +293,7 @@ PROGRAM _CYCLIC
 				uhly.ref_alfa_y[5]	:= act_alfa_y_ID6;
 				uhly.ref_alfa_x[6]	:= act_alfa_x_ID7;
 				uhly.ref_alfa_y[6]	:= act_alfa_y_ID7;
-				
+				*)
 				IF automatika.repeatability = FALSE THEN
 					
 					// Nastavenie tlakov podla regulacie

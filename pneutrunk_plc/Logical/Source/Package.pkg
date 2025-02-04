@@ -11,6 +11,5 @@
     <Object Type="Program" Language="IEC">Identifikacia</Object>
     <Object Type="Program" Language="IEC">Testing</Object>
     <Object Type="Program" Language="IEC">Narazy</Object>
-    <Object Type="Package">Experiments</Object>
   </Objects>
 </Package>

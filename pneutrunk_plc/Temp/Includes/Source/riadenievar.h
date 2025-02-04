@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _BUR_1733740351_5_
-#define _BUR_1733740351_5_
+#ifndef _BUR_1726139130_3_
+#define _BUR_1726139130_3_
 
 #include <bur/plctypes.h>
 
@@ -49,5 +49,5 @@ __asm__(".ascii \"iecfile \\\"Logical/Source/riadenie.var\\\" scope \\\"global\\
 __asm__(".previous");
 
 
-#endif /* _BUR_1733740351_5_ */
+#endif /* _BUR_1726139130_3_ */
 

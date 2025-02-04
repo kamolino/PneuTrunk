@@ -69,7 +69,6 @@ VAR
 	trajectoryStart : BOOL;
 	Green_tab_ID5 : REAL;
 	Green_tab_ID4 : REAL;
-	uhly : experimentyUhly;
 	Green_tab_ID3 : REAL;
 	Green_tab_ID2 : REAL;
 	Green_tab_ID1 : REAL;
@@ -90,7 +89,6 @@ VAR
 	act_alfa_y_ID7 : REAL;
 	act_alfa_y_ID6 : REAL;
 	act_alfa_y_ID5 : REAL;
-	step_repeatability : INT;
 	act_alfa_y_ID4 : REAL;
 	act_alfa_y_ID3 : REAL;
 	act_alfa_y_ID2 : REAL;

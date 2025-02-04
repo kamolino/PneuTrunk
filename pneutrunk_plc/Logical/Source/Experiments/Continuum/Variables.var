@@ -1,4 +1,0 @@
-VAR
-	pressure : tlak;
-	id : INT;
-END_VAR

@@ -1,27 +1,27 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Continuum 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=3 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=1 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                 pressure                                     tlak    0 "                                                               *"    0   24    1    0    1    1         
                                       p2                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
                                       p3                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
                                       p1                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
                                    modul                                   moduly    0 "                                                               *"    0   24    1    0    0    1         
-                                   uhol2                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    0         
-                                uhol2[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[2]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[3]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol2[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                   uhol1                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    0         
-                                uhol1[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol1[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol1[2]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol1[3]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol1[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol1[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                uhol1[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   uhol2                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    1         
+                                uhol2[0]                                     REAL    0 "                                                         -4.0625"    2    8    1   10    0    0         
+                                uhol2[1]                                     REAL    0 "                                                      -5.5859375"    2    8    1   10    0    0         
+                                uhol2[2]                                     REAL    0 "                                                     -0.76171875"    2    8    1   10    0    0         
+                                uhol2[3]                                     REAL    0 "                                                     -3.30078125"    2    8    1   10    0    0         
+                                uhol2[4]                                     REAL    0 "                                                      -1.5234375"    2    8    1   10    0    0         
+                                uhol2[5]                                     REAL    0 "                                                     -1.77734375"    2    8    1   10    0    0         
+                                uhol2[6]                                     REAL    0 "                                                       -1.015625"    2    8    1   10    0    0         
+                                   uhol1                               REAL[0..6]    0 "                                                               *"    1    8    7    0    0    1         
+                                uhol1[0]                                     REAL    0 "                                                      2.28515625"    2    8    1   10    0    0         
+                                uhol1[1]                                     REAL    0 "                                                      0.76171875"    2    8    1   10    0    0         
+                                uhol1[2]                                     REAL    0 "                                                       -129.7461"    2    8    1   10    0    0         
+                                uhol1[3]                                     REAL    0 "                                                      3.80859375"    2    8    1   10    0    0         
+                                uhol1[4]                                     REAL    0 "                                                      1.26953125"    2    8    1   10    0    0         
+                                uhol1[5]                                     REAL    0 "                                                     -1.26953125"    2    8    1   10    0    0         
+                                uhol1[6]                                     REAL    0 "                                                      -5.5859375"    2    8    1   10    0    0         
                                   koncak                               BOOL[0..6]    0 "                                                               *"    1    1    7    0    0    0         
                                koncak[0]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                koncak[1]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -38,13 +38,13 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                   led[4]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[5]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   led[6]                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                uholINT2                                      INT    0 "                                                             496"    1    3    1   10    0    0         
-                                uholINT1                                      INT    0 "                                                             526"    1    3    1   10    0    0         
+                                uholINT2                                      INT    0 "                                                             499"    1    3    1   10    0    0         
+                                uholINT1                                      INT    0 "                                                             527"    1    3    1   10    0    0         
                                    tlak1                                INT[0..6]    0 "                                                               *"    1    3    7    0    0    1         
-                                tlak1[0]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
-                                tlak1[1]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
-                                tlak1[2]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
-                                tlak1[3]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
+                                tlak1[0]                                      INT    3 "                                                           -6163"    2    3    1   10    0    0         
+                                tlak1[1]                                      INT    3 "                                                           -6177"    2    3    1   10    0    0         
+                                tlak1[2]                                      INT    3 "                                                           12422"    2    3    1   10    0    0         
+                                tlak1[3]                                      INT    3 "                                                           -5173"    2    3    1   10    0    0         
                                 tlak1[4]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
                                 tlak1[5]                                      INT    3 "                                                               0"    2    3    1   10    0    0         
                                 tlak1[6]                                      INT    3 "                                                               0"    2    3    1   10    0    0         

@@ -188,7 +188,7 @@
     </Task>
     <Task
       Name="Continuum"
-      Disable="false"
+      Disable="true"
       Source="Source.Experiments.Continuum"
       Language="IEC">
       <InternalFile
