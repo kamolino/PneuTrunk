@@ -156,7 +156,7 @@
     </Task>
     <Task
       Name="Repeatabil"
-      Disable="true"
+      Disable="false"
       Source="Source.Experiments.Repeatability"
       Language="IEC">
       <InternalFile

@@ -126,7 +126,11 @@ PROGRAM _CYCLIC
 				step			:= 4;
 			END_IF
 			
+			// Eperiment 1 - repeatability
+			automatika.repeatability			:= TRUE;
+			
 		4:
+			
 			
 			modul.linearReal		 			:= ref_linearny_posun;
 			
@@ -183,8 +187,8 @@ PROGRAM _CYCLIC
 					END_IF
 				ELSE
 					FOR id:=0 TO 6 BY 1 DO
-				//		modull.pozadovany_uhol_x[id]	:= automatika.x_desired[id];
-				//		modull.pozadovany_uhol_y[id] 	:= automatika.y_desired[id];
+						modull.pozadovany_uhol_x[id]	:= automatika.x_desired[id];
+						modull.pozadovany_uhol_y[id] 	:= automatika.y_desired[id];
 					END_FOR
 					modull.pozadovanyLinear				:= automatika.linear;
 				END_IF
@@ -277,6 +281,7 @@ PROGRAM _CYCLIC
 				act_alfa_y_ID6:= -(modull.real_uhol_y_kalibrovane[5]);
 				act_alfa_x_ID7:= -(modull.real_uhol_x_kalibrovane[6]);
 				act_alfa_y_ID7:= -(modull.real_uhol_y_kalibrovane[6]);
+			
 				// Pre experiment 2
 				(*
 				uhly.ref_alfa_x[0]	:= act_alfa_x_ID1;
@@ -294,8 +299,9 @@ PROGRAM _CYCLIC
 				uhly.ref_alfa_x[6]	:= act_alfa_x_ID7;
 				uhly.ref_alfa_y[6]	:= act_alfa_y_ID7;
 				*)
-				IF automatika.repeatability = FALSE THEN
-					
+				IF automatika.experiment1 = TRUE THEN		// repeatability
+					automatika.experiment2	:= FALSE;
+					automatika.experiment3	:= FALSE;
 					// Nastavenie tlakov podla regulacie
 					// ID1
 					id:=0;
@@ -341,17 +347,20 @@ PROGRAM _CYCLIC
 			
 					//lin_modul
 					modul.tlakLinear:= REAL_TO_INT(lin_pressure*32767/9);
+				
 				ELSE
-					IF automatika.continuum = TRUE THEN
-						
-					ELSE
-						
+					IF automatika.experiment2 = TRUE THEN	// continuum robot
+						automatika.experiment1	:= FALSE;
+						automatika.experiment3	:= FALSE;
 						FOR id:= 0 TO 5 BY 1 DO
 							modul.tlak1[id] := automatika.desiredPressure1[id];		
 							modul.tlak2[id] := automatika.desiredPressure2[id];
 							modul.tlak3[id] := automatika.desiredPressure3[id];
 						END_FOR
-						modul.tlakLinear	:= automatika.desiredPressureLinear;
+						modul.tlakLinear	:= automatika.desiredPressureLinear;	
+					ELSE
+						
+						
 					END_IF
 					
 				END_IF

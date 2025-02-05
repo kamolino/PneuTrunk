@@ -48,9 +48,11 @@ TYPE
 		desiredPressure1_previous : ARRAY[0..6]OF INT;
 		desiredPressureLinear : INT;
 		desiredPressure1 : ARRAY[0..6]OF INT;
-		repeatability : BOOL;
 		step_repeatability : INT;
-		continuum : BOOL;
+		handControl : BOOL;
+		experiment2 : BOOL;
+		experiment3 : BOOL;
+		experiment1 : BOOL;
 	END_STRUCT;
 	podavac : 	STRUCT 
 		levitovanie : BOOL;
