@@ -156,7 +156,7 @@
     </Task>
     <Task
       Name="Repeatabil"
-      Disable="false"
+      Disable="true"
       Source="Source.Experiments.Repeatability"
       Language="IEC">
       <InternalFile
@@ -188,7 +188,7 @@
     </Task>
     <Task
       Name="Continuum"
-      Disable="true"
+      Disable="false"
       Source="Source.Experiments.Continuum"
       Language="IEC">
       <InternalFile

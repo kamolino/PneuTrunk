@@ -127,7 +127,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 			// Eperiment 1 - repeatability
-			automatika.repeatability			:= TRUE;
+			automatika.experiment1			:= TRUE;
 			
 		4:
 			
@@ -359,7 +359,7 @@ PROGRAM _CYCLIC
 						END_FOR
 						modul.tlakLinear	:= automatika.desiredPressureLinear;	
 					ELSE
-						
+					// twisting - experiment 3
 						
 					END_IF
 					
@@ -375,7 +375,9 @@ PROGRAM _CYCLIC
 				global_step_udp			:= 0;
 				global_step				:= 0;
 				step_repeatability		:= 0;
-				automatika.repeatability:= FALSE;
+				automatika.experiment1	:= FALSE;
+				automatika.experiment2	:= FALSE;
+				automatika.experiment3	:= FALSE;
 				automatika.casovac		:= FALSE;
 				automatika.ball_piston	:= FALSE;
 				automatika.ball_up		:= FALSE;
