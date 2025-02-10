@@ -3,10 +3,16 @@ import matplotlib.pyplot as plt
 from scipy.stats import linregress
 import pandas as pd
 
-# Define correction factors for individual modules
-c_A = 1.0  # Correction factor for series A
-c_B = 1.0  # Correction factor for series B
-c_C = 1.0  # Correction factor for series C
+# Define cross-sectional areas of bellows
+area_large = 0.125  # Cross-sectional area of larger bellows (m^2)
+area_small = 0.08   # Cross-sectional area of smaller bellows (m^2)
+
+# Define correction factors based on module position
+def get_correction_factors(module_index):
+    if module_index < 2:  # First two modules have larger bellows
+        return area_large, area_small, area_small
+    else:  # Remaining modules have smaller bellows
+        return area_small, area_small, area_small
 
 # Function to calculate k_i coefficients for each module
 def calculate_ki(pressure_diff, angles):
@@ -62,25 +68,28 @@ deflection_y = {
 }
 data_y = data_y.assign(**deflection_y)
 
-# Compute k_i values for theta_x
-ki_x_results = {}
-pressure_diff_x = c_A * data_x["p1"] - c_B * data_x["p2"]
-for module in deflection_x.keys():
-    ki_x, details_x = calculate_ki(pressure_diff_x, data_x[module].values)
-    ki_x_results[module] = {"k_i": ki_x, "details": details_x}
+# Compute k_ix coefficients
+kix_results = {}
+for idx, q in enumerate(["q1x", "q2x", "q3x", "q4x", "q5x", "q6x", "q7x"]):
+    c_A, c_B, _ = get_correction_factors(idx)
+    pressure_diff_x = c_A * data_x["p1"] - c_B * data_x["p2"]
+    kix, details = calculate_ki(pressure_diff_x, data_x[q])
+    kix_results[q] = details
 
-# Compute k_i values for theta_y
-ki_y_results = {}
-pressure_diff_y = c_A * data_y["p1"] - c_C * data_y["p3"]
-for module in deflection_y.keys():
-    ki_y, details_y = calculate_ki(pressure_diff_y, data_y[module].values)
-    ki_y_results[module] = {"k_i": ki_y, "details": details_y}
+# Compute k_iy coefficients
+kiy_results = {}
+for idx, q in enumerate(["q1y", "q2y", "q3y", "q4y", "q5y", "q6y", "q7y"]):
+    c_A, _, c_C = get_correction_factors(idx)
+    pressure_diff_y = c_A * data_y["p1"] - c_C * data_y["p3"]
+    kiy, details = calculate_ki(pressure_diff_y, data_y[q])
+    kiy_results[q] = details
 
-# Print results
-print("Theta X Coefficients:")
-for module, result in ki_x_results.items():
-    print(f"{module}: k_i = {result['k_i']:.4f}")
+# Display results
+df_kix = pd.DataFrame.from_dict(kix_results, orient='index')
+df_kiy = pd.DataFrame.from_dict(kiy_results, orient='index')
 
-print("\nTheta Y Coefficients:")
-for module, result in ki_y_results.items():
-    print(f"{module}: k_i = {result['k_i']:.4f}")
+# Display results
+print("kix Coefficients:")
+print(pd.DataFrame.from_dict(kix_results, orient='index'))
+print("\nkiy Coefficients:")
+print(pd.DataFrame.from_dict(kiy_results, orient='index'))
