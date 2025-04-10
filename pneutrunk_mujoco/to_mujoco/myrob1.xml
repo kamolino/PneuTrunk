@@ -1,0 +1,193 @@
+<mujoco model="test2025">
+  <compiler angle="radian"/>
+ <visual>
+        <quality shadowsize="4096"/>
+    </visual>
+    
+  <asset>
+    <material name="red_glossy" rgba="0.3 0.3 0.3 1" specular="0.8" shininess="0.9" reflectance="0.4"/>
+    <material name="white" rgba="0.9 0.9 0.9 1" specular="1.0" shininess="1.0" reflectance="0.5"/>
+
+    <material name="black_steel" rgba="0.3 0.3 0.3 1" specular="0.6" shininess="0.7" reflectance="0.3"/>
+
+    <mesh name="base_link" file="bigpart.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="base_link2" file="square1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new2_1" file="joint_new2_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new3_1" file="joint_new3_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new5_1" file="joint_new5_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new6_1" file="joint_new6_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new8_1" file="joint_new8_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new9_1" file="joint_new9_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new1_1" file="joint_new1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpart2_1" file="bigpart.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new4_1" file="joint_new4_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpart4_1" file="bigpart.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new7_1" file="joint_new7_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpart_v2_1" file="smallpart_v2_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new10_1" file="joint_new10_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new11_1" file="joint_new11_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new12_1" file="joint_new12_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpar5_1" file="smallpar5_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new13_1" file="joint_new13_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new14_1" file="joint_new14_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new15_1" file="joint_new15_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpart6_1" file="smallpart6_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new17_1" file="joint_new17_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new18_1" file="joint_new18_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new19_1" file="joint_new19_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpart7_1" file="smallpart7_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new20_1" file="joint_new20_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new21_1" file="joint_new21_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="joint_new22_1" file="joint_new22_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="smallpart8_1" file="smallpart8_1.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+   <default>
+        <joint damping="100" stiffness="100" armature="0.001"/>
+        <motor ctrllimited="true" ctrlrange="-22 22"/>
+    </default>
+
+<worldbody>
+        <!-- Свет спереди -->
+    <light pos="0 -3 3" dir="0 1 -1"/>
+    <light pos="3 0 3" dir="-1 0 -1"/>
+
+
+         <geom name="floor" type="plane" size="100 100 100" pos="0 0 -0.5"/>
+        
+
+
+<body name="plate00" pos="0 0 1.42267">
+ <geom name="plate00" pos="0 0 0.085" material="red_glossy" type="mesh" mesh="base_link2"/>
+  <joint name="Base 0" pos="0 0 0" range="0 0"/>
+
+  <body name="joint_new1_1" pos="0 0 0">
+   <geom name="plate0" pos="0 0 0.077" type="mesh" material="black_steel" mesh="base_link"/>
+   <geom pos="0 0 -1.42267" type="mesh" rgba="2 2 2 1" mesh="joint_new1_1"/>
+
+    <body name="joint_new2_1" pos="0 0 0">
+      <joint name="Revolute 1" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972"/>
+      <geom pos="0 0 -1.42267" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new2_1"/>
+      
+
+      <body name="joint_new3_1" pos="0 0 -0.0063">
+        <inertial pos="2.31673e-10 2.31664e-10 -0.08233" quat="0.5 0.5 -0.5 0.5" mass="1.79753" diaginertia="0.006167 0.00389206 0.00389206"/>
+        <joint name="Revolute 3" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+        <geom pos="0 0 -1.41637" type="mesh" rgba="2 2 2 1" mesh="joint_new3_1"/>
+        <geom name="plate1" pos="0 0 -0.087" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpart2_1"/>
+        <geom pos="0 0 -1.41637" quat="1 0 0 0" type="mesh" rgba="2 2 2 1" mesh="joint_new4_1"/>
+
+        <body name="joint_new5_1" pos="0 0 -0.16466">
+          <inertial pos="0 0 -0.00315" mass="0.0340764" diaginertia="2e-06 2e-06 1e-06"/>
+          <joint name="Revolute 6" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+          <geom pos="0 0 -1.25171" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new5_1"/>
+
+          <body name="joint_new6_1" pos="0 0 -0.0063">
+            <inertial pos="3.54084e-10 -3.54075e-10 -0.0795162" quat="0.5 0.5 -0.5 0.5" mass="1.71488" diaginertia="0.006162 0.00357619 0.00357619"/>
+            <joint name="Revolute 7" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+            <geom pos="0 0 -1.24541" type="mesh" rgba="2 2 2 1" mesh="joint_new6_1"/>
+            <geom name="plate2" pos="0 0 -0.087" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpart4_1"/>
+            <geom pos="0 0 -1.24541" quat="1 0 0 0" type="mesh" rgba="2 2 2 1" mesh="joint_new7_1"/>
+
+            <body name="joint_new8_1" pos="0 0 -0.13566">
+              <inertial pos="0 0 -0.00315" mass="0.0340764" diaginertia="2e-06 2e-06 1e-06"/>
+              <joint name="Revolute 10" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+              <geom pos="0 0 -1.10975" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new8_1"/>
+
+              <body name="joint_new9_1" pos="0 0 -0.0063">
+                <inertial pos="2.55134e-10 2.55125e-10 -0.05333" quat="0.5 0.5 -0.5 0.5" mass="1.63223" diaginertia="0.006157 0.00328747 0.00328747"/>
+                <joint name="Revolute 11" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                <geom pos="0 0 -1.10345" type="mesh" rgba="2 2 2 1" mesh="joint_new9_1"/>
+                <geom pos="0 0 -1.10345" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpart_v2_1"/>
+                <geom pos="0 0 -1.10345" quat="1 0 0 0" type="mesh" rgba="2 2 2 1" mesh="joint_new10_1"/>
+
+                <body name="joint_new11_1" pos="0 0 -0.10666">
+                  <inertial pos="0 0 -0.00315" mass="0.0340764" diaginertia="2e-06 2e-06 1e-06"/>
+                  <joint name="Revolute 20" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                  <geom pos="0 0 -0.99679" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new11_1"/>
+
+                  <body name="joint_new12_1" pos="0 0 -0.0063">
+                    <inertial pos="-2.55116e-10 -2.55125e-10 -0.05333" quat="0.5 0.5 -0.5 0.5" mass="1.63223" diaginertia="0.006157 0.00328747 0.00328747"/>
+                    <joint name="Revolute 21" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                    <geom pos="0 0 -0.99049" type="mesh" rgba="2 2 2 1" mesh="joint_new12_1"/>
+                    <geom pos="0 0 -0.99049" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpar5_1"/>
+                    <geom pos="0 0 -0.99049" quat="1 0 0 0" type="mesh" rgba="2 2 2 1" mesh="joint_new13_1"/>
+
+                    <body name="joint_new14_1" pos="0 0 -0.10666">
+                      <inertial pos="0 0 -0.00315" mass="0.0340764" diaginertia="2e-06 2e-06 1e-06"/>
+                      <joint name="Revolute 24" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                      <geom pos="0 0 -0.88383" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new14_1"/>
+
+                      <body name="joint_new15_1" pos="0 0 -0.0063">
+                        <inertial pos="3.72014e-10 -3.72004e-10 -0.05333" quat="0.5 0.5 -0.5 0.5" mass="1.63223" diaginertia="0.006157 0.00328747 0.00328747"/>
+                        <joint name="Revolute 25" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                        <geom pos="0 0 -0.87753" type="mesh" rgba="2 2 2 1" mesh="joint_new15_1"/>
+                        <geom pos="0 0 -0.87753" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpart6_1"/>
+                        <geom pos="0 0 -0.87753" quat="1 0 0 0" type="mesh" rgba="2 2 2 1" mesh="joint_new17_1"/>
+                        
+                        <body name="joint_new18_1" pos="0 0 -0.10666">
+                          <inertial pos="0 0 -0.00315" mass="0.0340764" diaginertia="2e-06 2e-06 1e-06"/>
+                          <joint name="Revolute 28" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                          <geom pos="0 0 -0.77087" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new18_1"/>
+                          
+                          <body name="joint_new19_1" pos="0 0 -0.0063">
+                            <inertial pos="-3.71994e-10 3.72004e-10 -0.05333" quat="0.5 0.5 -0.5 0.5" mass="1.63223" diaginertia="0.006157 0.00328747 0.00328747"/>
+                            <joint name="Revolute 29" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                            <geom pos="0 0 -0.76457" type="mesh" rgba="2 2 2 1" mesh="joint_new19_1"/>
+                            <geom pos="0 0 -0.76457" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpart7_1"/>
+                            <geom pos="0 0 -0.76457" quat="1 0 0 0" type="mesh" rgba="2 2 2 1" mesh="joint_new20_1"/>
+
+                            <body name="joint_new21_1" pos="0 0 -0.10666">
+                              <inertial pos="0 0 -0.00315" mass="0.0340764" diaginertia="2e-06 2e-06 1e-06"/>
+                              <joint name="Revolute 32" pos="0 0 0" axis="1 0 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                              <geom pos="0 0 -0.65791" type="mesh" rgba="0.7 0.7 0.7 1" mesh="joint_new21_1"/>
+
+                              <body name="joint_new22_1" pos="0 0 -0.0063">
+                                <inertial pos="-6.26863e-11 3.36405e-10 -0.0514071" quat="0.5 0.5 -0.5 0.5" mass="1.52141" diaginertia="0.006149 0.00317961 0.00317861"/>
+                                <joint name="Revolute 33" pos="0 0 0" axis="0 1 0" range="-0.383972 0.383972" actuatorfrcrange="-100 100"/>
+                                <geom pos="0 0 -0.65161" type="mesh" rgba="2 2 2 1" mesh="joint_new22_1"/>
+                                <geom pos="0 0 -0.65161" quat="1 0 0 0" type="mesh" material="black_steel" mesh="smallpart8_1"/>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+   </body>
+  </body>
+  </worldbody>
+   <actuator>
+
+    <position joint="Revolute 1" name="actuator_1" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 3" name="actuator_2" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+    <position joint="Revolute 6" name="actuator_3" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 7" name="actuator_4" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+    <position joint="Revolute 10" name="actuator_5" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 11" name="actuator_6" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+    <position joint="Revolute 20" name="actuator_7" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 21" name="actuator_8" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+    <position joint="Revolute 24" name="actuator_9" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 25" name="actuator_10" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+    <position joint="Revolute 28" name="actuator_11" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 29" name="actuator_12" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+    <position joint="Revolute 32" name="actuator_13" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+    <position joint="Revolute 33" name="actuator_14" kp="70000" ctrllimited="true" ctrlrange="-0.383972 0.383972"/>
+
+  </actuator>
+
+</mujoco>
+
